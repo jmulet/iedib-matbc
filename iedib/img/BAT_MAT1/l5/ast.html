@@ -1,0 +1,1912 @@
+<html>
+
+<head> 
+    <base href="lliurament5_assets/">
+    <link rel="stylesheet" type="text/css" href="../../../ASSETS/iedib.css">
+    </link>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+    <script type="text/javascript" src="../../../ASSETS/iedib.js"></script>
+
+    <title>Coneixes la paradoxa d’Aquil·les i la tortuga?</title>
+    <subtitle>Límits i asímptotes de funcions</subtitle>
+    <lliurament>5</lliurament>
+    <category>Anàlisi</category>
+    <author>Josep Mulet Pol</author>
+    <year>2023</year>
+    <subject>Matemàtiques I</subject>
+    <subject-short>BAT_MAT1</subject-short>
+</head>
+
+<body>
+
+    <section id="Funcions">
+
+        <h3>Concepte de funció</h3>
+
+        <p>A l'ESO ja vares estudiar el concepte i les característiques d'una funció. </p>
+        <div class="quadre-blau">
+            <DT>
+                <p>
+                    Una <strong>funció</strong> és una <strong>relació</strong> entre dues magnituds de manera que a un valor
+                    de  \(x\) (
+                    <strong>variable independent</strong>) li feim correspondre
+                    <span style="text-decoration: underline"><strong>un únic</strong></span>
+                    valor de  \(y\) (<strong>variable dependent</strong>). Per a indicar que la variable  \(y\) depèn o és funció
+                    d'una altra,  \(x\), empram la notació  \(y = f(x)\), que es llegeix " \(y\) és la imatge de  \(x\) mitjançant la
+                    funció  \(f\)".
+                </p>
+                <DD>Definició de funció!https://www.vitutor.com/fun/2/a_r.html</DD>
+            </DT>
+        </div>
+
+        <p>Aquesta relació funcional es pot expressar mitjançant</p>
+        <p><br></p>
+
+        <div class="row" style="margin:0">
+        <div class="span6">
+            <ul> 
+                <li>una taula de valors</li>
+                <li>una gràfica</li>
+                <li>un enunciat</li>
+                <li>una expressió matemàtica o fórmula</li>
+            </ul>
+        </div>
+        <div class="span6">
+            <img src="formes-funcio.png" style="width:390px; latex-width: 90%" title="Formes d'expressar una funció" />
+        </div>
+        </div>
+
+
+        <div class="if-latex">
+            <div class="resolt onecol breakable" data-closable="true">
+                <div class="formulacio">
+                    <p>Associa cada gràfica amb el tipus (lineal, quadràtica, proporcionalitat inversa, radical, exponencial
+                        o logarítmica). Si et ve de gust, intenta també associar cada gràfica amb la seva equació. 
+                        <b>Atenció</b>: sobren equacions.</p>
+                    <center>
+                        <img src="chap6-inicial.png" style="width:630px; latex-width: 90%"/>
+                    </center>
+                </div>
+                <div class="resolucio">
+                    <center>
+                        <img src="keys-iniaval.png" style="width:500px" />
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="html">
+            <h3>Avaluació inicial</h3>
+            <iframe src="https://piworld.es/iedib/activityjs/bat_mat1_l4_1.html" width="550" height="550" style="border:none;"></iframe>
+        </div>
+  <br>
+  <br>
+   
+        
+        <section id="Funcions elementals">
+
+            <p>Les funcions descriuen fenòmens quotidians, econòmics, psicològics, científics, ... Aquestes funcions s'obtenen
+                experimentalment a través de l'observació. Després, s'idealitzen o es modelitzen utilitzant famílies de funcions
+                ben conegudes que anomenam <b>funcions elementals</b>.
+            </p>
+            <p>Per exemple, la funció lineal és adequada per descriure com s'allarga una molla de la qual pengem una massa
+                petita. Les funcions quadràtiques descriuen la trajectòria que descriu un projectil. La funció de proporcionalitat
+                inversa descriu la relació entre la pressió i el volum d'un èmbol ple de gas. Les funcions exponencials descriuen
+                creixements de poblacions i com canvia la quantitat de substància radioactiva en el temps. Les funcions logarítmiques s'empren per
+                mesurar el nivell de renou, la brillantor dels estels i el pH d'una dissolució. Finalment, les funcions trigonomètriques
+                apareixen en fenòmens que són periòdics (es repeteixen en el temps).
+            </p>
+
+            <p>En aquest apartat s'enumeren aquestes funcions i es detallen els seus elements i propietats més importants.</p>
+
+            <h3>La funció lineal</h3>
+            <p><DT>L'expressió d'una funció lineal és  \(y=mx+n\), essent  \(m\) el pendent i  \(n\) l'ordenada a l'origen. Si  \(m=0\)
+                    es diu que la funció és constant i la gràfica és una recta horitzontal.
+                    <DD>Funció lineal</DD>
+                </DT></p>
+            <center>
+                <img src="flineal.png" style="width:600px" />
+            </center>
+
+            <h3>La funció quadràtica o paràbola</h3>
+
+            <p><DT>L'expressió d'una funció quadràtica és  \(y=ax^2+bx+c\). Quan  \(a>0\) la funció és còncava  \(\cup\) i si  \(a\lt0\)
+                    és convexa  \(\cap\). El valor de  \(b\) controla la posició del vèrtex (el màxim o mínim). L'abscissa del vèrtex s'obté de la
+                    fórmula  \(x_v=\dfrac{-b}{2a}\). L'ordenada del vèrtex es troba substituint  \(x_v\) dins la funció.
+                    <DD>Funció quadràtica</DD>
+                </DT></p>
+            <center>
+                <img src="fparabola.png" style="width:600px" />
+            </center>
+
+            <h3>La funció de proporcionalitat inversa (hipèrboles)</h3>
+            <p><DT>L'expressió analítica és  \(y=\dfrac{k}{x-a} + b\). La representació gràfica són hipèrboles amb les asímptotes
+                    paral·leles als eixos de coordenades. Tenen una asímptota vertical a  \(x=a\) i una horitzontal a  \(y=b\).
+                    Les asímptotes separen la funció en dues parts, cada part s'anomena branca. La funció de proporcionalitat inversa
+                    té la forma \(y=\dfrac{k}{x}\).
+                    <DD>Funció de proporcionalitat inversa</DD></DT>
+            </p>
+            <center>
+                <img src="fhiperbola.png" style="width:600px" />
+            </center>
+
+            <h3>La funció arrel quadrada</h3>
+            <p><DT>Les funcions arrel  \(y=k\sqrt{x-a}\) es representen com mitges paràboles amb eix paral·lel a l'eix X.<DD>Funció
+                        arrel quadrada</DD></DT></p>
+            <center>
+                <img src="farrel.png" style="width:600px" />
+            </center>
+
+
+
+            <h3>Funcions a trossos</h3>
+            <p>Les funcions a trossos les empram per descriure situacions on hi ha canvis de comportament. Per exemple: Un
+                cotxe està aturat a un semàfor i després accelera. La funció que descriu la velocitat presenta un canvi de
+                comportament en el moment que el conductor pitja l'accelerador. Aquesta funció expressa com
+            </p>
+            <br>
+            <div class="minipage" style="width:50%">
+                \[ v(t) = \left\{ \begin{array}{ll} 0 & \text{ si }\,\, 0 \leq t \leq 30 \\ 2(t-30) & \text{ si }\,\, t \gt 30 \end{array}\right.
+                \nonumber
+                \]
+            </div>
+            <div class="minipage" syle="width:50%">
+                <center>
+                    <img src="cotxe.png" style="width: 80%" />
+                </center>
+            </div>
+            <br>
+
+            <p>De 0 a 30 segons el cotxe està aturat i, després dels 30 s, la seva velocitat augmenta linealment.</p>
+
+            <p>Les funcions a trossos són fàcils de representar si sabem representar cadascun dels trams i param atenció
+                al seu comportament en els punts d'unió.</p>
+            <center>
+                <img src="ftrossos.png" style="width:600px" />
+            </center>
+
+            <h3>La funció valor absolut</h3>
+            <p>Recordem que el valor absolut d'un nombre  \(a\) coincideix amb el nombre  \(a\) si és positiu o zero, o amb l'oposat
+                i si és negatiu
+            </p>
+            \[ |a| = \left\{ \begin{array}{ll} -a & \text{ si }\,\, a\leq 0 \\ a & \text{ si }\,\, a\gt 0 \end{array} \right.  \tag{1}\]
+            <p>Amb això, una funció de valor absolut es pot expressar com una funció a trossos</p>
+            <DT>
+                \[ |f(x)| = \left\{ \begin{array}{ll} -f(x) & \text{ si }\,\, f(x)\leq 0 \\ f(x) & \text{ si }\,\, f(x)\gt 0 \end{array}
+                \right.  \tag{2}\]
+                <DD>Funció absolut</DD>
+            </DT>
+            <center>
+                <img src="fvabs.png" style="width:600px" />
+            </center>
+
+            <div class="proposats">
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Representa gràficament les funcions  \(y=x^2-2x\) i  \(y=3x-1\) en la mateixa gràfica.
+                           Quin tipus de funcions obtens?
+                        </p> 
+                    </div>
+                    <div class="resolucio">
+                        <p>La funció  \(y=x^2-2x\) és una paràbola que té el vèrtex en el punt  \(V(1, -1)\). La paràbola
+                            talla l'eix de les OX en  \(x=0\) i  \(x=2\). Es tracta d'una paràbola còncava perquè el paràmetre
+                             \(a=1\) és positiu.</p>
+                        <p>
+                            D'altra banda, la funció  \(y=3x-1\) és una recta creixent perquè el seu pendent,  \(m=3\) és positiu.
+                            A més, l'ordenada a l'origen és  \(-1\), és a dir talla l'eix OY a  \(y=-1\).
+                        </p>
+                        <p>La gràfica de les dues funcions és la següent</p>
+                        <center>
+                            <img src="graficar-parabola-recta.png" style="width:300px"/>
+                        </center>
+                        
+                    </div>
+                </div>
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Representa la funció a trossos  \(y=\left\{ \begin{array}{ll} \dfrac{1}{x} & \,\,\text{ si }  x \lt 0\\ 2^x & \,\,\text{ si } 0\leq x\lt 2 \\  \sqrt{x-2}  & \,\,\text{ si }   x\ge 2 \end{array}\right.\)</p>
+                    </div>
+                    <div class="resolucio">
+                        <p>Identificam tres trossos, el primer és una branca de una funció de proporcionalitat
+                            inversa, seguit d'un tros d'una funció exponencial creixent i acaba amb una
+                            funció radical.
+                        </p>
+                        <p>Farem tres taules de valors per conèixer algun punt de cada gràfica.</p>
+                        <div class="row">
+                            <div class="span4">
+                                <center>
+                                     \(y= 1/x\)<br>
+                                    <img src="taula1.png" style="width:150px"/>
+                                </center>
+                            </div>
+                            <div class="span4">
+                                    <center>
+                                         \(y=2^x\)<br>
+                                        <img src="taula2.png" style="width:150px"/>
+                                    </center>
+                            </div>
+                            <div class="span4">
+                                    <center>
+                                         \(y=\sqrt{x-2}\)<br>
+                                        <img src="taula3.png" style="width:150px"/>
+                                    </center>
+                            </div>
+                        </div>
+                        <p>La gràfica és la següent</p>
+                        <center>
+                            <img src="representa-a-trossos.png" style="width:300px"/>
+                        </center>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+      
+        <section id="Operacions amb funcions">
+            <p>A part de les operacions bàsiques de suma, diferència, producte o quocient de funcions també és possible fer
+                la composició i la inversa d'una funció.
+            </p>
+
+            <h3>Composició de dues funcions</h3>
+
+            <p>Considerem dues funcions  \(f(x)=\sqrt{x}\) i  \(g(x)=\sin x\). La primera funció, per a cada valor de  \(x\) que li
+                donam, retorna la seva arrel quadrada. La segona funció, en canvi, retorna el sinus de  \(x\).
+            </p>
+
+            <p>Què passa si aplicam una funció darrera l'altra? Això és composar funcions. S'indica d'una aquestes formes:
+                 \(f\circ g (x)\) o  \(f(g(x))\). Aquesta figura mostra el seu significat
+            </p>
+
+            <center>
+                <img src="composicio2.png" width="450" title="Composició de funcions f(g(x))" />
+            </center>
+
+            <p> \(f(g(x)) = \sqrt{\sin x}\), primer calculam el sinus de l'angle i al resultat li feim l'arrel quadrada.</p>
+
+            <p>La composició de funcions és una operació <strong>no commutativa</strong>. Això vol dir que l'ordre de l'operació
+                canvia el resultat.</p>
+
+            <p>Efectivament  \(g \circ f (x) = g(f(x))= \sin (\sqrt{x})\). Primer calculam l'arrel de l'angle i després feim
+                el sinus.</p>
+
+            <center>
+                <img src="composicio1.png" width="450" title="Composició de funcions g(f(x))" />
+            </center>
+
+            <p>Si definim la funció  \(h(x)=\dfrac{1}{x+1}\) també és possible composar les tres funcions. Vegem com fer-ho:</p>
+            \[ f\circ g\circ h (x) = f(g(h(x))) = f(g( \dfrac{1}{x+1} )) = \tag{3}\] \[ = f(\sin \left( \dfrac{1}{x+1} \right) ) = \sqrt{\sin
+            \left( \dfrac{1}{x+1} \right) } \tag{4}\]
+
+
+            <h3>Funció inversa</h3>
+            <p>No hem de confondre la inversa amb fer 1 dividit, són coses diferents.</p>
+            <DT>
+                <p>Es defineix la inversa d'una funció  \(f(x)\) i la indicam com  \(f^{-1}(x)\) a aquella funció que compleix</p>
+                \[ f(f^{-1}(x)) = f^{-1}(f(x)) = x  \tag{5}\]
+                <DD>Funció inversa</DD>
+            </DT>
+            <p>No totes les funcions tenen una inversa o, millor dit, en alguns casos poden tenir-ne més d'una.</p>
+
+            <p>El procediment per calcular la inversa d'una funció és senzill</p>
+            <ul>
+                <li>Canviam el nom de les variables  \(x \leftrightarrow y \)</li>
+                <li>Aïllam la  \(y\)</li>
+                <li>Anomenam  \(y = f^{-1}(x)\), la inversa</li>
+            </ul>
+
+            <div class="resolt" data-closable="false">
+                <div class="formulacio">
+                    <p>Calcula la inversa de  \(f(x)=\dfrac{3}{x-2}\)</p>
+                </div>
+                <div class="resolucio">
+                    <p>Escrivim la funció com  \(y=\dfrac{3}{x-2}\), i canviam el nom de les variables</p>
+                    \[x=\dfrac{3}{y-2} \tag{6}\]
+                    <p>Aïllam la  \(y\),  \(y=\dfrac{3}{x}+2\). Aleshores la funció inversa és  \(f^{-1}(x)=\dfrac{3}{x}+2\)</p>
+                    <br>
+                    <p>Podem comprovar que es compleix  \(f(f^{-1}(x))=x\)</p>
+                    \[ f(\dfrac{3}{x}+2) = \dfrac{3}{ \left(\dfrac{3}{x}+2\right)-2 } = x \tag{7}\]
+                </div>
+            </div>
+
+            <p>Si representam gràficament la funció i la seva inversa, trobam una propietat curiosa de la gràfica. Si doblegam
+                la gràfica per una línia que es troba a 45 graus, la funció es transforma en la seva inversa. Això passa
+                perquè quan feim aquest doblec, l'eix  \(y\) passa damunt l'eix  \(x\) i aquesta és precisament el canvi de variables
+                que feim per calcular la inversa.
+            </p>
+
+            <center>
+                <img src="inverses.png" width="500" title="La funció i la seva inversa. Doblec a 45 graus." />
+
+            </center>
+
+            <p>Podeu comprovar que la funció  \(y=x^2\) té dues inverses que són  \(f^{-1}_1(x)=\sqrt{x}\) i  \(f^{-1}_2(x)=-\sqrt{x}\)</p>
+
+
+            <div class="proposats onecol pw-mq-group"> 
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Considerau les funcions  \(f(x)=\dfrac{1}{x+2}\) i  \(g(x)=\sqrt{3x+1}\). Calculau
+                             \(f^{-1}(x)\) i les composicions  \(f\circ g\) i  \(g \circ f\).
+                        </p> 
+                        <p data-mq="simple" data-mq-ans="1/x-2" data-mq-formulation="\(f^{-1}(x)=\)"></p>
+                        <p data-mq="simple" data-mq-ans="1/(sqrt(3*x+1)+2)" data-mq-formulation="\(f(g(x))=\)"></p>
+                        <p data-mq="simple" data-mq-ans="sqrt(3/(x+2)+1)" data-mq-formulation="\(g(f(x))=\)"></p>
+                    </div>s
+                    <div class="resolucio">
+                        <ul>
+                            <li>Per calcular la inversa de  \(y=\frac{1}{x+2}\), canviam el nom de les lletres i aïllam
+                                 \(y\),  \(x=\frac{1}{y+2}\)  \(\rightarrow\)  \(y+2 = \dfrac{1}{x}\)  \(\rightarrow\)  \(y=\dfrac{1}{x}-2\).
+                                És a dir, la funció inversa és  \(f^{-1}(x)=\dfrac{1}{x}-2\).
+                            </li>
+
+                            <li>
+                                La composició  \(f \circ g\) és  \(f(g(x))=f(\sqrt{3x+1})= \dfrac{1}{\sqrt{3x+1}+2}\).
+                            </li>
+                            
+                            <li>
+                                La composició  \(g \circ f\) és  \(g(f(x))=g(\dfrac{1}{x+2})= \sqrt{3\dfrac{1}{x+2} + 1}\).
+                            </li>
+                                
+                        </ul>
+                     
+                    </div>
+                </div> 
+            </div>
+    
+
+        </section>
+   
+ 
+    <section id="Funcions exponencials i logarítmiques">
+
+
+        <h3>Funció exponencial</h3>
+        <DT>
+            <p>Les funcions <strong>exponencials</strong> són del tipus  \(y=b^x\). Si  \(b>1\) són creixents i si \(0 \lt b \lt 1\) 
+                són decreixents. Totes elles passen pel punt  \((0, 1)\).</p>
+            <DD>Funció exponencial</DD>
+        </DT>
+
+        <p>Un cas important és  \(y=e^x\) on la base és el número  \(e \simeq 2.7182818\).</p>
+
+
+        <center>
+            <img src="fexponencial.png" style="width:600px" />
+        </center>
+
+        <p><br></p>
+        <p>La funció exponencial es manifesta a multitud de fenòmens de creixement animal, vegetal i econòmic. A tots ells
+            la variable independent és el temps. Vegem un exemple:
+        </p>
+
+        <div class="resolt breakable">
+            <div class="formulacio">
+                <p>La temperatura d'una tassa de cafè des del moment que l'hem deixada damunt la taula d'una habitació canvia
+                    segons els temps segons l'expressió  \(T(t)=52\cdot e^{-\frac{t}{15}}+24\) on  \(t\) ve donat en minuts i  \(T\)
+                    en  \({}^\circ\)C.
+                </p>
+                <p>a) Quina és la temperatura inicial de la tassa? I transcorreguts 20 minuts?</p>
+                <p>b) Quin temps ha de transcórrer perquè la temperatura sigui 30 \({}^\circ\)C?</p>
+                <p>c) Representa la funció gràficament.</p>
+                <p>d) Quina és la temperatura de l'habitació?</p>
+            </div>
+            <div class="resolucio">
+                <p>a) Inicialment significa  \(t=0\),  \(T(0)=52\cdot e^{-\frac{0}{15}}+24= 76 {}^\circ\)C</p>
+                <p>Passats 20 minuts  \(T(20)=52\cdot e^{-\frac{20}{15}}+24= 37,71 {}^\circ\)C</p>
+                <br>
+                <p>b) Hem de resoldre l'equació  \(30=52\cdot e^{-\frac{t}{15}}+24\). Aïllam l'exponencial a un membre \(e^{-\frac{t}{15}}
+                    = \dfrac{30-24}{52}\)  \(\rightarrow\)  \(e^{-\frac{t}{15}} = \dfrac{6}{52}\), prenem logaritmes
+                     \(-\frac{t}{15}= \ln \dfrac{6}{52}\) i finalment aïllam la incògnita \(t=-15\ln \dfrac{6}{52} \approx 32,392\) minuts.
+                </p>
+                <br>
+                <p>c) Es tracta d'una exponencial decreixent que té una asímptota horitzontal a  \(y=24\)</p>
+                <center>
+                    <img src="habitacio.png" style="width: 300px" />
+                </center>
+                <br>
+                <p>d) La temperatura de l'habitació és la temperatura de la tassa passat molt de temps, és a dir, el valor
+                    de l'asímptota que hem vist a la gràfica anterior.  \(T_{\text{habitacio}}=24 {}^\circ\)C.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <h3>Funció logarítmica</h3>
+        <DT>
+            <p> Les funcions <strong>logarítmiques</strong> són del tipus  \(y=\log_b x\). Si  \(b>1\) són creixents i si 
+                \(0 \lt b \lt 1\) són decreixents. Totes elles passen pel punt  \((1, 0)\).</p>
+            <DD>Funció logarítmica</DD>
+        </DT>
+        <p>Dos casos importants són:</p>
+        <DT>
+            <ul>
+                <li><strong>Logaritme Neperià:</strong>  \(y=\ln x\) si la base és el número  \(e\) </li>
+                <li><strong>Logaritme decimal:</strong>  \(y= \log x\) si la base és 10</li>
+            </ul>
+            <DD>Tipus de logaritmes</DD>
+        </DT>
+
+
+        <p>Es compleix que les funcions exponencials i logarítmiques són funcions inverses una de l'altra. Per exemple, la
+            funció inversa de  \(y=2^x\) és  \(y=\log_2 x\) i viceversa. Aleshores presenten les propietats de les funcions inverses,
+            és a dir, una s'obté de l'altra doblegant la gràfica per una línia a 45 graus.
+        </p>
+
+
+        <p>Cal recordar la definició o comprovació d'un logaritme  \(\log_b y = x \quad \leftrightarrow \quad b^x = y\).</p>
+
+
+        <center>
+            <img src="flogaritme.png" style="width:600px" />
+        </center>
+
+        <p><br></p>
+
+        <div class="resolt" data-closable="true">
+            <div class="formulacio">
+                <p>Representa gràficament aquestes funcions:</p>
+                <p>a)  \(y=1,2^x\)</p>
+                <p>b)  \(y=-\log_3 x\)</p>
+                <p>c)  \(y=0,6^x\)</p>
+                <p>d)  \(y=\log_{2} (-x)\)</p>
+            </div>
+            <div class="resolucio">
+                <div>
+                <center>
+                    <img src="resolt-graf-a.png" style="width: 200px" />
+                    <img src="resolt-graf-b.png" style="width: 200px" />
+                    <br>
+                    <img src="resolt-graf-c.png" style="width: 200px" />
+                    <img src="resolt-graf-d.png" style="width: 200px" />
+                </center>
+                 </div>
+            </div>
+        </div>
+
+        <div class="proposats pw-mq-group">
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p> Associa cada gràfica amb la seva expressió analítica.
+                    </p> 
+                    <table class="table-md">
+                        <tr>
+                            <td>a) <img src="el3.png" style="width:190px"/>
+                            <br>
+                            <p data-mq="mchoice" data-mq-ans="2" data-mq-symbols="\(y=5^x\); \(y=(1/5)^{x}\); \(y=\log_5 x\); \(y=\log_{1/5} x\)"></p>
+                            </td>
+                            <td>b) <img src="el1.png" style="width:190px"/>
+                                <br>
+                                <p data-mq="mchoice" data-mq-ans="0" data-mq-symbols="\(y=5^x\); \(y=(1/5)^{x}\); \(y=\log_5 x\); \(y=\log_{1/5} x\)"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>c) <img src="el4.png" style="width:190px"/>
+                                <br>
+                                <p data-mq="mchoice" data-mq-ans="3" data-mq-symbols="\(y=5^x\); \(y=(1/5)^{x}\); \(y=\log_5 x\); \(y=\log_{1/5} x\)"></p>
+                            </td>
+                            <td>d) <img src="el2.png" style="width:190px"/>  <br>
+                                <p data-mq="mchoice" data-mq-ans="1" data-mq-symbols="\(y=5^x\); \(y=(1/5)^{x}\); \(y=\log_5 x\); \(y=\log_{1/5} x\)"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="resolucio">
+                    <p>a)  \(y=\log_5 x\), b)  \(y=5^x\), c)  \(y=\log_{1/5} x\), d)  \(y=(1/5)^{x}\)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Funcions trigonomètriques"> 
+        <div class="quadre-groc">
+            <p>Quan es treballa en funcions trigonomètriques recordeu que els angles venen donats en RADIANTS.</p>
+            \[\begin{array}{ccc} 2\pi \text{ rad } &\quad \quad \Leftrightarrow \quad& \quad 360^\circ \\
+           \pi \text{ rad } &\quad \quad \Leftrightarrow \quad \quad& 180^\circ  \\
+            \dfrac{\pi}{2} \text{ rad } &\quad \quad \Leftrightarrow \quad \quad& 90^\circ \\ &\cdots& \end{array} \nonumber\]
+
+            <center>
+                <img src="calc-rad.jpg" style="width:220px"/><br>
+                <a class="nomediaplugin" href="https://youtu.be/nj_Q5SU-e2Y" target="_blank">Vídeo que explica com canviar de la configuració de DEG a RAD i viceversa.</a>
+            </center>
+        </div>
+
+        <p>Les funcions trigonomètriques són  \(y=\sin x\),  \(y=\cos x\) i  \(y=\tg x=\dfrac{\sin x}{\cos x}\). Aquestes funcions s'utilitzen per descriure fenòmens
+            periòdics com ara oscil·lacions i la propagació d'ones. Es defineix el període d'una oscil·lació  \(T\) com l'interval més petit de  \(x\)
+            pel qual es repeteix la funció. 
+        </p>
+
+        <p>Les funcions sinus i cosinus tenen període  \(2\pi\) i oscil·len entre els valors  \(-1\) i  \(1\).</p>
+        <p>La funció tangent, en canvi, té període  \(\pi\) i presenta asímptotes verticals per a tots els valors en què  \(\cos x = 0\).</p>
+        <br>
+
+
+        <center>
+                <img src="elem-trig.png" style="width:700px" title="Gràfiques de les funcions trigonomètriques"/>
+        </center>
+    
+
+        <h3>Funcions trigonomètriques inverses</h3>
+
+        <p>Les funcions trigonomètriques inverses són  \(\arcsin x\),  \(\arccos x\) i  \(\arctg x\). Per exemple,  \(\arcsin \dfrac{1}{2}\) dóna l'angle
+        pel qual el seu sinus val  \(\dfrac{1}{2}\). Recordem que l'angle vindrà donat en radiants i, per tant, la resposta
+        que obtindrem serà:
+        </p>
+        \[ \arcsin \dfrac{1}{2} = \dfrac{\pi}{6} \quad \text{ ja que } \quad \sin \dfrac{\pi}{6} = \dfrac{1}{2}\nonumber \]
+
+        <p>Naturalment, si a l'angle de  \(\dfrac{\pi}{6}\) (en graus  \(30^\circ\)) li sumam voltes completes ( \(2\pi\, n\)) també complirà l'equació anterior. Per aquest motiu,
+            es diu que les funcions trigonomètriques inverses són funcions <b>multivaluades</b>. A la pràctica, per evitar aquesta situació, es decideix un interval
+        pels angles de cada funció trigonomètrica inversa. En el cas de la funció \(y=\arcsin x\) s'estableix que l'angle  \(y\) estigui comprès entre  
+        \([-\dfrac{\pi}{2}, \dfrac{\pi}{2}]\), és a dir, \([-90^\circ, 90^\circ]\).</p>
+
+        <center> 
+               <img src="elem-trig-inv.png" style="width:700px" title="Gràfiques de les funcions trigonomètriques inverses"/>
+        </center>
+   
+
+</section>
+
+    </section>
+
+    <section id="Límits">
+        <h3>Concepte de límit</h3>
+        
+
+        <p>Comencem entenent que significa acostar-se a un nombre. Donam una sèrie de definicions: </p>
+
+        <ul>
+            <li>
+                <p>Direm que <strong> \(x\) tendeix a  \(a\) per la dreta</strong> ( \(x \to a^+\)) si  \(x\) pren valors majors que  \(a\)
+                    i cada vegada més propers a ell, </p>
+
+                <p> \(x \to 3^+ \quad\) si  \(\quad x=3.1, 3.01, 3.001, \cdots\).
+                    <img style="margin-left: 100px; height: 55px; vertical-align: middle;" src="acosta-dreta.png">
+                </p>
+                <br>
+            </li>
+
+            <li>
+                <p>Direm que <strong> \(x\) tendeix a  \(a\) per l'esquerra</strong> ( \(x \to a^-\)) si  \(x\) pren valors menors que
+                     \(a\) i cada vegada més propers a ell,</p>
+
+                <p> \(x \to 3^- \quad\) si  \(\quad x=2.9, 2.99, 2.999, \cdots\).
+                    <img style="margin-left: 100px;height: 55px; vertical-align: middle" src="acosta-esquerre.png">
+                </p>
+                <br>
+            </li>
+
+
+            <li>
+                <p>Direm que <strong> \(x\) tendeix a  \(a\) </strong> ( \(x \to a\)) si  \(x\) pren valors cada vegada més propers a
+                     \(a\), indistintament superiors o inferiors a ell,
+                </p>
+
+                <p> \(x \to 3\quad\) si  \(\quad x=3.1, 2.99, 3.001, \cdots\)
+
+                </p>
+                <br>
+            </li>
+
+
+            <li>
+                <p> Direm que  \(x\) tendeix a  \(+\infty\) ( \(x \to +\infty\)) si  \(x\) pren valors positius cada vegada més grans,</p>
+
+                <p> \(x \to +\infty\quad\) si  \(\quad x=10, 1000, 1000000, \cdots\).</p>
+                <br>
+            </li>
+
+            <li>
+                <p>Direm que  \(x\) tendeix a  \(-\infty\) ( \(x \to -\infty\)) si  \(x\) pren valors negatius cada vegada més grans,</p>
+
+                <p> \(x \to -\infty\quad\) si  \(\quad x=-10, -1000, -1000000, \cdots\).</p>
+                <br>
+            </li>
+
+        </ul>
+
+        <p>
+            El límit ho podem definir com aquell lloc al qual, si no arribam, serem capaços d'acostar-nos tot el que vulguem. En sentit
+            matemàtic, el límit d'una funció en un punt, és el valor de la funció
+             \(f(x)\) al que s'acosta quan la variable independent ( \(x\)) s'aproxima a un valor determinat. Llavors, important: el límit d'una
+            funció és un <b>valor de la variable y</b>.
+        </p>
+
+        <br>
+        <div class="minipage" style="width:40%">
+            <center>
+                <img src="lim-parabola.png" style="width:300px;latex-width:90%" />
+            </center>
+        </div>
+        <div class="minipage" style="width:60%">
+            <p>Si prenem la funció del gràfic adjunt, quan  \(x\) s'aproxima al valor 2, el valor de la funció  \(f(x)=x^2\) s'aproxima
+                al valor 4. A més, en aquest cas, no solament podrem acostar-nos tot quant vulguem, sinó podem arribar al mateix
+                valor, ja que el valor de la funció per a  \(x = 2\) és  \(f(2) = 4\). </p>
+            <p>En forma de límit escrivim</p>
+            \[ \limx{2} f(x)=4 \tag{8}\]
+            <p>i es llegeix "el límit quan x tendeix a 2 (tant per la dreta o l'esquerra) de la funció és igual a 4"</p>
+
+        </div>
+
+        <br>
+
+        <div class="minipage" style="width:40%">
+            <center>
+                <img src="lim-oneoverx.png" style="width:300px;latex-width:90%" />
+            </center>
+        </div>
+        <div class="minipage" style="width:60%">
+            <p>Si prenem la funció del gràfic adjunt, quan  \(x\) s'aproxima al valor 0, el valor de la funció  \(f(x)=\dfrac{1}{x}\)
+                s'aproxima cap a més o menys infinit. En aquest cas, necessitam especificar si ens acostam per la dreta o
+                per l'esquerra de 0. </p>
+            <p>En forma de límit escrivim</p>
+            \[ \limx{0^-} f(x)=-\infty \quad\quad \limx{0^+} f(x)=\infty \tag{9}\]
+
+            <p>Es llegeix, "el límit per l'esquerra de 0 de la funció és menys infinit i per la dreta de zero més infinit".</p>
+        </div>
+
+
+
+
+        <p>
+            Anomenam <strong>límits laterals</strong> a  \(x=a\) als límits per l'esquerra i la dreta de  \(a\). Direm que el límit
+            d'una funció en un punt existeix si els <strong>dos límits laterals coincideixen</strong> , és a dir
+        </p>
+
+        <div class="quadre-groc quadre-md">
+            <DT>
+                <p><span style="color:darkred">El límit al punt  \(a\) existeix si</span></p>
+                \[ \limx{a^-} f(x) = \limx{a^+} f(x) = \limx{a} f(x)  \tag{10}\]
+                <DD>Existència del límit</DD>
+            </DT>
+        </div>
+
+
+        <div class="resolt" data-closable="true">
+            <div class="formulacio">
+                <p>A partir de la gràfica de la funció següent</p>
+                <center>
+                    <img src="exemple-lim.png" style="width:80%;max-width:300px;latex-width:220px" />
+                </center>
+                <br> deduïu els límits
+                <br>  \(\text{a) } \limx{-3^-} f(x) \quad\quad \text{b) } \limx{-3^+} f(x)\)
+                <br>  \(\text{c) } \limx{0} f(x) \quad\quad \text{d) } \limx{2^-} f(x)\)
+                <br>  \(\text{e) } \limx{2^+} f(x) \quad\quad \text{f) } \limx{-2} f(x)\)
+
+            </div>
+            <div class="resolucio">
+                <ul>
+                    <li>a)  \(+\infty\)</li>
+                    <li>b)  \(-\infty\)</li>
+                    <li>c) 2</li>
+                    <li>d) 0</li>
+                    <li>e) 3</li>
+                    <li>f) 0</li>
+                </ul>
+            </div>
+        </div>
+
+
+       
+
+    <section id="Càlcul de límits">
+
+            <h3>Límits a partir d'una taula de valors</h3>
+            <p>L'apartat anterior ha introduït el concepte de límit i hem après com deduir-ne valors a partir d'una gràfica.
+                El problema és que en moltes ocasions no tenim la gràfica o no sabem quina forma té. En aquests casos aprendrem
+                com calcular el límit a través d'una taula de valors
+            </p>
+    
+            <p>Anem a calcular els límits de les funcions de l'apartat anterior  \(f(x)=x^2\) i  \(f(x)=\dfrac{1}{x}\) mitjançant taules
+                de valors</p>
+    
+            <center>
+                <table title="Límits a partir de taules de valors">
+                    <thead>
+                        <tr>
+                            <td> \(\limx{2^-} x^2\)</td>
+                            <td> \(\limx{2^+} x^2\)</td>
+                            <td> \(\limx{0^-} \dfrac{1}{x}\)</td>
+                            <td> \(\limx{0^+} \dfrac{1}{x}\)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> \(x=1.9\)  \(y=3.61\)</td>
+                            <td> \(x=2.1\)  \(y=4.41\)</td>
+                            <td> \(x=-0.1\)  \(y=-10\)</td>
+                            <td> \(x=0.1\)  \(y=10\)</td>
+                        </tr>
+                        <tr>
+                            <td> \(x=1.99\)  \(y=3.96\)</td>
+                            <td> \(x=2.01\)  \(y=4.04\)</td>
+                            <td> \(x=-0.01\)  \(y=-100\)</td>
+                            <td> \(x=0.01\)  \(y=100\)</td>
+                        </tr>
+                        <tr>
+                            <td> \(x=1.999\)  \(y=3.996\)</td>
+                            <td> \(x=2.001\)  \(y=4.004\)</td>
+                            <td> \(x=-0.001\)  \(y=-1000\)</td>
+                            <td> \(x=0.001\)  \(y=1000\)</td>
+                        </tr>
+                        <tr>
+                            <td> \(\cdots\)</td>
+                            <td> \(\cdots\)</td>
+                            <td> \(\cdots\)</td>
+                            <td> \(\cdots\)</td>
+                        </tr>
+                        <tr>
+                            <td> \(y \rightarrow 4\)</td>
+                            <td> \(y \rightarrow 4\)</td>
+                            <td> \(y \rightarrow -\infty\)</td>
+                            <td> \(y \rightarrow +\infty\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+    
+            <p>A mesura que la  \(x\) s'acosta al valor on demanen el límit, ens fixam cap a on s'acosta el valor de  \(y\). Aquest
+                valor extrapolat és el valor del límit que ens demanen.
+            </p>
+    
+            <div class="resolt" data-closable="true">
+                <div class="formulacio">
+                    Calcula el límit \[ \limx{1^-} \dfrac{\sqrt{x} -1}{x^2-1} \nonumber \] amb l'ajuda d'una taula de valors.
+                </div>
+                <div class="resolucio">
+    
+                    <p>Donam cada vegada valors que s'apropin més a 1 per l'esquerra (és a dir, menors que 1):</p>
+                    <br>
+                    <center>
+                        <img src="lim-taula.png" style="width: 260px" />
+                    </center>
+    
+                </div>
+            </div>
+
+
+        <h3>Tipus de límits</h3>
+        <p>Podem classificar els límits en un punt en:</p>
+        <ul>
+            <li>
+                <p><strong>Immediats: </strong> Només cal substituir el valor de  \(x\) dins la funció.</p>
+            </li>
+            <li>
+                <p><strong>Infinits: </strong> Quan substituïm valor de  \(x\) dins la funció, trobam una divisió per zero  \(\dfrac{k}{0}\).
+                    El límit pot donar  \(\pm \infty\). Cal calcular els dos límits laterals.</p>
+            </li>
+            <li>
+                <p><strong>Indeterminats: </strong> Una indeterminació és una expressió que no sabem el seu valor si no feim
+                    alguna cosa més. Cada tipus d'indeterminació té una tècnica per descobrir el seu valor.
+                    <br>
+                    <p> Són indeterminacions expressions com ara:</p>
+                    <DT>
+                        \[ 0/0, \quad \infty/\infty, \quad \infty - \infty,\quad 0\cdot \infty,\quad 1^\infty, ...\nonumber \]
+                        <DD>Indeterminacions</DD>
+                    </DT>
+            </li>
+
+        </ul>
+
+        <div class="quadre-groc quadre-md">
+            <p>La primera cosa que SEMPRE cal fer per calcular un límit és substituir el valor de  \(x\) dins la funció. Si
+                la calculadora dóna un nombre, ja haurem acabat.</p>
+
+            <p>\[\limx{2} x^2 = 2^2 = 4 \quad\quad \text{Ja hem acabat!} \tag{11}\]</p>
+            <p>\[\limx{0} \dfrac{1}{x} = \dfrac{1}{0} = \text{Math Error} \quad\quad \text{Ups! Caldrà fer alguna cosa més} \tag{12}\]</p>
+        </div>
+
+        <div class="proposats onecol pw-mq-group">
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Emprant una taula de valors, esbrina el límit de la funció  \(f(x)=\dfrac{3x}{x-2}\) quan
+                         \(x\rightarrow 2^-\) i  \(x\rightarrow 2^+\). 
+                    </p> 
+                    <div>
+                        <span data-mq="simple" data-mq-ans="-oo" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="\(\displaystyle \lim_{x\to 2^-} f(x)=\)"></span>
+                        <span data-mq="simple" data-mq-ans="+oo" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="\(\displaystyle \lim_{x\to 2^+} f(x)=\)"></span>
+                    </div>
+                </div>
+                <div class="resolucio">
+                    <p>Es tracta d'acostar-se a 2 per la dreta i l'esquerra. Calculem ambdós límits per separat</p>
+                    <p><img src="table-lim1.png" style="width:200px"> \(\limx{2^-} \dfrac{3x}{x-2} = - \infty \)</p>
+                    <p><img src="table-lim2.png" style="width:200px"> \(\limx{2^+} \dfrac{3x}{x-2} = + \infty \)</p>
+                </div>
+            </div>
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Calcula els límits 
+                        \(\limx{3} 2x^2-x+1\)<span data-mq="basic" data-mq-ans="2*v**2-v+1" data-mq-symbols="v:=3"  data-mq-formulation="="></span>, 
+                        \(\quad\limx{0} \frac{1}{x-1}\)<span data-mq="basic" data-mq-ans="-1" data-mq-formulation="="></span>,  
+                        \(\quad\limx{-2} \sqrt{x^2+5}\)<span data-mq="basic" data-mq-ans="3" data-mq-formulation="="></span>. 
+                    </p> 
+                </div>
+                <div class="resolucio">
+                    <p>Es tracta de límits immediats, únicament cal substituir x dins la funció.</p>
+                    <p>\(\limx{3} 2x^2-x+1=18-3+1=16\),  \(\quad\limx{0} \frac{1}{x-1}=-1\),  \(\quad\limx{-2} \sqrt{x^2+5}=\sqrt{9}=3\)</p>
+                </div>
+            </div>
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Representau gràficament la funció a trossos \(f(x)=\left\{ \begin{array}{ll} x^{2} + 2\, x + 1 & x\lt 1 \\ 2\, x +2 & x \geq 1 \end{array} \right.\) .
+                        A partir de la gràfica calculau, si existeix,\(\displaystyle \lim_{x\to \mathtt{\text{1}}} f(x)\) 
+                        <span data-mq="basic" data-mq-ans="4" data-mq-formulation="="></span>
+                    </p>
+                </div>
+                <div class="resolucio">
+                    <p>Es tracta d'un tros de paràbola per a valors menors que  1  unida amb un tros de recta per valors majors o iguals que  1. 
+                        Aquesta és la gràfica de la funció  a trossos:
+                    </p>
+                    <center>
+                        <img src="atrossos-lim-prop.png" style="width:300px"/>
+                    </center>
+
+                    <p>A partir de la gràfica, podem calcular els límits laterals a \(x=1\) </p>
+                    <p>\(\displaystyle \lim_{x\to \mathtt{\text{1}^-}} f(x) = 4\) </p>
+                    <p>\(\displaystyle \lim_{x\to \mathtt{\text{1}^+}} f(x) = 4\) </p>
+                    <p>Atès que els dos límits laterals són iguals, podem assegurar que existeix el límit de la funció en el punt \(x=1\) i val:</p>
+                    <p>\(\displaystyle \lim_{x\to \mathtt{\text{1}}} f(x) = 4\) </p>
+                </div>
+            </div>
+
+
+           
+        </div>   
+
+    </section>
+        <section id="Límits en un punt">
+
+
+            <p>En aquesta secció aprendrem tècniques per determinar els límits del tipus \(k/0\) i la indeterminació \(0/0\).
+                La següent taula mostra cada regla juntament amb un exemple:
+            </p>
+
+            <center>
+                <table class="table-xl">
+                    <thead>
+                        <tr>
+                            <th>Vull calcular \(\displaystyle \lim_{x \to a }f(x)\)</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="table-xl" title="Com calcular límits i no morir en el intent.">
+                    <thead>
+                        <tr>
+                            <th>Quan substitueixo  \(x\) per  \(a\) trobo...</th>
+                            <th>Què he de fer?</th>
+                            <th>Exemple</th>
+                        </tr>
+                    </thead>    
+                    <tbody>
+                        <tr>
+                            <td>
+                                Un nombre
+                            </td>
+                            <td>
+                                Res. Ja has acabat!
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to 2 } x^2 = 2^2 =4\)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 \(\dfrac{k}{0}\)
+                            </td>
+                            <td>
+                               Has de calcular els límits laterals per saber
+                               si són  \(-\infty\) o  \(+\infty\)
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to 2 } \dfrac{1}{x-2}\)\(=\left\{ \begin{array}{l}  \displaystyle \lim_{x \to 2^-} \dfrac{1}{x-2}=-\infty \\  \displaystyle \lim_{x \to 2^+} \dfrac{1}{x-2}=+\infty \end{array} \right.\)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 \(\dfrac{0}{0}\) amb polinomis
+                            </td>
+                            <td>
+                               Has de factoritzar i simplificar
+                            la fracció.
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to 5 } \dfrac{x^2-25}{x-5}\)\(= \displaystyle \lim_{x \to 5 } \dfrac{(x+5)\cdot (x-5)}{x-5}\)\(= \lim_{x \to 5 } (x+5)= 10\)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 \(\dfrac{0}{0}\) amb arrels
+                            </td>
+                            <td>
+                              Heu de racionalitzar la fracció i simplificar
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to 3 } \dfrac{\sqrt{x+6}-3}{x-3}\)\(=\displaystyle \lim_{x \to 3 } \dfrac{(\sqrt{x+6}-3)\cdot (\sqrt{x+6}+3)}{(x-3)\cdot (\sqrt{x+6}+3)}\)\(\cdots=\frac{1}{6}\)
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+               <!-- <img src="regles-lim-punt.png" width="650" title="Com calcular límits i no morir en el intent." /> -->
+            </center>
+
+            <div class="resolt" data-closable="true" data-audible="batmat1/res6.5">
+                <div class="formulacio">
+                    <p> Calcula els límits de la funció </p>
+                    \[ f(x)=\dfrac{x+3}{x^{2} -9} \nonumber \] quan <br> a)  \(x\rightarrow 1\)
+                    <br> b)  \(x\rightarrow 3\)
+                    <br> c)  \(x\rightarrow -3\)
+                </div>
+                <div class="resolucio">
+
+                    <p>a) Immediat:  \(\limx{1} \dfrac{x+3}{x^{2} -9} = \dfrac{1+3}{1-9} = - \dfrac{1}{2} \) </p>
+                    <br>
+
+                    <p data-from="21">b) Infinit:  \(\limx{3} \dfrac{x+3}{x^{2} -9} = \dfrac{6}{0} = \left\{ \begin{array}{l} \limx{3^-} \dfrac{x+3}{x^{2}
+                        -9} = \dfrac{+6}{-0} = -\infty \\ \limx{3^+} \dfrac{x+3}{x^{2} -9} = \dfrac{+6}{+0} = +\infty \end{array}
+                        \right.\) </p>
+                    <br>
+
+                    <p data-from="77">c) Indeterminació 0/0:  \(\limx{-3} \dfrac{x+3}{x^{2} -9} = \dfrac{0}{0} = \mathrm{IND}=\)<br> <span
+                            style="width:100px;display:inline-block"></span>  \(=\limx{-3} \dfrac{(x+3)}{(x+3)\cdot (x-3)}= \limx{-3}
+                        \dfrac{1}{x-3}= -\dfrac{1}{6} \)
+                    </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="h5p" id="Video 5.01 BAT_MAT1" data-yt="nnbRtibgETU" title="Límits de funcions racionals en un punt." 
+            data-pdf="https://piworld.es/activities/173/1bat-limits1.pdf"></div>
+ 
+
+            <div class="proposats onecol pw-mq-group">
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Emprant les tècniques de càlcul de límits obteniu el valor <br> </p> 
+                        a)   \(\limx{0} e^x +1\)  <span data-mq="simple" data-mq-ans="2" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span><br>
+                        b)   \(\limx{1} \dfrac{3x-2}{x^2-1}\)  <span data-mq="simple" data-mq-ans="oo" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span><br>
+                        c)   \(\limx{3} \dfrac{x^3-3x^2}{x^2-x-6}\)  <span data-mq="simple" data-mq-ans="Rational(9,5)" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span><br>
+                        d)   \(\limx{-2} \dfrac{x+2}{x^2-4}\)  <span data-mq="simple" data-mq-ans="-Rational(1,4)" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span>
+                    </div>
+                    <div class="resolucio">
+                        <p><b>a)</b>  Es tracta d'un límit immediat (basta substituir)  \(\limx{0} e^x +1 = e^0 + 1 = 1+1=2\)<br></p>
+                        <p><b>b)</b>   \(\limx{1} \dfrac{3x-2}{x^2-1} = \dfrac{1}{0}\). Es tracta d'un infinit; calculam els dos límits laterals.
+                         <br>
+                        \(\left\{ \begin{array}{l} \limx{1^-} \dfrac{3x-2}{x^2-1} = \frac{+1}{-0}=-\infty \\ \limx{1^+} \dfrac{3x-2}{x^2-1} =  \frac{+1}{+0}=+\infty  \end{array}\right.\)
+                         <br>
+                        </p>
+
+                        <p><b>c) </b>  \(\limx{3} \dfrac{x^3-3x^2}{x^2-x-6} = \frac{0}{0}\). Trobam la indeterminació 0/0 amb polinomis.
+                            Cal factoritzar el numerador (traient factor comú \(x^2\)) i el denominador (resolent l'equació de 2n grau):<br>
+                            \(\limx{3} \dfrac{x^3-3x^2}{x^2-x-6} =\limx{3} \dfrac{x^2\cdot\cancel{(x-3)}}{(x+2)\cdot \cancel{(x-3)}}\). Ara simplificam el factor repetit.
+                            \(\limx{3} \dfrac{x^2}{x+2} = \frac{9}{5}\) i veim que es transforma en un límit immediat.
+                            
+                            
+                            <br></p>
+                        <p><b>d)</b>   \(\limx{-2} \dfrac{x+2}{x^2-4}= \frac{0}{0}\).  Trobam la indeterminació 0/0 amb polinomis.
+                            Cal factoritzar el numerador (ja està factoritzat) i el denominador (identitat notable):<br>
+                        
+                            \(\limx{-2} \dfrac{x+2}{x^2-4}= \limx{-2} \dfrac{\cancel{(x+2)}}{\cancel{(x+2)}\cdot(x-2)}\). Tatxam el factor repetit,
+                            \(\limx{-2} \dfrac{1}{x-2} = -\frac{1}{4}\)  i veim que es transforma en un límit immediat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="Límits a l'infinit">
+
+            <p>Treballar amb infinits a vegades és contraintuïtiu. Això passa perquè l'infinit no és un nombre real i les
+                operacions són una mica especials. Us deixo en aquesta taula les operacions més habituals perquè les pugueu consultar
+                en cas de dubte:
+            </p>
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operacions immediates amb infinits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                \[ \infty+\infty = \infty \quad\quad \infty\cdot\infty=\infty \quad\quad k\cdot \infty = \left\{ \begin{array}{ll} +\infty
+                                & \text{ si } k\gt 0 \\ -\infty & \text{ si } k\lt 0 \end{array} \right. \nonumber\] \[ \dfrac{k}{\infty}=0
+                                \quad\quad \dfrac{\infty}{0}=\pm \infty \quad\quad b^ \infty = \left\{ \begin{array}{ll}
+                                +\infty & \text{ si } b\gt 1 \\ 0 & \text{ si } 0\lt b \lt 1 \end{array} \right.\nonumber\]
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+            <p><br></p>
+
+
+            <p>Algunes operacions són indeterminades i caldrà aplicar les regles a l'hora de calcular els límits</p>
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operacions indeterminades amb infinits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                \[ \infty-\infty \quad\quad \dfrac{\infty}{\infty} \nonumber\] \[ 0\cdot\infty \quad\quad 1^\infty \nonumber\]
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+
+            <p><br></p>
+            <p>La següent taula mostra els diferents casos que ens podem trobar quan calculam límits de funcions a l'infinit.
+               Llegiu l'exemple i fixeu-vos en la tècnica heu d'aplicar en cada cas.
+            </p>
+
+         
+            <center>
+                <table class="table-xl">
+                    <thead>
+                        <tr>
+                            <th>Vull calcular \(\displaystyle \lim_{x \to \pm \infty }f(x)\)</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="table-xl" title="Regles per calcular límits a l'infinit">
+                    <thead>
+                        <tr>
+                            <th>Quan substitueixo  \(x\) per  \(\pm \infty\) trobo...</th>
+                            <th>Què he de fer?</th>
+                            <th>Exemple</th>
+                        </tr>
+                    </thead>    
+                    <tbody>
+                        <tr>
+                            <td>
+                                 \(\dfrac{k}{\pm\infty}\)
+                            </td>
+                            <td>
+                                El límit val zero.
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to \infty } \dfrac{5}{x^2} = \frac{5}{\infty} =0\) 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                 \(\dfrac{\infty}{\infty}\) amb polinomis
+                            </td>
+                            <td>
+                                Cal dividir tots els termes del numerador i denominador
+                                per la major potència de  \(x\) del denominador.
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to \infty } \dfrac{2x^2+5}{3x^2-2x+1} =\) 
+                                dividim per  \(x^2\)
+                                \(\displaystyle \lim_{x \to \infty } \dfrac{2+5/x^2}{3-2/x+1/x^2} = \frac{2}{3}\) 
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                 \(\dfrac{\infty}{\infty}\) amb arrels
+                            </td>
+                            <td>
+                                Igual que abans però tenint en compte que el major
+                                exponent del denominador queda dividit per 2 degut
+                                a l'arrel quadrada.
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to \infty } \dfrac{2x+1}{\sqrt{3x^2+1}} =\) 
+                                dividim per  \(x\)
+                                \(\displaystyle \lim_{x \to \infty } \dfrac{2+1/x}{3+1/x^2} = \frac{2}{\sqrt{3}}\)  
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                 \(\infty- \infty\) amb polinomis
+                            </td>
+                            <td>
+                               Cal calcular el mín.c.m, i efectuar la resta
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to \infty } \dfrac{x^2}{x+1} - x =\) \( \cdots = 
+                                 \displaystyle \lim_{x \to \infty } \dfrac{-x}{x+1} = -1  \) 
+                            </td> 
+                        </tr>
+
+                        <tr>
+                            <td>
+                                 \(\infty- \infty\) amb arrels
+                            </td>
+                            <td>
+                               Cal racionalitzar i simplificar l'expressió
+                            </td>
+                            <td>
+                                \(\displaystyle \lim_{x \to \infty } \sqrt{x^2-1}-x = \)
+                                \(\displaystyle \lim_{x \to \infty } (\sqrt{x^2-1}-x)\cdot \frac{(\sqrt{x^2-1}+x)}{(\sqrt{x^2-1}+x)}\)
+                               \( =\cdots = 0  \) 
+                            </td> 
+                        </tr>
+                </tbody>
+                </table>
+               
+               
+               <!-- <img src="regles-lim-infinit.png" width="650" title="Regles per calcular límits a l'infinit" /> -->
+            </center>
+
+            <br>
+            <div class="h5p" id="Video 5.02 BAT_MAT1" data-yt="EQxB-xFjIKc" title="Límits de polinomis a l'infinit" data-pdf="https://piworld.es/activities/174/1bat-limits2.pdf"></div>
+            <br>
+            <div class="h5p" id="Video 5.03 BAT_MAT1" data-yt="lZVNc19MNTc" title="Límits de funcions racionals en l'infinit." data-pdf="https://piworld.es/activities/175/1bat-limits3.pdf"></div>
+
+
+            <div class="resolt breakable" data-closable="true" data-audible="batmat1/res7.5">
+                <div class="formulacio">
+                    <p>Calcula els següents límits</p>
+                    <p>a)  \(\limx{-\infty} x^3-2x^2+1\)</p>
+                    <p>b)  \(\limx{+\infty} \dfrac{2}{x^2-1}\)</p>
+                    <p>c)  \(\limx{+\infty} \dfrac{3x^2+x-5}{2x^2+1}\)</p>
+                    <p>d)  \(\limx{+\infty} \dfrac{2-x^2}{x+3}\)</p>
+                </div>
+                <div class="resolucio">
+                    <p>a) Donat que es tracta d'un polinomi només consideram la potència de major grau </p>
+                    \[\limx{-\infty} x^3-2x^2+1 = \limx{-\infty} x^3 = (-\infty)^3 = - \infty \tag{13}\]
+                    <br>
+
+                    <p data-from="35">b)  \(\limx{+\infty} \dfrac{2}{x^2-1} = \dfrac{2}{\infty^2-1} = \dfrac{2}{\infty}=0\)</p>
+                    <br>
+
+                    <div data-from="55">
+                    <p>c) Trobam una indeterminació  \(\infty/\infty\). Cal dividir tots els termes per la major potència del
+                        denominador. En aquest cas dividim tots els termes entre  \(x^2\)
+                    </p>
+                    \[ \limx{+\infty} \dfrac{3x^2+x-5}{2x^2+1} = \dfrac{\infty}{\infty} = IND= \limx{+\infty} \dfrac{\frac{3x^2}{x^2}+\frac{x}{x^2}-\frac{5}{x^2}}{\frac{2x^2}{x^2}+\frac{1}{x^2}}=
+                    \nonumber\] \[ \limx{+\infty} \dfrac{3+\frac{1}{x}-\frac{5}{x^2}}{2+\frac{1}{x^2}}= \dfrac{3+\cancel{\frac{1}{\infty}}-\cancel{\frac{5}{\infty}}}{2+\cancel{\frac{1}{\infty}}}
+                    = \frac{3}{2}  \tag{14}\]
+                    <br>
+                    </div>
+
+                    <div data-from="137">
+                    <p>d) Trobam una indeterminació  \(\infty/\infty\). Cal dividir tots els termes per la major potència del
+                        denominador. En aquest cas dividim tots els termes entre  \(x\)</p>
+                    \[ \limx{+\infty} \dfrac{2-x^2}{x+3} =\dfrac{\infty}{\infty} = IND= \limx{+\infty} \dfrac{\frac{2}{x}-\frac{x^2}{x}}{\frac{x}{x}+\frac{3}{x}}
+                    = \nonumber\] \[ \limx{+\infty} \dfrac{\frac{2}{x}-x}{1+\frac{3}{x}} = \dfrac{\cancel{\frac{2}{\infty}}-\infty}{1+\cancel{\frac{3}{\infty}}}
+                    = - \infty  \tag{15}\]
+                    <br>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="proposats onecol pw-mq-group">
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Emprau les tècniques apreses per calcular els límits a l'infinit:</p>
+                    <p>a)  \(\limx{-\infty} x^4 - 2x^2 +5x -3\)  <span data-mq="simple" data-mq-ans="oo" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span></p>
+                    <p>b)  \(\limx{\infty} -2x^2+5x+2\)  <span data-mq="simple" data-mq-ans="-oo" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span></p>
+                    <p>c)  \(\limx{+\infty} \dfrac{-3}{x-2}\)  <span data-mq="simple" data-mq-ans="0" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span></p>
+                    <p>d)  \(\limx{+\infty} \dfrac{-2x^3+3x^2-1}{x^3+x^2-x+1}\)  <span data-mq="simple" data-mq-ans="-2" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span></p>
+                    <p>e)  \(\limx{-\infty} \dfrac{x^3 - x^2 - 5x}{x^2+1}\)  <span data-mq="simple" data-mq-ans="-oo" data-mq-palettes="General,Símbols,Intervals" data-mq-formulation="="></span></p>
+                </div>
+                <div class="resolucio">
+                    <p><b>a)</b> Donat que es tracta d'un polinomi només consideram la potència de major grau </p>
+                    \[\limx{-\infty} x^4 - 2x^2 +5x -3 = \limx{-\infty} x^4 = (-\infty)^4 = + \infty \tag{16}\]
+                    <br>
+                    <p><b>b)</b> Donat que es tracta d'un polinomi només consideram la potència de major grau </p>
+                    \[\limx{\infty} -2x^2+5x+2 = \limx{\infty} -2x^2 = -2(\infty)^2 = - \infty \tag{17}\]
+                    <br>
+
+                    <p><b>c)</b>  \(\limx{+\infty} \dfrac{-3}{x-2} = \dfrac{-3}{\infty-1} = \dfrac{-3}{+\infty}=0\)</p>
+                    <br>
+
+                    <p><b>d)</b> Trobam una indeterminació  \(\infty/\infty\). Cal dividir tots els termes per la major potència del
+                        denominador. En aquest cas dividim tots els termes entre  \(x^3\)
+                    </p>
+                    \[ \limx{+\infty} \dfrac{-2x^3+3x^2-1}{x^3+x^2-x+1} = \dfrac{\infty}{\infty} = IND= \limx{+\infty} \dfrac{-2x^3/x^3 + 3x^2/x^3 - 1/x^3 }{x^3/x^3 +x^2/x^3-x/x^3 +1/x^3 }=
+                    \nonumber\] \[ \limx{+\infty} \dfrac{-2+3/x-1/x^3}{1+1/x-1/x^2+1/x^3}= -2   \tag{18}\]
+                    <br>
+
+                    <p><b>e)</b> Trobam una indeterminació  \(\infty/\infty\). Cal dividir tots els termes per la major potència del
+                        denominador. En aquest cas dividim tots els termes entre  \(x^2\)</p>
+                    \[ \limx{-\infty} \dfrac{x^3 - x^2 - 5x}{x^2+1} =\dfrac{\infty}{\infty} = IND= \limx{-\infty} \dfrac{x^3/x^2 - x^2/x^2 - 5x/x^2}{x^2/x^2+1/x^2}
+                    = \nonumber\] \[ \limx{-\infty} \dfrac{x - 1 - 5/x}{1+1/x^2} = \dfrac{-\infty - 1 + \cancel{5/\infty}}{1+\cancel{1/\infty}}
+                    = - \infty  \tag{19}\]
+                    <br>
+                </div>
+            </div>
+        </div>
+
+            <br>
+
+
+            <div class="quadre-tasca">
+                <h4>Microtasca d'aprenentatge BAT&#95;MAT1 4.1</h4>
+                <p>Et recomano que intentis realitzar aquesta tasca abans de seguir amb els continguts del lliurament.</p>
+                <p>Fins ara hem introduït el concepte de límit. En les properes seccions, utilitzarem el límit per analitzar
+                    les asímptotes i la continuïtat de les funcions.
+                </p>
+            </div>
+
+        </section>
+
+    </section>
+    <section id="Asímptotes">
+
+        <p>
+            Les asímptotes d'una funció, en cas d'existir, són rectes a les quals la funció s'aproxima tant com volguem. Donat que, les
+            asímptotes són rectes, aquestes podran ser verticals, horitzontals  i obliqües.
+        </p>
+
+        <div class="quadre-vermell quadre-md">
+            Les asímptotes verticals són <em>parets</em> les qual la funció no pot atravessar.
+        </div>
+
+
+
+        <section id="Asímptotes verticals">
+            <DT>
+                <p>
+                    Per a que una funció racional  \(f(x)=\dfrac{P(x)}{Q(x)}\) tengui una asímptota vertical, el denominador ha d'ésser igual a
+                    zero i el numerador diferent de zero. El procediment consisteix resoldre l'equació  \(Q(x)=0\).
+                </p>
+                <DD>Asímptota vertical</DD>
+            </DT>
+
+            <div class="quadre-vermell quadre-md">
+                Ens hem d'assegurar que no tenim 0/0, perquè podria no ésser una asímptota.
+                Per tenir una asímptota vertical, els límits al punt han d'ésser més o menys infinit.
+            </div>
+            
+            <p><br></p>
+            
+            <div class="row">
+            <div class="span3">
+                <center>
+                    <img src="asimptota-vertical.png" style="width: 90px;latex-width:90%" />
+                </center>
+            </div>
+            <div class="span8">
+                <p>Per a cada valor  \(x=a\) tal que  \(Q(a)=0\), estudiam la posició relativa calculant els dos límits laterals:
+                </p>
+                \[ \limx{a^-} \dfrac{P(x)}{Q(x)}=\pm \infty \qquad\qquad \limx{a^+} \dfrac{P(x)}{Q(x)}=\pm\infty  \tag{20}\]
+
+                <p> d'aquesta forma sabem si s'acosta cap a  \(\pm \infty\) al voltant de l'asímptota vertical.</p>
+            </div>
+            </div>
+
+          
+            <div class="resolt onecol" data-closable="true" data-audible="batmat1/res8.5">
+                <div class="formulacio">
+                    <p>Calcula les asímptotes verticals de la funció  \(y=\dfrac{x^2+2}{x^2-2x}\)</p>
+                </div>
+                <div class="resolucio">
+                    <p>Igualam a zero del denominador de la funció  \(x^2-2x=0\). Resolem l'equació de segon grau incompleta
+                         \(x=0\);  \(x=2\).</p>
+                    <p>Calculam els límits laterals al voltant de cada arrel.</p>
+                    <ul>
+                        <li> \(x=0\):  \(\limx{0^-} \dfrac{x^2+2}{x^2-2x} = \dfrac{+2}{+0} = +\infty\);  \(\limx{0^+} \dfrac{x^2+2}{x^2-2x}
+                            = \dfrac{+2}{-0} = -\infty\)
+                            <p></p>
+                        </li>
+                        <li> \(x=2\):  \(\limx{2^-} \dfrac{x^2+2}{x^2-2x} = \dfrac{+6}{-0} = -\infty\);  \(\limx{2^+} \dfrac{x^2+2}{x^2-2x}
+                            = \dfrac{+6}{+0} = +\infty\)</li>
+                    </ul>
+                    <p>Representam gràficament les dues asímptotes verticals a  \(x=0\) i  \(x=2\) juntament amb els límits obtinguts:</p>
+                    <center>
+                        <img src="sample-a-verticals.png" style="width:250px; " />
+                    </center>
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="Asímptotes horitzontals">
+            <DT>
+                <p>
+                    Perquè una funció racional  \(f(x)=\dfrac{P(x)}{Q(x)}\) tengui una asímptota horitzontal, el grau  \(P\leq \)grau  \(Q\). L'asímptota
+                    és la recta horitzontal  \(y=L\), essent  \(L=\limx{\infty }f(x)\).
+                </p>
+                <DD>Asímptota horitzontal</DD>
+            </DT>
+            <br>
+
+           
+               
+            <p> <strong>Nota:</strong> Quan grau  \(P \lt grau Q\), la recta  \(y=0\) és l'asímptota horitzontal.</p>
+  
+            <p> Per saber si ens acostam per damunt o davall de l'asímptota horitzontal  \(y=L\) construïm una taula amb dos
+                valors grans (un negatiu i l'altre positiu). Si la funció és més petita que l'asímptota, ens acostam per davall
+                d'ella i sinó per damunt.
+            </p>
+            <p><br></p>
+
+
+            <center>
+                <img src="asimptota-horitzontal.png" style="width: 350px;latex-width:90%" />
+            </center>
+         
+
+            <br>
+            <div class="h5p" id="Video 5.04 BAT_MAT1" data-yt="tAnQoMSf5cs" title="Asímptotes verticals i horitzontals"></div>
+
+
+            <p><br></p>
+
+            <div class="resolt onecol" data-closable="false" data-audible="batmat1/res9.5">
+                <div class="formulacio">
+                    <p>Calcula l'asímptota horitzontal de la funció  \( y = \dfrac { x ^ { 2 } } { 1 + x ^ { 2 } } \)</p>
+                </div>
+                <div class="resolucio">
+                    <p>Aquesta funció no té asímptotes verticals perquè l'equació  \(1+x^2=0\) no té solucions.</p>
+                    <p>Sí que tindrà una asímptota horitzontal a un valor de  \(y\) diferent de zero, perquè els graus del numerador
+                        i denominador són iguals.</p>
+                    <p>L'asímptota és el valor del límit a l'infinit</p>
+                    \[ \limx{\infty} \dfrac { x ^ { 2 } } { 1 + x ^ { 2 } } = \dfrac{\infty}{\infty} = IND = \limx{\infty} \dfrac { \frac{x^2}{x^2}
+                    } { \frac{1}{x^2} + \frac{x^2}{x^2} } = \limx{\infty} \dfrac {1 } { \frac{1}{x^2} + 1 } = \dfrac {1 }
+                    { \frac{1}{\infty} + 1 } = 1  \tag{21}\]
+                    <p>Per resoldre la indeterminació  \(\infty/\infty\) hem dividit tot per la major potència de  \(x\) del denominador.
+                        Hem trobat que la recta  \(y=1\) és una asímptota horitzontal.
+                    </p>
+                    <p>Per saber la posició relativa (si ens acostam per damunt o davall de  \(y=1\)) construïm una taula amb
+                        un valor gran de  \(x\) positiu i negatiu.
+                    </p>
+                    <table title="" class="tabular">
+                        <thead>
+                            <tr>
+                                <th> \(x\)</th>
+                                <th> \(f(x)\)</th>
+                                <th>Posició</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> \(-100\)</td>
+                                <td> \(0.9999 \lt 1\)</td>
+                                <td>Per davall</td>
+                            </tr>
+                            <tr>
+                                <td> \(+100\)</td>
+                                <td> \(0.9999 \lt 1\)</td>
+                                <td>Per davall</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <center>
+                        <img src="sample-a-horitzontal.png" style="width:250px" />
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="proposats onecol">
+
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Determinau <b>totes</b> les asímptotes de la funció <span class="notranslate"> \(f(x)=-\dfrac{(4 x + 5)}{x - 2}\) </span>.
+                            Calculau tots els límits necessaris per determinar-les.
+                            Representau gràficament com s'acosta la funció a les asímptotes.</p>
+                    </div>
+                    <div class="resolucio">
+                        <p>Resolem l'equació <span class="notranslate"> \(x - 2=0\) </span> i trobam les solucions <span class="notranslate"> \(x=2\) </span>. La funció pot tenir fins
+                            1 asímptotes verticals.</p><p>Calculam els límits laterals en cada solució:</p><ul>
+                    <li><p><span class="notranslate"> \(x=2\) </span>:</p>
+                    <p><span class="notranslate"> \(\displaystyle \lim_{x\to 2^{-}} \frac{- 4 x - 5}{x - 2}\) </span><span class="notranslate"> \(=\infty\) </span> i <span class="notranslate"> \(\displaystyle \lim_{x\to 2^{+}} \frac{- 4 x - 5}{x - 2}\) </span>=<span class="notranslate"> \(=-\infty\) </span></p>
+                    <p>La recta <span class="notranslate"> \(x=2\) </span> és una asímptota vertical.</p>
+                    <p><br></p></li>
+                    </ul>
+                    <p>Com que el grau del numerador és menor o igual al grau del denominador, té una asímptota horitzontal.</p>
+                    <p>Calculam el límit a l'infinit: <span class="notranslate"> \(\displaystyle \lim_{x\to \infty} \dfrac{- 4 x - 5}{x - 2}\) </span>=<span class="notranslate"> \(\dfrac{-\infty}{\infty}\) </span>=IND.=<span class="notranslate"> \(\displaystyle \lim_{x\to \infty} \dfrac{\frac{- 4 x - 5}{x}}{\frac{x - 2}{x}}\) </span>=<span class="notranslate"> \(\displaystyle \lim_{x\to \infty} \dfrac{-4 - \frac{5}{x}}{\frac{x - 2}{x}}\) </span>=<span class="notranslate"> \(-4\) </span></p>
+                    <p>La recta <span class="notranslate"> \(y=-4\) </span> és una asímptota horitzontal. Per saber com ens acostam a la asímptota, completam la següent taula:</p>
+                    <table>
+                            <thead>
+                                <tr style="background: whitesmoke;"><th style="border:1px solid black;">x</th><th style="border:1px solid black">f(x)</th><th style="border:1px solid black">Asímptota</th><th style="border:1px solid black">Posició</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="border:1px solid black">-100</td><td style="border:1px solid black">-3.873</td><td style="border:1px solid black">-4</td><td style="border:1px solid black">Per damunt</td></tr>
+                                <tr><td style="border:1px solid black">100</td><td style="border:1px solid black">-4.133</td><td style="border:1px solid black">-4</td><td style="border:1px solid black">Per davall</td></tr>            
+                            </tbody>
+                        </table>
+                        
+                    <p><br></p><p>Amb aquesta informació podem representar les asímptotes i la forma en què la funció s'acosta a elles.</p>
+                    <center>
+                        <img src="prop2-asimptota.png" style="width: 400px;">
+                    </center>
+                    </div>
+                </div>
+
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Determinau <b>totes</b> les asímptotes de la funció \(f(x)=\dfrac{3}{x^{2} - 2 x}\).
+                            Calculau tots els límits necessaris per determinar-les.
+                            Representau gràficament com s'acosta la funció a les asímptotes.</p>
+                    </div>
+                    <div class="resolucio">
+                        <p>Resolem l'equació <span class="notranslate"> \(x^{2} - 2 x=0\) </span> i trobam les solucions <span class="notranslate"> \(x=0\) </span>, <span class="notranslate"> \(x=2\) </span>. La funció pot tenir fins
+                            2 asímptotes verticals.</p><p>Calculam els límits laterals en cada solució:</p><ul>
+                    <li><p><span class="notranslate"> \(x=0\) </span>:</p>
+                    <p><span class="notranslate"> \(\displaystyle \lim_{x\to 0^{-}} \frac{3}{x^{2} - 2 x}\) </span><span class="notranslate"> \(=\infty\) </span> i <span class="notranslate"> \(\displaystyle \lim_{x\to 0^{+}} \frac{3}{x^{2} - 2 x}\) </span>=<span class="notranslate"> \(=-\infty\) </span></p>
+                    <p>La recta <span class="notranslate"> \(x=0\) </span> és una asímptota vertical.</p>
+                    <p><br></p></li>
+                    <li><p><span class="notranslate"> \(x=2\) </span>:</p>
+                    <p><span class="notranslate"> \(\displaystyle \lim_{x\to 2^{-}} \frac{3}{x^{2} - 2 x}\) </span><span class="notranslate"> \(=-\infty\) </span> i <span class="notranslate"> \(\displaystyle \lim_{x\to 2^{+}} \frac{3}{x^{2} - 2 x}\) </span>=<span class="notranslate"> \(=\infty\) </span></p>
+                    <p>La recta <span class="notranslate"> \(x=2\) </span> és una asímptota vertical.</p>
+                    <p><br></p></li>
+                    </ul>
+                    <p>Com que el grau del numerador és menor o igual al grau del denominador, té una asímptota horitzontal.</p>
+                    <p>Calculam el límit a l'infinit: <span class="notranslate"> \(\displaystyle \lim_{x\to \infty} \dfrac{3}{x^{2} - 2 x}\) </span>=<span class="notranslate"> \(0\) </span></p>
+                    <p>La recta <span class="notranslate"> \(y=0\) </span> és una asímptota horitzontal. Per saber com ens acostam a la asímptota, completam la següent taula:</p>
+                    <table>
+                            <thead>
+                                <tr style="background: whitesmoke;"><th style="border:1px solid black;">x</th><th style="border:1px solid black">f(x)</th><th style="border:1px solid black">Asímptota</th><th style="border:1px solid black">Posició</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="border:1px solid black">-100</td><td style="border:1px solid black">+0.0002941</td><td style="border:1px solid black">0</td><td style="border:1px solid black">Per damunt</td></tr>
+                                <tr><td style="border:1px solid black">100</td><td style="border:1px solid black">+0.000306</td><td style="border:1px solid black">0</td><td style="border:1px solid black">Per damunt</td></tr>            
+                            </tbody>
+                        </table>
+                        
+                    <p><br></p><p>Amb aquesta informació podem representar les asímptotes i la forma en què la funció s'acosta a elles.</p>
+                    
+                    <center>
+                        <img src="prop1-asimptota.png" style="width: 400px;">
+                    </center>
+                
+                </div>
+            </div>
+
+                
+            </div>
+
+        </section>
+
+
+
+        <section id="Asímptotes obliqües">
+                 <p>
+                    Una funció racional  \(f(x)=\dfrac{P(x)}{Q(x)}\) té una asímptota obliqua si
+                    el grau del numerador és igual el grau del denominador més u, grau  \(P= \)grau  \(Q+1\). L'asímptota
+                    és una recta de la forma  \(y=mx+n\).
+                </p> 
+
+                <div class="quadre-groc">
+                    <p>Si una funció té una asímptota obliqua no en tindrà d'horitzontal. Ara bé, potser que 
+                        en tingui de verticals i caldrà calcular-les.
+                    </p>
+                </div>
+ 
+            <p>Per determinar l'asímptota obliqua feim la divisió  \(P(x):Q(x)\). Del quocient de la divisió podem
+                obtenir l'expressió de l'asímptota. Per exemple, donada la funció  \(f(x)=\dfrac{x^3+5x+1}{x^2+2x}\), 
+                veim que té una asímptota obliqua perquè el grau del numerador és 3 i el denominador és un menys (2).
+                Realitzam la divisió de polinomis
+            </p>
+
+            \[ \begin{array}{l} {\, \, \, \, x^3\quad\quad+5x+1\quad \quad \quad \quad \underline{|}\underline{\quad
+                x^{2} +2x \quad }} \\ {\underline{-x^3-2x^2 }\, \, \, \, \, \, \, \, \, \, \, \, \, \,
+                \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \quad x-2\, }
+                \\ {\, \, \, \, \, \, \, \, \, \,   \, \,-2x^2+5x+1} \\ {\, \, \, \, \, \, \, \,
+                \, \, \, \, \underline{2x^2+4x}} \\ {\, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \,
+                \, \, \, \, \, \, \, \underbrace{9x+1}} \end{array}  \tag{22}\]
+
+            <p>Atès que la divisió té quocient  \(x-2\), l'equació de l'asímptota obliqua és 
+                la recta  \(y=x-2\).</p>
+
+            <p> Per saber si ens acostam per damunt o davall de l'asímptota obliqua construïm una taula amb dos
+                valors grans (un negatiu i l'altre positiu). Si la funció és més petita que l'asímptota, 
+                ens acostam per davall d'ella i sinó per damunt. Anem a fer els càlculs.
+            </p>
+            <table title="" class="tabular">
+                <thead>
+                    <tr>
+                        <th> \(x\)</th>
+                        <th> \(y=x-2\)</th>
+                        <th> \(f(x)\)</th>
+                        <th>Posició</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> \(-100\)</td>
+                        <td> \(-102\)</td>
+                        <td> \(-102.91\)</td>
+                        <td> \(f\) és més negativa que l'asímptota.  \(f\) s'acosta per davall</td>
+                    </tr>
+                    <tr>
+                        <td> \(+100\)</td>
+                        <td> \(98\)</td>
+                        <td> \(98.0883\)</td>
+                        <td> \(f\) és més gran que l'asímptota.  \(f\) s'acosta per damunt</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><br></p>
+            <p>La situació gràfica es mostra a la figura següent</p>
+
+            <center>
+                <img src="asimptota-obliqua.png" style="width: 350px;latex-width:70%" />
+            </center>
+         
+ 
+            <div class="proposats onecol">
+
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Acabau de calcular la resta d'asímptotes que té la funció que s'ha explicat en
+                            aquest apartat  \(f(x)=\dfrac{x^3+5x+1}{x^2+2x}\) i feu una gràfica on apareguin totes elles i axí com s'acosta
+                            la funció a aquestes.</p>
+                    </div>
+                    <div class="resolucio">
+                       <p>Com que sabem que té l'asímptota obliqua  \(y=x-2\), no caldrà mirar si en té d'horitzontal.</p>
+                       <p>Ara bé, el denominador de la funció  \(x^2+2x=0\) s'anul·la quan  \(x=0\) i  \(x=-2\). El més
+                           probable que siguin dues asímptotes verticals. Simplement ens hem d'assegurar que els límits 
+                           laterals en cada punt siguin infinit. Anem a calular aquests limits
+                       </p>
+                       \[\lim_{x\to -2^-} \dfrac{x^3+5x+1}{x^2+2x}=\dfrac{-17}{+0}=-\infty \nonumber\]
+                       \[\lim_{x\to -2^+} \dfrac{x^3+5x+1}{x^2+2x}=\dfrac{-17}{-0}=+\infty \nonumber\]
+                       \[\lim_{x\to 0^-} \dfrac{x^3+5x+1}{x^2+2x}=\dfrac{1}{-0}=-\infty \nonumber\]
+                       \[\lim_{x\to 0^+} \dfrac{x^3+5x+1}{x^2+2x}=\dfrac{1}{+0}=+\infty \nonumber\]
+                    <p><br></p><p>Amb aquesta informació podem representar les asímptotes i la forma en què la funció s'acosta a elles.</p>
+                    <center>
+                        <img src="prop3-oblic.png" style="width: 500px;latex-width:400px;">
+                    </center>
+                    </div>
+                </div>
+
+               <br>
+               <div class="h5p" id="Video 5.05 BAT_MAT1" data-yt="728vYN49NJ0" title="Asímptotes obliqües."></div>
+
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Digues quina/es d'aquestes funcions té una asímptota horitzontal i quina/es obliqua. 
+                            En cas afirmatiu, calcula l'equació de l'asímptota i representa de forma qualitativa 
+                            com s'acosta la funció a l'asímptota.</p>
+                            <p>a)  \(f(x)=\dfrac{1}{x^2+4}\)  \(\quad\) b)  \(f(x)=\dfrac{2x^2}{x^2+4}\)  \(\quad\) c)  \(f(x)=\dfrac{3x^3}{x^2+4}\)  \(\quad\) d)  \(f(x)=\dfrac{4x^4}{x^2+4}\)</p>
+                    </div>
+                    <div class="resolucio">
+                        <p>Ens fixam amb els graus del numerador i el denominador</p>
+                        <p>a)  \(f(x)\) té una asímptota horitzontal a  \(y=0\).</p>
+                        <p>b)  \(f(x)\) té una asímptota horitzontal a  \(y=2\).</p>
+                        <p>c)  \(f(x)\) té una asímptota obliqua  \(y=3x\).</p>
+                        <p>d)  \(f(x)\) no té ni asímptota horitzontal ni obliqua.</p>
+                        <p>En cap dels casos existeixen asímptotes verticals perquè els denominadors
+                            no s'anul·len mai,  \(x^2+4=0\) no té cap solució. De les gràfiques següents
+                            es pot deduir la posició relativa que ens demanen
+                        </p>
+                        <center>
+                            <img src="prop4-amisc.png" style="width: 550px;latex-width:400px">
+                        </center>
+                    </div>
+            </div>
+
+                
+            </div>
+
+        </section>
+
+
+ 
+        </section>
+       
+        
+        <!--
+        <h3>Asímptotes obliqües i branques parabòliques</h3>
+
+            <DT>
+                <p>Per a que una funció racional  \(f(x)=\dfrac{P(x)}{Q(x)}\) tingui una asímptota obliqua, el graus han de
+                    complir grau  \(P(x) = \)grau  \(Q(x)+1\). L'equació de l'asímptota obliqua s'obté del quocient de la divisió
+                    de  \(P(x):Q(x)\).</p>
+                <DD>Asímptota obliqua</DD>
+            </DT>
+
+            <DT>
+                <p>
+                    Si es compleix que grau  \(P(x) \gt \)grau  \(Q(x)+1\), aleshores la funció creix més ràpidament que una recta, es diu que té branques
+                    parabòliques.
+                </p>
+                <DD>Branques parabòliques</DD>
+            </DT>
+
+            <br>
+            <div class="youtube" id="J2fRtddSQyE" title="Com calcular i representar asímptotes obliqües?"></div>
+
+            <div class="resolt" data-closable="false">
+                <div class="formulacio">
+                    <p>Calcula i representa les asímptotes de la funció  \(y = \dfrac { x ^ { 2 } + 3 x } { x + 1 } \)</p>
+                </div>
+                <div class="resolucio">
+                    <p>Aquesta funció té una asímptota vertical a  \(x=-1\). Calculam els límits laterals</p>
+                    <ul>
+                        <li> \(x=-1^-\):  \(\limx{-1^-} \dfrac{x^2+3x}{x+1} = \dfrac{-2}{-0} = +\infty\)
+                            <p></p>
+                        </li>
+                        <li> \(x=-1^+\):  \(\limx{-1^+} \dfrac{x^2+3x}{x+1} = \dfrac{-2}{+0} = -\infty\)</li>
+                    </ul>
+
+                    <p>Donat que el grau del numerador supera amb 1 al grau del denominador, aquesta funció té una asímptota
+                        oblïqua. Per determinar l'equació de l'asímptota efectuam la divisió
+                    </p>
+                    \[ \begin{array}{l} {\, \, \, \, x^2 + 3x \quad \quad \underline{|}\underline{\quad x+1 \quad }} \\ {\underline{-x^2-x}\,
+                    \, \, \, \, \, \, \, \, \, \, \, \, \, \, \quad x+2 } \\ {\, \, \, \, \, \, \, \, \, \, \, \, \, \, 2x}
+                    \\ { \, \, \, \, \, \, \, \, \, \, \underline{-2x-2}} \\ {\, \, \, \, \, \, \, \, \, \, \, \, \, \, \,
+                    \, \, \, \, \, \, \, \, \, \underbrace{-2}} \end{array}  \tag{23}\]
+
+                    <p>La recta  \(y_A=x+2\) és l'asímptota obliqua. Per conèixer la posició relativa ens construïm una taula
+                        de valors</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> \(x\)</th>
+                                <th> \(y_A\)</th>
+                                <th> \(f(x)\)</th>
+                                <th>Posició</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> \(-100\)</td>
+                                <td>-98</td>
+                                <td> \(-97.98 \gt -98 \)</td>
+                                <td>Per damunt</td>
+                            </tr>
+                            <tr>
+                                <td> \(+100\)</td>
+                                <td>102</td>
+                                <td> \(101.98 \lt 102\)</td>
+                                <td>Per davall</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <center>
+                        <img src="sample-a-obliqua.png" style="width:200px" />
+                    </center>
+                </div>
+            </div>
+            </div>
+
+            <div class="resolt" data-closable="false">
+                <div class="formulacio">
+                    <p>Calcula les asímptotes de la funció  \(y=\dfrac{x^3+2}{x-2}\)</p>
+                </div>
+                <div class="resolucio">
+                    <p>Aquesta funció té una asímptota vertical a  \(x=2\) perquè el denominador s'anul·la. Calculam els límits
+                        laterals</p>
+                    <ul>
+                        <li> \(x=2^-\):  \(\limx{2^-} \dfrac{x^3+2}{x-2} = \dfrac{10}{-0} = -\infty\)
+                            <p></p>
+                        </li>
+                        <li> \(x=2^+\):  \(\limx{2^+} \dfrac{x^3+2}{x-2} = \dfrac{10}{+0} = +\infty\)</li>
+                    </ul>
+
+                    <p>Donat que el grau del numerador supera amb més d'un al grau del denominador, aquesta funció presenta
+                        branques parabòliques. Per saber si la funció se'n va cap a  \(\pm\infty\), calculam els Límits
+                    </p>
+                    <ul>
+                        <li>  \(\limx{-\infty} \dfrac{x^3+2}{x-2} = \dfrac{\infty}{\infty} IND = \limx{-\infty} \dfrac{x^3/x+2/x}{x/x-2/x}
+                            = \limx{-\infty} \dfrac{x^2+2/x}{1-2/x} = +\infty\)
+                            <p></p>
+                        </li>
+                        <li>  \(\limx{+\infty} \dfrac{x^3+2}{x-2} = +\infty\)</li>
+                    </ul>
+
+                    <p>Amb aquesta informació podem representar les asímptotes i la posició relativa de la funció respecte
+                        d'elles</p>
+
+                    <center>
+                        <img src="sample-a-branques.png" style="width:300px" />
+                    </center>
+                </div>
+            </div>
+            </div>
+
+            <center>
+                <img src="misc-asimptotes.png" style="width:95%; max-width: 750px;" />
+            </center>
+            <div class="resolt" data-closable="true">
+                <div class="formulacio">
+                    <p>Observa les gràfiques anteriors. Fixat amb la posició i tipus d'asímptotes i intenta associar cada
+                        gràfica amb la seva equació de les següents.</p>
+
+                    a)  \(y=\dfrac{x^4-1}{x^2}\)<br> b)  \(y=\dfrac{(x+3)^2}{(x+1)^2}\)<br> c)  \(y=\dfrac{1}{9-x^2}\)<br> d)  \(y=\dfrac{x^2-1}{2x^2+1}\)<br>                    e)
+                     \(y=\dfrac{2x^2}{x+3}\)<br> f)  \(y=\dfrac{x^3}{2x-5}\) <br>
+                    <p>
+                        Quan estiguis llest pitja el botó per comprovar la solució.
+                    </p>
+                </div>
+                <div class="resolucio">
+                    <ul>
+                        <li> Asímptotes verticals: 1, 2, 4, 5, 6</li>
+                        <li> Asímptotes horitzontals: 3, 4, 6</li>
+                        <li> Asímptotes obliqües: 5</li>
+                        <li> Branques parabòliques: 1, 2</li>
+                    </ul>
+
+                    <p>Solució: 1–f; 2–a; 3–d; 4–c; 5–e; 6–b</p>
+
+
+                </div>
+            </div>
+            </div>
+-->
+ 
+    <!--
+    <section id="Continuïtat">
+        <br>
+        <div class="quadre-groc quadre-md">
+            <p> Us deixo aquesta secció com ampliació. </p>
+        </div>
+        <br>
+
+        <br>
+        <div class="minipage" style="width:70%">
+            <p>Durant l'ESO has après el concepte intuïtiu de funció contínua: "Una funció és contínua si podem dibuixar-la
+                en tot el seu recorregut sense necessitat d'aixecar el llapis del paper".
+            </p>
+            <p>En aquest apartat intentarem donar una definició més precisa de funció contínua a partir del concepte de límit
+                que hem treballat.
+            </p>
+        </div>
+        <div class="minipage" style="width:30%">
+            <center>
+                <img src="continua.png" style="width:300px;latex-width:90%" title="Concepte intuïtiu de funció continua" />
+            </center>
+        </div>
+        <br>
+
+        <h3>Tipus de discontinuïtats</h3>
+        <p>Existeixen <strong>4 motius</strong> pels quals una funció pot ésser discontínua en un punt  \(x = a\):</p>
+        <ol>
+            <li><strong>Salt infinit o discontinuïtat asimptòtica</strong>: La funció presenta una asímptota vertical en
+                 \(x = a\)<br>
+                <p>Totes les funcions racionals que tinguin asímptotes verticals presentaran aquest tipus de discontinuïtat.
+                    Per exemple:  \(y=\dfrac{1}{x}\),  \(y=\dfrac{x^2+3}{x^2-x}\), etc.
+                </p>
+            </li>
+            <li><strong>De salt finit</strong>: La funció presenta un bot.
+                <p>Normalment, les funcions definides a trossos poden presentar aquest tipus de discontinuïtat si els dos
+                    trossos no s'uneixen adequadament. Per exemple:  \(y=\left\{ \begin{array}{cl} 5 & \text{ si } x\lt 0 \\
+                    x & \text{ si } x\ge 0 \end{array} \right.\). Té un salt finit de 5 unitats a  \(x=0\).
+                </p>
+            </li>
+            <li><strong>Li falta un punt</strong>: No es pot calcular el valor de la funció a x = a.
+                <p>Exemples poden ésser funcions a trossos poden presentar on no s'inclou en punt d'unió dels trossos  \(y=\left\{
+                    \begin{array}{cl} 0 & \text{ si } x\lt0 \\ x & \text{ si } x\gt 0 \end{array} \right.\) li falta el punt
+                    a  \(x=0\). També funcions racionals que presentin una indeterminació  \(0/0\). Un exemple del darrer cas és
+                    la funció  \(y=\dfrac{x^2-1}{x-1}\) que li falta un punt a  \(x=1\).
+                </p>
+            </li>
+            <li><strong>Punt desplaçat</strong>: Aquest cas, el punt existeix però es troba a una altura incorrecta.
+                <p>Un exemple d'aquest tipus de discontinuïtat és una funció definida a trossos  \(y=\left\{ \begin{array}{cl}
+                    \dfrac{x^2-1}{x-1} & \text{ si } x \neq 1 \\ 3 & \text{ si } x=1 \end{array}\right.\)</p>
+            </li>
+        </ol>
+
+        <center>
+            <br>
+            <img src="discontinuitats.png" style="width:650px" title="Els quatre tipus de discontinuïtats" />
+        </center>
+
+        <p>Els casos 3, 4 s'anomenen discontinuïtats evitables. Evitable significa que es pot modificar lleugerament la funció
+            perquè sigui contínua. </p>
+
+
+    </section>
+    <section id="Condició de continuïtat">
+        <br>
+        <div class="quadre-groc quadre-md">
+            <p> Us deixo aquesta secció com ampliació. </p>
+        </div>
+        <br>
+
+        <div class="quadre-groc">
+            <p>Per a que una funció sigui contínua en un punt  \(x=a\) ha de complir:</p>
+            <DT>
+                <ol>
+                    <li> Els límits  \(\limx{a^\pm} f(x)\) han d'ésser finits  \(\quad\) (Evitam asímptotes verticals)</li>
+                    <li>  \(\limx{a^-} f(x) = \limx{a^+} f(x) = \limx{a} f(x)\quad\) (Evitam salts)</li>
+                    <li> Existeix  \(f(a)\quad\) (Evitam li falta un punt)</li>
+                    <li>  \(\limx{a} f(x)=f(a)\quad\) (Evitam punt desplaçat)</li>
+                </ol>
+                <DD>
+                    Condicions de continuïtat!https://www.vitutor.com/fun/3/b_1.html
+                </DD>
+            </DT>
+        </div>
+
+        <p>Una funció és diu que és contínua si és contínua en tots els punts del seu domini. </p>
+
+        <p>Com a regla general tots els polinomis són continus a tot  \(\mathbb{R}\). A més, totes les funcions elementals que
+            coneixem també són contínues en el seu domini (allà on estan definides). Les funcions definides a trossos caldrà
+            analitzar cada tros per separat i, sobretot, la continuïtat en els punts d'unió.
+        </p>
+
+        <div class="resolt" data-closable="true">
+            <div class="formulacio">
+                <p>Analitza la continuïtat de les funcions següents i indica, si escau, la causa de discontinuïtat.</p>
+                <p>a)  \(y=x^3-2x+1\) </p>
+                <p>b)  \(y=\left\{\begin{array}{cl} \log x & \text{ si } x \gt 0 \\ x^2 & \text{ si } x\lt 0 \end{array} \right.\)</p>
+                <p>c)  \(y=\dfrac{x^2+x}{x}\)</p>
+                <p>d)  \(y=\left\{\begin{array}{cl} 2^x & \text{ si } x \neq 1 \\ 3 & \text{ si } x=1 \end{array} \right.\)</p>
+                <p>e)  \(y=\dfrac{1}{x+2}\)</p>
+            </div>
+            <div class="resolucio">
+                <p>a)  \(y=x^3-2x+1\) </p>
+                <p> Els polinomis són continus a tota la recta real.</p>
+                <p>b)  \(y=\left\{\begin{array}{cl} \log x & \text{ si } x \gt 0 \\ x^2 & \text{ si } x\lt 0 \end{array} \right.\)</p>
+                <p> Aquesta funció no està definida a  \(x=0\), per tant li falta un punt. A més, el logaritme té una asímptota
+                    vertical a  \(x=0\), llavors té una discontinuïtat asimptòtica a  \(x=0\).
+                </p>
+                <p>c)  \(y=\dfrac{x^2+x}{x}\)</p>
+                <p> A  \(x=0\), l'expressió queda indeterminada  \(0/0\). Això ens indica que és discontínua perquè li falta un
+                    punt a  \(x=0\).</p>
+                <p>d)  \(y=\left\{\begin{array}{cl} 2^x & \text{ si } x \neq 1 \\ 3 & \text{ si } x=1 \end{array} \right.\)</p>
+                <p> Té un punt desplaçat a  \(x=1\) perquè la funció hauria de valer  \(2^1 = 2\) i veim que val  \(f(1)=3\).</p>
+                <p>e)  \(y=\dfrac{1}{x+2}\)</p>
+                <p>Té una asímptota vertical a  \(x=-2\). Llavors, discontinuïtat asimptòtica a  \(x=-2\).</p>
+            </div>
+        </div>
+
+        <h3>Discussió segons un paràmetre</h3>
+
+        <div class="resolt">
+            <div class="formulacio">
+                <p>Determina el valor de  \(k\) perquè la funció  \(f(x)=\left\{\begin{array}{cc} {2-x^{2} } & {si\; x\le 1} \\
+                    {k+x} & {si\; x>1} \end{array}\right. \) sigui contínua en tota la recta real.</p>
+            </div>
+            <div class="resolucio">
+
+                <p>Donat que el primer tros és una paràbola i el segon tros una línia recta, cada funció per separat és contínua.
+                    L'únic que hem d'imposar és que sigui contínua en el punt d'unió  \(x=1\) de la funció a trossos.</p>
+                <p> Estudiam la continuïtat en el punt  \(x=1\):</p>
+                <ol>
+                    <li>Els límits laterals són finits; no té asímptotes</li>
+                    <li>Els límits laterals valen  \(\limx{1^-} f(x)=\limx{1^-} 2-x^2 = 2-1^2 = 1\) i </li>
+                    <li> \(\limx{1^+} f(x)=\limx{1^+} k+x = k+1\).
+                        <p> Si imposam que els dos límits laterals siguin iguals,  \(1=1+k\) ens duu al resultat  \(k=0\).</p>
+                    </li>
+                    <li>Existeix  \(f(1)=1\) </li>
+                    <li>També es compleix que  \(\limx{1} f(x)=f(1)=1\). </li>
+                </ol>
+                <p>La resposta és que per a  \(k=0\) la funció serà contínua a tot  \(\mathbb{R}\).</p>
+
+                <div class="geogebra" id="k85pwhbk" title="Canvia k i observa la continuïtat" data-img="k85pwhbk.png" width="400" height="300"></div>
+            </div>
+        </div>
+
+        <div class="resolt">
+            <div class="formulacio">
+                <p>Determina el valor de  \(k\) per què la funció  \(f(x)=\left\{\begin{array}{cc} \dfrac{3x^2+6x }{x+2} & {si\;
+                    x\neq -2} \\ {k} & {si\; x=2} \end{array}\right. \) sigui contínua a  \(x=-2\).</p>
+            </div>
+            <div class="resolucio">
+                <p>Aquí els trossos estan donats de forma diferent. La primera línia ens diu quina funció hem d'agafar sempre
+                    que  \(x\) no sigui igual a -2. Aquesta és la funció que agafarem per calcular els límit.
+                </p>
+                \[  \limx{-2} \dfrac{3x^3+6x }{x+2} = \dfrac{0}{0} IND = \limx{-2} \dfrac{3x(x+2) }{(x+2)} = \limx{-2} 3x =-6  \tag{24}\]
+                <p> Estudiam la continuïtat en el punt  \(x=-2\):</p>
+                <ol>
+                    <li>Els límits laterals són finits (valen -6); No té asímptotes</li>
+                    <li>Els límits laterals coincideixen i valen  \(\limx{-2} f(x)=-6\) (No té salts) </li>
+                    <li>Existeix  \(f(-2)=k\) (No té forats)</li>
+                    <li>Imposam que  \(\limx{-2} f(x)=f(-2) \quad \rightarrow\)  \(-6=k\). </li>
+                </ol>
+                <p>La resposta és que per a  \(k=-6\) la funció serà contínua a  \(x=-2\).</p>
+
+
+                <div class="geogebra" id="frsayfmr" title="Canvia k i observa la continuïtat" data-img="frsayfmr.png" width="400" height="300"></div>
+            </div>
+        </div>
+
+    </section>
+    
+    </section>
+    -->
+</body>
+
+</html>

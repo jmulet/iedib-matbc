@@ -1,0 +1,29 @@
+.sd-speak-enabled {
+    position: relative;
+    background: whitesmoke;
+    text-decoration: none;  
+  } 
+  @keyframes speakicon_anim {
+    0% {
+      opacity: 0;
+      left: -10px;
+    }
+    100% {
+      opacity: 1;
+      left: -5px;
+    }
+  } 
+  .sd-speak-enabled:hover:after {
+    content: "\f0a1";
+    position: absolute;
+    left: -5px;
+    top: -16px;
+    background: white;
+    z-index:1000;
+    font-family: 'Font Awesome\ 5 Free'; 
+    font-size: 70%;
+    margin: 0px 5px;
+    font-weight: 700; 
+    vertical-align:top; 
+    animation: speakicon_anim 1s ease;
+  }

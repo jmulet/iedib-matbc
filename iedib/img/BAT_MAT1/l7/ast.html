@@ -1,0 +1,1503 @@
+<html>
+
+<head>
+    <base href="lliurament7_assets/">
+    <link rel="stylesheet" type="text/css" href="../../../ASSETS/iedib.css">
+    </link>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+    <script type="text/javascript" src="../../../ASSETS/iedib.js"></script>
+
+    <title>Com ajuda l'àlgebra a resoldre situacions geomètriques?</title>
+    <subtitle>Vectors i rectes en el pla</subtitle>
+    <lliurament>7</lliurament>
+    <category>Geometria analítica</category>
+    <author>Josep Mulet Pol</author>
+    <year>2022</year>
+    <subject>Matemàtiques I</subject>
+    <subject-short>BAT_MAT1</subject-short>
+
+</head>
+
+<body>
+
+    <section id="Introducció a la geometria analítica">
+
+        <!--
+            <span data-print="https://piworld.es/iedib/pdf/TEORIA-BAT_MAT1-7.1.pdf" data-guidance="https://www.youtube.com/embed/6B2CuXBabuY" data-title="Orientacions lliurament 7"></span>
+        -->
+        
+
+        <h3 title="Mind Map creat per Josep Mulet">Esquema del lliurament</h3>
+        <div class="html">
+            <iframe width='100%' height='600px' scrolling='no' src='https:&#x2F;&#x2F;www.goconqr.com&#x2F;en&#x2F;p&#x2F;36654491-geometria-analitica-en-el-pla-mind_maps?frame=true'  style='border: 1px solid #ccc'  allowfullscreen  webkitallowfullscreen  mozallowfullscreen  oallowfullscreen  msallowfullscreen></iframe>
+        </div>
+        <div class="if-latex">
+            <center>
+                <img src="mindmap.png" style="width:90%;" title=""/>
+            </center>
+        </div>
+        <center><small>Mapa conceptual creat amb GoConqr per Josep Mulet.</small></center>    
+        
+    </section>
+
+    <section id="Vectors en el pla">
+
+            <p></p>Les magnituds físiques es classifiquen en escalars i vectorials.
+            Una magnitud escalar és aquella que queda completament determinada amb un nombre i 
+            les unitats corresponents. En canvi, una magnitud vectorial és aquella que, 
+            a més d'un valor numèric i les seves unitats (mòdul), cal especificar-ne la direcció i el sentit.
+            </p>
+
+            <div class="if-latex">
+            <center>
+                <table title="Tipus de magnituds">
+                    <thead>
+                        <tr>
+                            <th>Magnituds vectorials</th>
+                            <th>Magnituds escalars</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Temps</td>
+                            <td>Velocitat</td>
+                        </tr>
+                        <tr>
+                            <td>Temperatura</td>
+                            <td>Acceleració</td>
+                        </tr>
+                        <tr>
+                            <td>Volum</td>
+                            <td>Força</td>
+                        </tr>
+                        <tr>
+                            <td> \(\cdots\)</td>
+                            <td> \(\cdots\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+            </div>
+       
+            <div class="html"> 
+                <div style="margin:10px auto;max-width: 500px;">
+                    <iframe src="https://iedib.net/avirtual/mod/hvp/embed.php?id=46235" width="712" height="553" frameborder="0" allowfullscreen="allowfullscreen" title="Classifica les magnituds"></iframe>
+                    <script src="https://iedib.net/avirtual/mod/hvp/library/js/h5p-resizer.js" charset="UTF-8"></script>
+                </div>
+                <p><br></p>
+            </div>
+
+        <p>Un <b>vector fix</b> queda determinat per dos punts  \(A\) <strong>origen</strong> i  \(B\) <strong>extrem</strong>. El <strong>mòdul</strong>
+            és la llargària del vector o la distància entre  \(A\) i  \(B\). La <strong>direcció</strong> és la de la recta que
+            passa per  \(A\) i  \(B\). Cada direcció té dos <strong>sentits</strong>.
+        </p>
+
+        
+
+        <div class="html">
+            <center>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSs-JTK1BwHpj24AXcvpZ8tT3hwIJJFwZ80vVlzLodLBiXzUa0bU11igNLhva9ZlpGUOA2m6RRQgRYL/embed?start=true&amp;loop=true&amp;delayms=1200&amp;rm=minimal" frameborder="0" width="300" height="170" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                <br> <small>Presentació de Google Slides. Elaboració pròpia.</small>
+            </center>
+        </div>
+
+        <p><br></p>
+        <h3>No et confonguis! Escalars i vectors.</h3>
+
+
+        <p>En aquest lliurament, s'ha d'entendre el vocabulari que farem servir. En particular, cal tenir
+            clara la diferència entre els nombres reals, que anomenarem <b>escalars</b>, i els <b>vectors</b>.
+            D'una forma poc rigorosa, pots pensar que els vectors "porten fletxa" i els escalars no.
+        </p>
+        <p class="iedib-ret iedib-ret-ampliacio"> A l'estructura algebraica formada per escalars i vectors, juntament amb les
+            operacions que veurem a continuació, se l'anomena <b>espai vectorial</b>.</p>
+        <p><br></p>
+        <center>
+            <img src="espai_vectorial.png" style="width:350px;" title="Caracterització d'un espai vectorial. Imatge d'elaboració pròpia.">
+        </center>
+
+
+
+        <section id="Vectors fixos i lliures">
+
+            <p>Un <b>sistema de referència Cartesià</b> està format per dos eixos, perpendiculars dos a dos, 
+                que designam com  \(OX\)
+                i  \(OY\). Els dos eixos es tallen en un punt que anomenam origen  \(O(0, 0)\).</p>
+
+
+            <center>
+                <img src="so_cartesia.png" width="260" title="Sistema de referència cartesià. Elaboració pròpia." />
+            </center>
+
+
+            <p>Per localitzar un punt  \(P\) en el pla donam dues coordenades  \(P=(P_1, P_2)\) que corresponen a les projeccions
+                sobre els eixos  \(OX\),  \(OY\) respectivament.</p>
+            <center>
+                <img src="mallorcaAB.png" width="400" 
+                title="Les coordenades dels municipis són A=(3,2) i B=(5,4) i AB indica el vector fix. Elaboració pròpia." />
+            </center>
+
+
+            <p>Definim un <strong>vector fix</strong> d'origen en el punt  \(A\) i extrem en el punt  \(B\) com el <strong>segment
+                    orientat
+                </strong>
+                que va des d' \(A\) cap a  \(B\). La fletxa del vector es dibuixa cap al punt extrem.</p>
+
+            <p>Les <b>components del vector</b> s'obtenen de restar els punts extrem menys origen</p>
+            <DT>
+                \[ \overrightarrow{AB}=B-A=(B_1-A_1, B_2-A_2)  \tag{1}\]
+                <DD>Components d'un vector fix</DD></DT>
+
+                <p>Les components d'un vector indiquen quina distància s'avança en cada direcció mesurada des del seu 
+                    origen.
+                </p>
+
+            <div class="resolt" data-closable="true" data-audible="batmat1/res1.7">
+                <div class="formulacio">
+                <p>
+
+                    Donats els punts  \(A=(-2,3)\) i extrem a  \(B=(1,-1)\), calcula les components dels vectors  \(\overrightarrow{AB}\) i  \(\overrightarrow{BA}\).
+                    Quina relació existeix entre aquests dos vectors?
+                </p>
+
+                </div>
+                <div class="resolucio">
+                    <p> \(\overrightarrow{AB}=B-A=(1,-1)-(-2,3)=\)<span data-laser="22,23,sw|25,26,se"> \((3,-4)\)</span></p>
+                    <p data-from="25">Aquest vector avança 3 unitats en direcció  \(x\) i baixa  \(4\) en direcció  \(y\).</p>
+                    <br>
+                    <div data-from="33">
+                        <p> \(\overrightarrow{BA}=(-2,3)-(1,-1)=(-3,4)\)</p>
+                        <br>
+                        <p>Els dos vectors tenen sentit oposat i les seves components tenen signe diferent.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <p>
+                Si ens donen el vector  \(\vec v = (2,2)\), del qual desconeixem l'origen, vol dir que el podem dibuixar amb l'origen que nosaltres
+                vulguem. Deim que es tracta d'un <strong>vector lliure</strong>. Generalment, resulta pràctic
+                representar-los en origen en el punt  \(O(0,0)\).
+            </p>
+            <center>
+                <img src="mallorca_lliure.png" width="400" title="Concepte de vector lliure. Elaboració pròpia." />
+            </center>
+
+            <p>Tots els vectors de la figura tenen igual direcció, mòdul i sentit. Les seves components també són idèntiques.
+                L'únic que canvia són els punts d'origen i extrem. Direm que tots aquests vectors són <b>equipol·lents</b>
+                entre si.
+            </p>
+
+            <div class="quadre-groc">
+                El vector que va des de l'origen de coordenades  \(O=(0,0)\) al punt  \(P=(P_1,P_2)\) s'anomena 
+                <b>vector de posició</b> del punt  \(P\) i té per components les mateixes coordenades del punt  \(\vec{OP}=P-O=P=(P_1,P_2)\).
+            </div>
+
+            <div class="resolt" data-closable="true">
+                <div class="formulacio">
+                    <p>La figura ABCDEF és un hexàgon. Compara el mòdul, direcció i sentit de les següents parelles de vectors.
+                    </p>
+                    <center>
+                        <img src="chap-vect-hexagon.png" width="300" />
+                    </center>
+                    <p>a)  \(\overrightarrow{AB}\) i  \(\overrightarrow{BC}\quad\)
+                    b)  \(\overrightarrow{FE}\) i  \(\overrightarrow{BC}\quad\)
+                    c)  \(\overrightarrow{BM}\) i  \(\overrightarrow{DE}\quad\)
+                    d)  \(\overrightarrow{OS}\) i  \(\overrightarrow{OE}\)</p>
+                </div>
+                <div class="resolucio">
+                    <p>a)  \(\overrightarrow{AB}\) i  \(\overrightarrow{BC}\): Igual mòdul, direcció diferent </p>
+                    <p>b)  \(\overrightarrow{FE}\) i  \(\overrightarrow{BC}\): Igual mòdul, direcció i sentit </p>
+                    <p>c)  \(\overrightarrow{BM}\) i  \(\overrightarrow{DE}\): El mòdul del segon vector és el doble, igual direcció
+                        i sentit </p>
+                    <p>d)  \(\overrightarrow{OS}\) i  \(\overrightarrow{OE}\): Diferent mòdul i direcció </p>
+                </div>
+            </div>
+
+            <h3>Components d'un vector</h3>
+
+            <p>Una altra forma proporcionar un vector, que empraràs molt a física, consisteix en donar el seu mòdul i
+                l'angle que forma amb l'eix horitzontal. Per trigonometria, podem calcular fàcilment les seves components
+                 \(\vec v = (|\vec v|\cos\alpha, |\vec v|\sin\alpha)\).
+            </p> 
+
+            <center>
+                <img src="projeccions.png" style="width:280px" title="Components d'un vector. Elaboració pròpia.">
+            </center>
+
+            <div class="resolt">
+                <div class="formulacio">
+                    <p>L'aigua surt d'una mànega a una velocitat de 10 m/s i formant un angle de  \(30^\circ\) respecte
+                        l'eix horitzontal. Calcula les components del vector velocitat.
+                    </p>
+                    <center>
+                        <img src="manguera.jpg" style="width:200px;" title="Imatge de &lt;a href='https://traficozmg.com/2019/11/multaran-a-quien-tire-agua-con-manguera-en-guadalajara/' target='_blank'&gt;Trafico MZG&lt;/a&gt;"/>
+                    </center>
+                </div>
+                <div class="resolucio">
+                    <p>Les components del vector velocitat s'obtenen de projectar el mòdul sobre cadascun dels eixos de coordenades
+                     \(OX\) i  \(OY\).
+                    </p>
+                    \[\vec v = 10 \, (\cos 30^\circ, \sin 30^\circ)=10 \, \left(\frac{\sqrt{3}}{2}, \dfrac{1}{2}\right)=(5\sqrt{3}, 5) \text{ m/s} \tag{2}\]
+                    <p></p>
+                </div>
+            </div>
+
+        </section>
+        <section id="Operacions amb vectors lliures">
+
+            <p>Donats dos vectors lliures, per exemple  \(\vec u = (-2,5)\) i  \(\vec v =(3,1)\), es poden realitzar les següents
+                operacions; totes elles donen com a resultat un altre vector.
+            </p>
+
+             
+            <h3>Producte d'un vector per un escalar</h3>
+
+            <p>Multiplicar un nombre (escalar)  \(k\) per un vector  \(\vec u\) dona un vector que té la mateixa direcció que el
+                vector  \(\vec u\) i mòdul  \(k\) vegades més llarg. El sentit del vector serà el mateix si  \(k \gt 0\) i sentit oposat si  \(k
+                \lt 0\).
+            </p>
+
+            <p>En components, es multiplica cada component per l'escalar. Per exemple:  \(7\, (-2,5) = (-14, 35)\).</p>
+            
+            <div class="iedib-central" style="background: #e1f5fb">
+                <div class="html">
+                <p><b>Experimenta:</b></p>
+                </div>
+                <p>En la simulació següent modifica el valor de  \(k\) arrossegant el control i observa quin efecte té sobre el vector  \(k\vec u\). Quines 
+                    conclusions en treus?
+                </p>
+
+            <div id="fnfrh3rj" class="geogebra" title="Producte d'un escalar per un vector." data-img="pexv.png" width="500" height="360"></div>
+            </div>
+            <p><br></p>
+
+            <p>Si prenem  \(k=-1\), obtenim el <b>vector oposat</b>  \(-\, (-2,5) = (2, -5)\)</p>
+
+            <p>Perquè dos vectors tinguin igual direcció, un a d'ésser un múltiple de l'altre  \(\vec u=\lambda \vec v\). Direm que les
+                seves components són proporcionals
+            </p>
+            <DT>
+            \[ \dfrac{u_1}{v_1} = \dfrac{u_2}{v_2} \tag{3}\]
+            <DD>Condició de vectors paral·lels</DD>
+            </DT>
+
+            <p>Fixeu-vos que multiplicar qualsevol vector pel nombre 0 dóna el vector zero:  \(0\, (-2,5) = (0, 0)\)</p>
+
+            <div class="quadre-vermell ">
+                <p>Atenció. No confoneu el vector zero  \(\vec 0 = (0,0)\) amb l'escalar  \(0\).</p>
+            </div>
+ 
+            <h3>Suma de vectors</h3>
+
+            <div class="minipage" style="width:60%">
+            <p>Sabies que quan dues o més forces actuen sobre un cos, s'obté la força resultat mitjançant la suma 
+                dels vectors? El cos romandrà en equilibri si la força resultant és nul·la (vector  \(\vec 0\)).
+            En cas contrari, el cos es mourà amb una acceleració en la direcció de la força resultant.</p>
+            </div>
+            <div class="minipage" style="width:40%">
+                <img src="resultant.jpg" style="width:200px;latex-width:75%;" title="Imatge d'elaboració pròpia a partir de &lt;a target='_blank' href='https://www.infobae.com/educacion/2020/04/13/que-es-y-como-se-calcula-la-fuerza-resultante/'&gt;Infobae&lt;/a&gt;">
+            </div>
+ 
+            
+                <p>La suma de vectors emprant components es fa sumant primera amb primera i segona amb segona components:
+                      \((-2,5) + (3,1) = (-2+3, 5+1) = (1, 6)\)</p>
+
+                <p>
+                    Gràficament, la suma es pot construir dibuixant l'origen del segon vector a partir de l'extrem del primer. 
+                    Després s'uneix l'origen del primer
+                    amb l'extrem del darrer vector. La figura mostra com es fa la mateixa suma d'abans gràficament. Aquesta tècnica es pot aplicar a un nombre arbitrari de vectors.
+                </p>
+
+                <center>
+                    <img src="suma-vectors.png" style="width:350px;" title="Suma gràfica de dos vectors. Elaboració pròpia."/>
+                </center> 
+
+                <p>Si a un vector li sumam el seu oposat, el resultat de la suma és el vector zero.  \((-2,5) + (2, -5) = (0,0)\),
+                    o en general  \(\vec u + (-\vec u) = \vec 0\).</p>
+ 
+             
+            <br>
+
+
+            <h3>Resta de vectors</h3>
+
+            <br> 
+                <p>La resta de dos vectors és equivalent a sumar-li l'oposat del segon vector:  \(\vec u - \vec v = \vec u
+                    + (-\vec v)\).</p>
+                <p>Les components del vector resta s'obté restant component a component:  \((-2,5) - (3,1) = (-2-3, 5-1) = (-5,4)\)</p>
+                <p>També es pot efectuar la resta gràficament utilitzant la mateixa tècnica anterior. Al primer vector si li ha
+                    de sumar l'oposat del segon vector.
+                </p> 
+
+                <center>
+                    <img src="resta-vectors.png" style="width:350px;" title="Resta gràfica de dos vectors. El primer vector li sumam l'oposat del segon. Elaboració pròpia."/>
+                </center>
+            
+            <br>
+
+
+            <h3>Combinació lineal de vectors</h3>
+            <DT>
+            <p>Una combinació lineal de dos vectors consisteix en sumar els vectors prèviament multiplicats per algun escalar.
+                </p>
+                <p>Per exemple:  \(5 \vec u - 2 \vec v = 5(-2,5) - 2 (3,1)= (-10, 25)-(6,2)=(-16, 23)\).
+            </p>
+            <DD>Combinació lineal de vectors</DD>
+            </DT> 
+
+            <div class="iedib-central" style="background: #e1f5fb">
+                <div class="html">
+                <p><b>Experimenta:</b></p>
+                </div>
+                <p>
+                    Canvia els coeficients  \(\alpha\),  \(\beta\) i analitza com canvia el resultat de la combinació (vector vermell).
+                </p>
+            <div class="geogebra" id="pezetk5n" title="Combinació lineal de dos vectors. Elaboració pròpia."
+                data-img="combinacio-lineal-vectors.png" width="800" height="700"></div>
+            </div>
+            <p><br></p>
+
+
+            <!--Refer-->    
+            <div class="h5p" id="Video 7.01 BAT_MAT1" yt-id="dyG6xjZ4jwo" title="Introducció als vectors en el pla"></div>
+
+
+
+                       
+            <div class="proposats onecol pw-mq-group">
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Representau els vectors lliures \(\vec u=(-2,1)\) i \(\vec v=(3,2)\) 
+                            amb un mateix origen i calculau gràficament la seva suma. Comprovau
+                            que obteniu el mateix resultat operant les components.
+                        </p>
+                        <p data-mq="cloze" data-mq-ans="[1,3]" data-mq-ini="(?,?)" data-mq-formulation="\(\vec u + \vec v =\)"></p>
+                    </div>
+                    <div class="resolucio"> 
+                        <p>Gràficament empram la regla del paral·lelogram</p>
+                        <img src="proposat-sumavec.png" style="width:400px"/>
+                        <p> Amb components
+                            \(\vec u +\vec v =  (-2,1) + (3,2)=(1,3)\)
+                        </p>
+                          
+                    </div>
+                </div>
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Donats els vectors \(\vec u=(4,-5)\), \(\vec v=(2,1)\) i \(\vec w=(0,3)\), calculau
+                            la combinació lineal \(2\vec u + \vec v - 3\vec w\). T'atreveixes a fer l'operació
+                            gràficament?
+                        </p>
+                        <p data-mq="cloze" data-mq-ans="[10,-18]" data-mq-ini="(?,?)" data-mq-formulation="\(2\vec u + \vec v - 3\vec w =\)"></p>
+                    </div>
+                    <div class="resolucio">
+                        <p>
+                            \(2\vec u + \vec v - 3\vec w = 2(4,-5) +(2,1) -3(0,3)=\)
+                        </p>
+                        <p>
+                            \(=(8,-10) +(2,1)+(0,-9)= (10,-18)\)
+                        </p>
+                          
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="Dependència lineal i bases">
+
+            <p>Començarem donant dues definicions que ens serviran per entendre el concepte de base de vectors.</p>
+
+            <div class="quadre-groc">
+                <p>Direm que dos vectors són <b>linealment dependents</b> si tenen la mateixa direcció 
+                    (no cal que tenguin igual sentit).</p>
+                <p>Direm que dos vectors són <b>linealment independents</b> si tenen diferent direcció.</p>
+            </div>
+
+            <p>En l'apartat d'operacions hem vist com generar vectors dependents. Basta multiplicar un vector per 
+                un nombre i obtenim un 
+                vector dependent al primer. Per tant,
+                perquè dos vectors  \(\vec u\,(u_1,u_2)\) i  \(\vec v\,(v_1,v_2)\) siguin dependents, necessàriament un ha de ser un múltiple de l'altre. 
+                És a dir, existirà un nombre  \(\lambda\) tal que
+                 \(\vec v = \lambda \vec u\). Si expressam aquesta relació en components, arribam a la conclusió
+            </p>
+            \[\dfrac{v_1}{u_1}=\dfrac{v_2}{u_2} \tag{4}\]
+            <p>
+                En altres paraules, dos vectors són paral·lels o dependents si les seves components són proporcionals.
+            </p>
+
+            <h3>Condició d'alineament de 3 punts</h3>
+            <p>En el pla, tres punts  \(A\),  \(B\),  \(C\) poden estar alineats o formar un triangle. La condició perquè estiguin alineats
+                és que els vectors  \(\vec{AB}\) i  \(\vec AC\) siguin linealment dependents.
+            </p>
+
+            <center>
+                <img title="Condició de 3 punts alineats. Elaboració pròpia." src="alineats.png" style="width: 350px;">
+            </center>
+
+            <div class="resolt">
+                <div class="formulacio">
+                    <p>Calcula què ha de valer la coordenada  \(k\) perquè els punts  \(A=(-1, 2\)),  \(B=(k, 3)\),  \(C=(4,5)\) estiguin alineats.</p>
+                </div>
+                <div class="resolucio">
+                    <p>Calculam els vectors  \(\vec{AB}=B-A=(k,3)-(-1,2)=(k+1, 1)\) i  \(\vec{AC}=C-A=(4,5)-(-1,2)=(5,3)\)</p>
+                    <p>Aquests dos vectors han de ser linealment dependents; les seves components són proporcionals:</p>
+                    \[\dfrac{k+1}{5}=\dfrac{1}{3} \nonumber\]
+                    <p>Resolem l'equació i determinam que  \(k=\frac{2}{3}\) perquè els punts estiguin alineats.</p>
+                </div>
+            </div>
+
+            <h3>Bases i components</h3>
+
+            <br>
+            <div class="minipage" style="width:60%">
+                <p>Definim els vectors de la <b>base canònica o ortonormal</b> com <DT><DD>base canònica o ortonormal</DD>  \(\vec i = (1, 0)\),  \(\vec j = (0,1)\).
+                    Aquests vectors tenen mòdul 1 i formen un angle de  \(90^\circ\)</DT>.
+                    En el mot ortonormal,  <em>"orto"</em> significa
+                    que formen un angle de  \(90^\circ\) i <em>"normal"</em> que els vectors tenen mòdul 1.</p>
+    
+                <p>D'aquesta forma qualsevol altre vector, per exemple  \(\vec w = (2, 3)\), es pot expressar com una combinació lineal dels 
+                    vectors de la base  \(\vec w = 2 \vec i + 3\vec j\); és
+                    a dir  \((2, 3)\) són les components del vector  \(\vec w\) respecte de la base canònica.</p>
+    
+            </div>
+            <div class="minipage" style="width:40%">
+                <center>
+                    <img src="canonica.png" style="width:200px;latex-width:70%" title="Dues formes d'expressar un vector, w(2,3) o w=2i+3j. Elaboració pròpia."
+                    />
+                </center>
+            </div>
+            <br>
+
+            <div class="quadre-groc">
+                <p><b>Dues notacions equivalents</b></p>
+                <p>Un mateix vector es pot expressar en components  \(\vec u =(u_1, u_2)\) o en
+                    termes de la base canònica  \(\vec u =u_1 \, \vec i +  u_2\, \vec j\)
+                </p>
+            </div>
+
+            <p>En general, perquè dos vectors  \(\vec a\),  \(\vec b\) formin una base del pla, s'ha de complir que tenguin diferent direcció (han de 
+                ser linealment independents). En tal cas, qualsevol vector del pla es pot expressar com una combinació 
+            lineal dels vectors de la base </p>
+            \[\vec w = \alpha \vec a + \beta \vec b \tag{5}\]
+                    <p>Al parell de nombres  \((\alpha,\beta)\) s'anomenen components del vector  \(\vec w\) respecte de la base  \(\mathcal{B}\{\vec a, \vec b\}\).</p>
+            
+            <p><br></p>
+            <div class="if-latex">
+                \newpage
+            </div>
+            <div class="quadre-ampliacio">
+                     <p>Considera els vectors  \(\vec a(2,0)\),  \(\vec b(0,-1)\) de la figura. Atès que són linealment independents, 
+                        formen una base del pla.
+                    </p>
+                    <center>
+                        <img src="canvibase.png" style="width:300px" title="Exemple de base en el pla. Elaboració pròpia."/>
+                    </center>
+                    <p><br></p>
+                    <p>Ara ens donen el vector que té de components respecte la base ortonormal  \(\vec w=(4,3)=4\vec i + 3\vec j\).
+                        Aquest mateix vector, es pot expressar com  \(\vec w = 2 \vec a - 3 \vec b\) i, per tant, les components són
+                         \((2,-3)\) respecte de la base  \(\mathcal{B}\{\vec a, \vec b\}\).
+                    </p>
+                    <p>No et confonguis! Tot i que un vector sempre és un mateix objecte, hem descobert que les seves components 
+                        depenen de la base que emprem per expressa-lo.</p>
+            </div>
+           
+            <div class="proposats pw-mq-group">
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Justifica quins d'aquests parells de vectors formen una base del pla.</p>
+                        <ul>
+                            <li><p data-mq="mchoice" data-mq-ans="3" data-mq-symbols="Són una base perquè són independents;Són una base perquè són dependents; No formen base perquè són independents; No formen base perquè són dependents;"> \(\{\vec a (1,-1), \vec b (-1, 1)\}\)</p></li>
+                            <li><p data-mq="mchoice" data-mq-ans="0" data-mq-symbols="Són una base perquè són independents;Són una base perquè són dependents; No formen base perquè són independents; No formen base perquè són dependents;"> \(\{\vec a (1,-1), \vec b (1, 1)\}\)</p></li>
+                            <li><p data-mq="mchoice" data-mq-ans="3" data-mq-symbols="Són una base perquè són independents;Són una base perquè són dependents; No formen base perquè són independents; No formen base perquè són dependents;"> \(\{\vec a (8,-6), \vec b (-12, 9)\}\)</p></li>
+                        </ul>
+                    </div>
+                    <div class="resolucio">
+                        <ul>
+                            <li> \(\{\vec a (1,-1), \vec b (-1, 1)\}\): No formen una base perquè
+                                són linealment dependents. Un vector és l'oposat de l'altre  \(\vec b = - \vec a\).
+                            </li>
+                            <li> \(\{\vec a (1,-1), \vec b (1, 1)\}\): Formen una base perquè són
+                                linealment independents. Les components no són proporcionals  \(\dfrac{1}{1}\neq \dfrac{1}{-1}\). </li>
+                            <li> \(\{\vec a (8,-6), \vec b (-12, 9)\}\): Aquests vectors no formen base perquè són
+                                linealment dependents. Les components són proporcionals   \(\dfrac{-12}{8} = \dfrac{9}{-6}\).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="if-latex">
+                \newpage
+            </div>
+        </section>
+         
+        
+        <section id="Producte escalar de dos vectors">
+            <h3>Definició</h3>
+
+            <div class="quadre-groc">
+                <p>Anomenam <b>producte escalar</b> de dos vectors  \(\vec u\) i  \(\vec v\) al resultat de la següent operació</p>
+              <DT>
+                \[
+                \vec u \cdot \vec v = |\vec u| \, |\vec v| \, \cos \alpha \label{eq:pescalardef}
+                 \tag{6}\]
+              <DD>Definició de producte escalar</DD></DT>
+
+                <p>és a dir, el producte dels seus mòduls multiplicat pel cosinus de l'angle que formen.</p>
+            </div>
+            <div class="quadre-vermell ">
+                <p>El resultat del producte escalar és un nombre (un escalar). No doneu mai com a resposta un
+                    vector.
+                </p>
+            </div>
+
+            <h3>Interpretació geomètrica</h3>
+
+            <p>El producte escalar  \(\vec u \cdot \vec v\) es pot interpretar com la projecció (o l'ombra) del
+                vector  \(\vec u\) sobre la direcció donada pel vector  \(\vec v\)</p>
+
+            <center>
+                <img src="projescalar.png" style="width: 300px" title="Interpretació geomètrica del producte escalar. Elaboració pròpia."/>
+            </center>
+            <p><br></p>
+
+            <p>De la figura anterior s'obté la projecció per aplicació de la trigonometria
+                en el triangle rectangle. Podem definir la projecció del vector  \(\vec u\) sobre la direcció del vector  \(\vec v\)
+                com 
+            </p>
+
+            \[proj_{\vec v} (\vec u) = |\vec u|\cos \theta = \dfrac{\vec u \cdot \vec v}{|\vec v|} \tag{7}\]
+            
+            <h3>Propietats del producte escalar</h3>
+
+            <p>De la definició (6) en deduïm les següents propietats</p>
+            <ul>
+                <li>El producte escalar és commutatiu:  \(\vec u \cdot \vec v = \vec v \cdot \vec u\)</li>
+                <li>El producte escalar és distributiu:  \(\vec u \cdot (\vec v + \vec w) = \vec u \cdot \vec v + \vec u \cdot \vec w\)</li>
+                <li>El producte escalar és associatiu:  \(\lambda \, (\vec u \cdot \vec v ) = (\lambda \, \vec u) \cdot \vec v = \vec u \cdot (\lambda \, \vec v)\)</li>
+                <li>El producte escalar té signe</li>
+                <ul>
+                    <li>Si  \(\alpha\) és un angle agut,  \(\cos \alpha \gt 0\)  \(\Rightarrow\)  \(\vec u \cdot \vec v \gt 0\)</li>
+                    <li>Si  \(\alpha\) és un angle obtús,  \(\cos \alpha \lt 0\)  \(\Rightarrow\)  \(\vec u \cdot \vec v \lt 0\)</li>
+                    <li>Si  \(\alpha\) és un angle recte ( \(90^\circ\)),  \(\cos \alpha = 0\)  \(\Rightarrow\)  \(\vec u \cdot \vec v = 0\)</li>
+                </ul>
+            </ul>
+
+            <p>De la darrera propietat obtenim un resultat molt important que utilitzarem en la resta dels lliuraments.</p>
+            <div class="quadre-groc">
+                <DT>
+                <p>Dos vectors són <b>perpendiculars</b> si i només si el seu producte escalar és igual a zero  \(\vec u \cdot \vec v = 0\).</p>
+                <DD>Condició vectors perpendiculars</DD>
+                </DT>
+            </div>
+            <br>
+
+            <div class="resolt" data-closable="true">
+                    <div class="formulacio">
+                        <p>Calcula els següents productes escalars:</p>
+                        <p> \(\vec i \cdot \vec i\),  \(\quad\vec i \cdot \vec j\),  \(\quad\vec j \cdot \vec j\)</p>
+                    </div>
+                    <div class="resolucio">
+                        <p>Utilitzam la definició de producte escalar i recordam que els vectors  \(\vec i\),  \(\vec j\) són ortonormals (mòdul 1 i formen un angle de  \(90^\circ\))</p>
+                        \[ \vec i \cdot \vec i = |\vec i|\,|\vec i|\cos 0^\circ = 1\nonumber\]
+                        \[ \vec i \cdot \vec j = |\vec i|\,|\vec j|\cos 90^\circ = 0\nonumber\]
+                        \[ \vec j \cdot \vec j = |\vec j|\,|\vec j|\cos 0^\circ = 1\nonumber\]
+                    </div>
+            </div>
+           
+
+            <h3>Producte escalar en components</h3>
+
+            <div class="quadre-groc ">
+                <p>Si ens donem dos vectors expressats en components respecte de la base
+                    canònica  \(\vec u =u_1 \, \vec i +  u_2\, \vec j\) i  \(\vec v =v_1 \, \vec i +  v_2\, \vec j\), el producte escalar en components s'obté de
+                </p>   
+                <DT>
+                \[
+                \vec u \cdot \vec v = u_1 \, v_1 + u_2 \, v_2 \label{eq:pescalarcomp}
+                 \tag{8}\]
+                <DD>Producte escalar en components</DD> 
+                </DT>
+                <p>es llegeix com <em>primera component per primera més segona component per segona</em>.</p>
+             </div> 
+
+           
+             <div class="quadre-ampliacio">
+                <p>Demostració:</p>
+                <p> \(\vec u \cdot \vec v = (u_1 \, \vec i +  u_2\, \vec j) \cdot (v_1 \, \vec i +  v_2\, \vec j)=\)</p>
+                <p>Aplicam la propietat distributiva:</p>
+                <p> \( = u_1 \, v_1 \stackrel{=1}{\vec i \cdot \vec i}  + u_1\, v_2\, \stackrel{=0}{\cancel{\vec i \cdot \vec j}} +u_2 \, v_1 \stackrel{=0}{\cancel{\vec i \cdot \vec j}}  + u_2\, v_2\, \stackrel{=1}{\vec j \cdot \vec j} =\)</p>
+                <p>substituint els valors dels productes escalars dels vectors  \(\vec i\),  \(\vec j\) s'obté el resultat final</p>
+                <p> \( = u_1 \, v_1 + u_2\, v_2\)</p>
+             </div>
+
+             <div class="h5p" id="Video 7.02 BAT_MAT1" yt-id="LBz-TrTqCDc" title="Producte escalar de vectors per components"></div>
+
+
+            <div class="resolt" data-closable="true">
+                    <div class="formulacio">
+                       <p>Calcula els productes escalars i indica quines dels següents parelles de vectors són ortogonals.</p>
+                       <p>a)  \(\vec u (3,2)\) i  \(\vec v (1,3)\)</p>
+                       <p>b)  \(\vec u (5,-4)\) i  \(\vec v (4,5)\)</p>
+                       <p>c)  \(\vec u (1,2)\) i  \(\vec v (0,0)\)</p>
+                       <p>d)  \(\vec u (1,2)\) i  \(\vec v (-2,3)\)</p>
+                    </div> 
+                    <div class="resolucio">
+                        
+                        <p>La condició que dos vectors siguin perpendiculars és que el seu 
+                            producte escalar sigui igual a zero
+                        </p> 
+                        <p>a)  \((3,2)\cdot (1,3) =3+6=9\) no són ortogonals. </p>
+                        <p>b)  \((5,-4)\cdot (4,5) =20-20=0\) són ortogonals. </p>
+                        <p>c)  \((1,2)\cdot (0,0) = 0\) no té sentit demanar-se per l'angle ja que el segon vector és el vector nul. </p>
+                        <p>d)  \((1,2)\cdot (-2,3) =-2+6=4\) no són ortogonals.</p>
+                    </div>
+            </div>
+
+            <div class="resolt" data-audible="batmat1/res5.7">
+                    <div class="formulacio">
+                    <p>Què ha de valer  \(k\) perquè els vectors  \(\vec u(18,-6)\) i  \(\vec v(k,4)\) siguin perpendiculars?</p>
+                    </div>
+                    <div class="resolucio">
+                        <p>La condició que dos vectors siguin perpendiculars és que el seu 
+                            producte escalar sigui igual a zero.
+                        </p>
+                        <p data-laser="13,14,sw|49,50,se">  \((18,-6)\cdot (k,4) =18 k -24=0\)  \(\Rightarrow\)  \(k = \dfrac{24}{18} = \dfrac{4}{3}\). </p>                        
+                    </div>
+            </div>
+
+            <div class="resolt" data-closable="true"  data-audible="batmat1/res6.7">
+                    <div class="formulacio"> 
+                    <p>Donats els vectors  \(\vec u(2,3)\),  \(\vec v(-3,1)\),  \(\vec w(5,2)\), calcula:</p>
+                    <p>a)  \((3\vec u + 2\vec v) \cdot \vec w\)</p>
+                    <p>b)  \(\vec u\cdot \vec w - \vec v \cdot \vec w\) </p>
+                    <p>c)  \((\vec u \cdot \vec v)\, \vec w\)</p>
+                    <p>d)  \( \vec u \,(\vec v \cdot \vec v)\)</p>
+                    <p>Indica en cada cas si el resultat de l'operació és un vector o un escalar.</p>
+                    </div>
+                    <div class="resolucio">
+                         <p>a)  \((3\vec u + 2\vec v) \cdot \vec w \)= 
+                                \(\left(3(2,3) + 2(-3,1)\right) \cdot (5,2) \)=
+                                \(\left((6,9) + (-6,2)\right) \cdot (5,2) \)=
+                                \(\left(0, 11\right) \cdot (5,2) = 22\) és un escalar </p>                   
+                         <br>
+                         <p data-from="41">b)  \(\vec u\cdot \vec w - \vec v \cdot \vec w \)= 
+                              \((2,3)\cdot (5,2) - (-3,1) \cdot (5,2)\) = 
+                              \( 10 +6 - (-15+2) = 16 - (-13) = 29\) és un escalar </p>                    
+                         <br>
+                         <p data-from="55">c)  \((\vec u \cdot \vec v)\, \vec w \) 
+                             = \( \left( (2,3) \cdot (-3,1) \right)\, (5,2)\) =
+                               \( -3\, (5,2) = (-15, -6)\) és un vector</p>                    
+                         <br>
+                         <p data-from="84">d)  \(\vec u \,(\vec v \cdot \vec v) \) = 
+                                \((2,3) \, ((-3,1) \cdot (-3,1))\) = 
+                                \( (2,3) \, 10 = (20, 30)\) es tracta d'un vector. </p>                  
+                         <br>
+                    </div>
+            </div>
+
+            <div class="quadre-groc ">
+                <p><b style="color:darkred">Com trobar vectors perpendiculars a un donat?</b></p>
+                <p>Donat un vector  \(\vec v = (v_1, v_2)\) existeixen infinits vectors perpendiculars a ell.</p>
+                <p>Un d'aquests vectors en concret es troba girant l'ordre de les components i canviant un dels signes, per exemple
+                         \(\vec v_\perp = (-v_2, v_1)\).
+                </p>
+                <p>La resta de vectors seran múltiples d'aquest;  \(\lambda (-v_2, v_1)\).</p>
+            </div>
+
+            <div class="proposats onecol pw-mq-group">
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Considera els vectors  \(\vec u = (2,1)\),  \(\vec v = (1,-2)\),  \(\vec w = (-5,-2)\).
+                        Calculau les següents operacions, indicant si el resultat final és un vector o un escalar.
+                        </p>
+                        <p data-mq="mchoice" data-mq-ans="1" data-mq-symbols="Vector;Escalar;No es pot fer" data-mq-formulation="    ">a)  \((\vec u + \vec v)\cdot \vec w\) </p>
+                        <p data-mq="mchoice" data-mq-ans="0" data-mq-symbols="Vector;Escalar;No es pot fer" data-mq-formulation="   ">b)  \((\vec u \cdot \vec v) \, \vec w\) </p>
+                        <p data-mq="mchoice" data-mq-ans="2" data-mq-symbols="Vector;Escalar;No es pot fer" data-mq-formulation="   ">c)  \(\vec u + \vec v \cdot \vec w\) </p>
+                    </div>
+                    <div class="resolucio">
+                        <p>a)  \((\vec u + \vec v)\cdot \vec w =\)  \(((2,1) + (1,-2)) \cdot (-5,-2)=(3,-1)\cdot (-5,-2)\)  \(=-15+2=-13\).
+                            El resultat és un escalar.
+                        </p>
+                        <p><br></p>
+                        <p>b)  \((\vec u \cdot \vec v) \, \vec w  = (\vec (2,1) \cdot (1,-2)) \, (-5,-2)= 0 (-5,-2)= (0,0)\).
+                            El resultat és el vector nul. </p>
+                        <p><br></p>
+                        <p>c)  \(\vec u + \vec v \cdot \vec w\). Aquesta operació no té sentit. No es pot sumar a un vector un escalar.</p>
+ 
+                    </div>
+                </div>
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Calcula  \(m\) perquè els vectors  \(\vec u = (6,m)\),  \(\vec v = (2,3)\) siguin perpendiculars.
+                        </p> 
+                        <p data-mq="basic" data-mq-ans="-4" data-mq-formulation="\(m=\)"></p>
+                    </div> 
+                    <div class="resolucio">
+                         <p>Dos vectors són perpendiculars si el seu producte escalar és igual a zero:</p>
+                         <p>  \(\vec u  \cdot \vec v = (6,m)\cdot  (2,3)= 12 + 3m = 0\)</p>
+                         <p>Si resolem l'equació trobam que  \(m=-4\).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Mòdul i angle entre vectors">
+            <h3>Mòdul d'un vector</h3>
+            <div class="quadre-groc ">
+                <p>El mòdul d'un vector de components  \(\vec v (v_1, v_2)\) s'obté de</p>
+                <DT>
+                \[ |\vec v| = \sqrt{v_1^2 + v_2^2 } \label{eq:modul} \tag{9}\]
+                <DD>Mòdul d'un vector</DD>
+                </DT>
+                <p>A partir de la definició de producte escalar (6), 
+                    es compleix que  \(|\vec v|=\sqrt{\vec v \cdot \vec v}\)</p>
+            </div>
+            <DT>            
+            <p>Un vector és <b>unitari</b> si té mòdul 1. Per aconseguir que un vector sigui
+            unitari basta dividir el vector entre el seu mòdul. Ho indicam de la següent forma
+             \(\hat{\vec u}=\dfrac{\vec u}{|\vec u|}\).</p>
+            <DD>Vector unitari. Normalitzar un vector</DD>
+            </DT>
+            
+            
+            <h3>Angle entre dos vectors</h3>
+            <div class="quadre-groc ">
+                   
+                    <p>L'angle que formen dos vectors amb components  \(\vec u (u_1, u_2)\) i  \(\vec v (v_1, v_2)\) 
+                        s'obté a partir de les fórmules (6) i (8)
+                    </p>
+                    <DT>
+                    \[  \alpha = \arccos \dfrac{\vec u \cdot \vec v}{|\vec u|\, |\vec v|} =
+                    \arccos  \dfrac{u_1 v_1 + u_2 v_2}{\sqrt{u_1^2 + u_2^2} \sqrt{v_1^2 + v_2^2}}
+                     \label{eq:angle}  \tag{10}\]
+                     <DD>Angle entre dos vectors</DD>
+                    </DT>
+                    <center>
+                        <img src="angle_vectors.png" style="width:160px;" 
+                        title="Angle entre vectors. Elaboració pròpia."> 
+                    </center>
+                     <p>Dos vectors paral·lels que tenen igual sentit formen un angle de  \(0^\circ\), mentre que
+                         si tenen sentit oposat formen un angle de  \(180^\circ\).
+                     </p>
+             </div>
+
+             <div class="h5p" id="Video 7.03 BAT_MAT1" yt-id="lO_XyatSQrc" title="Aplicacions del producte escalar"></div>
+
+             
+                
+             <div class="resolt" data-closable="true"  data-audible="batmat1/res7.7">
+                    <div class="formulacio">
+                        <p>
+                        Calcula dos vector perpendiculars al vector  \(\vec v (4,-3)\) que siguin unitaris.
+                        </p>
+                    </div>
+                    <div class="resolucio">
+                        <p data-from="10">Un possible vector perpendicular és  \((3,4)\) perquè  \((3,4)\cdot (4,-3)=12-12=0\).</p>
+                        <p><span data-from="48">Calculem el seu mòdul  \(|(3,4)| = \sqrt{3^2+4^2}=\sqrt{25}=5\).</span>
+                            <span data-from="64">Per aconseguir un vector
+                            unitari, dividim el vector entre el seu mòdul  \(\dfrac{1}{5}(3,4)=(\frac{3}{5}, \frac{4}{5})\).
+                            L'altra resposta és l'oposat d'aquest vector  \((-\frac{3}{5}, -\frac{4}{5})\).</span> 
+                        </p>
+                    </div>
+            </div>
+            <div class="resolt" data-closable="true"  data-audible="batmat1/res8.7">
+                    <div class="formulacio">
+                        <p>
+                       Calcula l'angle que formen els vectors  \(\vec u(2,5)\) i  \(\vec v(4,-3)\).
+                        </p>
+                    </div>
+                    <div class="resolucio">
+                        <p data-from="15">
+                            Calculam el producte escalar  \(\vec u \cdot \vec v = (2,5)\cdot (4,-3)=8-15=-7\)
+                        </p>
+                        <p data-from="30">
+                            Calculam els seus mòduls  \(|\vec u|= \sqrt{2^2+5^2}= \sqrt{29}\), 
+                             \(|\vec v|= \sqrt{4^2+(-3)^2}= \sqrt{25}=5\)
+                        </p>
+                        <div data-from="63">
+                        <p>Calculam l'angle</p>
+                        \[
+                           \alpha = \arccos \dfrac{-7}{5\sqrt{29}} = \arccos -0,259 \approx 105,1^\circ \nonumber
+                        \]
+                        </div>
+                    </div>
+            </div>
+ 
+
+            <div class="proposats onecol pw-mq-group">
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Calculau el mòdul del vector  \(\vec a = (6, -8)\)</p>
+                        <p data-mq="simple" data-mq-ans="10" data-mq-formulation="\(|\vec a|=\)"></p>
+                    </div>
+                    <div class="resolucio">
+                        <p>  \(|\vec a| = \sqrt{6^2 + (-8)^2}=\sqrt{100}=10\)</p>
+                    </div>
+                </div>
+                <div class="exercici-proposat">
+                    <div class="formulacio">
+                        <p>Calculau l'angle que formen els vectors  \(\vec a = (6, -8)\) i  \(\vec b = (1,1)\)</p>
+                        <p data-mq="simple" data-mq-ans="98.13" data-mq-formulation="\(\alpha=\)" data-mq-rules='{"comma_as_decimal":true,"precision":0.5}'></p>
+                    </div>
+                    <div class="resolucio">
+                        <p>El cosinus de l'angle és igual a  \(\cos \alpha = \dfrac{\vec a \cdot \vec b}{|\vec a| \,|\vec b|}\)</p>
+                       <p> \(\vec a \cdot \vec b=(6, -8)\cdot (1,1)=6-8 = -2\)</p>
+                        <p>  \(|\vec a| = \sqrt{6^2 + (-8)^2}=\sqrt{100}=10\)</p>
+                        <p>  \(|\vec b| = \sqrt{1^2+1^2}=\sqrt{2}\)</p>
+                        <p>Llavors l'angle serà  \(\alpha = \arccos \dfrac{-2}{10\sqrt{2}} = 98.13^\circ\)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quadre-tasca">
+                    <h4>Microtasca d'aprenentatge BAT&#95;MAT1 6.1</h4>
+                    <p>Et recomano que intentis realitzar aquesta tasca abans de seguir amb els continguts del lliurament.</p>
+                    <p>Fins ara hem après a manejar vectors. En la propera secció veurem la seva aplicació a l'estudi de la recta en el pla.
+                    </p>
+            </div>
+            <br><br>
+
+        </section>
+
+    </section>
+
+    <section id="La recta en el pla">
+
+        <p>Existeixen dues formes (equivalents) d'expressar una recta:</p>
+        <ul>
+            <li>Per dos punts  \(A\) i  \(B\) hi passa una única recta</li>
+            <li>Proporcionat un punt  \(A\) i un vector director  \(\vec d\)</li>
+        </ul>
+        <p>El primer cas es redueix al segon perquè sempre podem prendre com a vector
+             \(\vec d = \overrightarrow{AB}\). Aquest vector es coneix com <b>vector director</b> de la recta.
+        </p>
+
+        <p>En aquest apartat aprendrem a expressar l'equació de la recta en diferents formes equivalents
+            entre si. 
+            Partirem de l'equació vectorial de la qual es poden deduir totes les altres.
+        </p>
+
+        <h3>Equació vectorial</h3>
+
+        <p>Volem trobar l'equació de la recta que passa pel punt  \(P\) i té com a vector director  \(\vec d\). 
+            Considerem un punt qualsevol  \(X\) que es troba damunt la recta. S'ha de complir que el vector
+             \(\overrightarrow{PX}\) ha d'ésser un múltiple del vector director  \(\overrightarrow{PX} = \lambda \vec d\).
+        </p>
+        <center>
+                <img src="rectavec.png" style="width:300px" title="Construcció de l'equació vectorial. Elaboració pròpia."/>
+        </center>
+
+        <p>De la suma gràfica de vectors de la figura, es compleix que  \(\vec{OX} = \vec{OP} + \lambda \vec d\). Aquesta
+            equació es coneix com l'equació vectorial de la recta. 
+            Si expressam els vectors en components  \(P=(P_1,P_2)\) i  \(\vec d(d_1, d_2)\) trobam</p>
+
+        <div class="quadre-groc">            
+            <p>Equació vectorial de la recta:</p>
+            <DT>
+            <p> \((x,y) = (P_1, P_2) + \lambda (d_1,d_2)\)</p>
+            <DD>Equació vectorial de la recta</DD>
+            </DT>
+            <p>Obtenim punts donant valors al paràmetre  \(\lambda\).</p>
+        </div>
+
+
+        <div class="resolt"  data-audible="batmat1/res9.7">
+                <div class="formulacio">
+                    <p>
+                  Escriu l'equació vectorial de la recta que passa pels punts  \(A=(3,1)\) i  \(B=(1,4)\).
+                  Troba tres punts més d'aquesta recta.
+                    </p>
+                </div>
+                <div class="resolucio">
+                    <p>
+                        Calculam el vector director de la recta 
+                         \(\vec d = \overrightarrow{AB} = B - A = (1,4)-(3,1)=(-2,3)\)
+                        i triam un punt, per exemple,  \(A\).
+                    </p>                    
+                    <p> \((x,y) = (3, 1) + \lambda (-2, 3)\)</p>
+                    <p data-from="62">Podem trobar més punts donant valors al paràmetre: Per a  \(\lambda=1\) trobam 
+                        el punt  \((x,y)=(1,4)\),  \(\lambda=-1\) tenim  \((x,y)=(5,-2)\) i  \(\lambda=3\) 
+                         \((x,y)=(-3,10)\), etc.
+                    </p>
+                </div>
+        </div>
+
+
+        
+
+        <h3>Equacions paramètriques</h3>
+ 
+        <p>De l'equació vectorial igualam les components  \(x\) i  \(y\) i obtenim</p>
+
+        <div class="quadre-groc">
+                <p>Equacions paramètriques:</p>
+                <DT>
+                <p> \(\left\{ \begin{array}{l} x = P_1 + \lambda d_1 \\ y = P_2 + \lambda d_2  \end{array} \right.\)</p>
+                <DD>Equacions paramètriques de la recta</DD>
+                </DT>
+                <p>Obtenim punts donant valors al paràmetre  \(\lambda\).</p>
+        </div>
+        <p>Cal notar que les components del vector director són els coeficients 
+            que acompanyen el paràmetre, mentre que els coeficients lliures
+        de paràmetre són les coordenades del punt.</p>
+        <p>Així doncs, la recta  \(\left\{ \begin{array}{l} x =  2\lambda  \\ y = 3 - \lambda \end{array} \right.\) 
+            tindrà com a punt  \(P=(0,3)\) i 
+            vector director  \(\vec d (2,-1)\).</p>
+
+
+            <div class="resolt"  data-audible="batmat1/res10.7">
+                    <div class="formulacio">
+                        <p>
+                      Escriu les equacions paramètriques de la recta que passa pels punts
+                        \(A=(3,1)\) i  \(B=(1,4)\).                      
+                        </p>
+                    </div>
+                    <div class="resolucio">
+                        <p>
+                          Partim de l'equació vectorial obtinguda a l'exemple anterior
+                            \((x,y) = (3, 1) + \lambda (-2, 3)\) operam el membre de la dreta
+                        </p>   
+                        <p data-from="17">   \((x,y) = (3-2\lambda, 1+3\lambda)\) i igualam component a component</p>
+
+                        <div data-from="40">
+                         \(\left\{ \begin{array}{l} x = 3 - 2\lambda  \\
+                                y = 1 + 3 \lambda \end{array} \right.\)
+                    
+                                <p>Igual que abans donant punts a  \(\lambda\) trobarem més punts de la recta.</p>
+                        </div>
+                    </div>
+            </div>
+
+
+
+        <h3>Equació contínua</h3>
+
+        <p>L'equació contínua s'obté d'eliminar el paràmetre  \(\lambda\) de les equacions paramètriques.</p>
+
+        <div class="quadre-groc">
+            <p>Forma de l'equació contínua</p>
+            <DT>
+             \(\dfrac{x - P_1}{d_1} = \dfrac{y-P_2}{d_2}\)
+            <DD>Equació contínua de la recta</DD>
+            </DT>
+        </div>
+
+        <p>Noteu que en forma contínua, les components del vector director apareixen en els 
+            denominadors i el punt en els numeradors canviat de signe.
+        </p>
+
+        <div class="resolt"  data-audible="batmat1/res11.7">
+                <div class="formulacio">
+                    <p>
+                  Passa la recta  \(\left\{ \begin{array}{l} x = 3 - 2\lambda  \\
+                  y = 1 + 3 \lambda \end{array} \right.\)  a forma contínua.            
+                    </p>
+                </div>
+                <div class="resolucio">
+                    <p>
+                      Aïllam  \(\lambda\) de cada equació.  \(\lambda = \dfrac{x-3}{-2}\) i 
+                       \(\lambda = \dfrac{y-1}{3}\)
+                    </p>   
+                    <p>Si igualam les expressions de  \(\lambda\) obtenim l'equació contínua</p>
+                     \(\dfrac{x-3}{-2} = \dfrac{y-1}{3}\)                 
+                </div>
+        </div>
+        <br>
+
+        <h3>Equació punt-pendent</h3>
+
+        <p>Com el mateix nom indica, l'equació punt-pendent s'obté a partir d'un punt de la recta i el
+            seu pendent. El pendent de la recta informa de la seva inclinació i està determinat pel vector director
+            <DT> \(m = \dfrac{d_2}{d_1}\)<DD>relació entre vector i pendent</DD></DT>.
+        </p>
+        <div class="quadre-groc ">
+            <p>L'equació punt-pendent té la forma</p>
+            <DT>
+            \[
+                y-P_1 = m \cdot (x - P_2) \label{eq:puntpendent}
+             \tag{11}\]
+            <DD>Equació punt-pendent de la recta</DD>
+            </DT>
+        </div>
+        <p>L'equació punt-pendent es pot obtenir a partir de l'equació contínua i passant un denominador
+            multiplicant a l'altre membre:
+                 \(\dfrac{x-3}{-2} = \dfrac{y-1}{3}\)   \(\Rightarrow\)  \(y-1 = -\frac{3}{2}(x-3)\) de la qual
+                el pendent és  \(m=-\dfrac{3}{2}\) i el punt  \(P=(3,1)\).
+        </p>
+        <br>
+
+        <h3>Equació implícita o general</h3>
+
+        <div class="quadre-groc ">
+        <DT>
+        <p>L'equació general té la forma  \(Ax+By+C=0\) on els coeficients  \(A, B\) són les
+            components del vector normal  \(\vec n =(A, B)\), és a dir, d'un vector perpendicular a la recta. 
+            Si volguéssim un vector director hauríem de prendre   \(\vec d =(-B, A)\)</p>
+        <DD>Equació general de la recta</DD>
+        </DT>
+        </div>
+
+        <p>L'equació general s'obté de la contínua efectuant els productes en creu i passant tots
+            els termes al membre de l'esquerre.
+        </p>
+ 
+        <p>Per trobar més punts, cal donar valors a una de les variables, per exemple  \(x\), i aïllar l'altra.
+        </p>
+
+        <div class="resolt"  data-audible="batmat1/res12.7">
+                <div class="formulacio">
+                    <p>
+                      Troba l'equació general de la recta  \(\dfrac{x-3}{-2} = \dfrac{y-1}{3}\).
+                    </p>
+                </div>
+                <div class="resolucio"> 
+                    <p>Multiplicam en creu les fraccions    \(3 (x-3) = -2(y-1)\)  \(\Rightarrow\) 
+                         \(3x-9 = -2y+2\)  \(\Rightarrow\)  \(3x+2y-11=0\).</p>
+                    <p>Podem trobar més punts donant valors a  \(x\) i aïllant la  \(y\). Per exemple
+                        si  \(x=1\),  \(y=4\). També es pot fer a l'inrevés, donam un valor a  \(y=0\) i 
+                        aïllam la  \(x=\dfrac{11}{3}\).
+                    </p>
+                </div>
+        </div>
+
+        <br>
+        <h3>Equació explícita</h3>
+
+        <div class="quadre-groc ">
+                <p>L'equació explícita de la recta s'obté aïllant la variable  \(y\) i
+                     té la forma </p>
+                     <DT>
+                    \[ y =m x + n \label{eq:implicit}  \tag{12}\]
+                    <DD>Equació explícita de la recta</DD>
+                    </DT>
+                <p>on  \(m\) s'anomena el pendent i  \(n\) l'ordenada a l'origen.
+                    Com hem dit, el pendent s'obté de  \(m = \dfrac{d_2}{d_1}\) i  \(n\) indica el punt de tall de 
+                la recta amb l'eix OY.</p>
+        </div>
+        
+        <div class="resolt">
+                <div class="formulacio">
+                    <p>
+                  Donada la recta  \(y=\dfrac{1}{3}x-5\), trobau-ne un punt i un vector director. Expresseu-la
+                  de totes les altres formes possibles.           
+                    </p>
+                </div>
+                <div class="resolucio">
+                    <p>
+                     Ens donen l'equació en forma explícita de la qual, per comparació amb (12), 
+                     deduïm  \(m=\dfrac{1}{3}\), llavors un vector director és  \(\vec d (3, 1)\). Si donam el valor 
+                      \(x=0\) trobam  \(y=-5\), per tant un punt de la recta és  \(P=(0,-5)\).                     
+                    </p>   
+                    <p>Les altres formes s'obtenen substituint les dades dins les seves equacions característiques</p>
+                    <ul>
+                        <li><b>Vectorial:</b>  \((x,y)=(0,-5) + t (3, 1)\)</li>
+                        <li><b>Paramètriques:</b>  \(\left\{ \begin{array}{l} x = 3 t  \\
+                                y = -5 + t \end{array} \right.\) </li>
+                        <li><b>Contínua:</b>  \(\dfrac{x-0}{3}=\dfrac{y+5}{1}\) </li>
+                        <li><b>Punt-pendent:</b>  \(y+5 = \dfrac{1}{3}(x+0)\)</li>
+                        <li><b>General:</b>  \(-x+3y+15=0\) </li> 
+                    </ul>
+                    <p></p>             
+                </div>
+        </div>
+
+
+        <div class="h5p" id="Video 7.04 BAT_MAT1" yt-id="TK3-oeJrffE" title="Equacions de la recta en el pla"></div>
+
+
+        <div class="proposats onecol pw-mq-group">
+            
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Calcula l'equació de la recta que passa pel punt  \(P=(2,-1)\) i que té 
+                        la direcció del vector  \(\vec d=(3,4)\) en totes les formes possibles.
+                    </p>
+                </div>
+                <div class="resolucio">
+                    <ul>
+                        <li>Equació vectorial:  \((x,y)=(2,-1) + t\, (3,4)\)</li>
+                        <li>Equacions paramètriques:  \(\left\{\begin{array}{l} x= 2+3t \\ y=-1+4t \end{array}\right.\)</li>
+                        <li>Equació contínua:  \(\dfrac{x-2}{3} = \dfrac{y+1}{4}\)</li>
+                        <li>Equació punt-pendent:  \(y+1 = \dfrac{4}{3}(x-2)\) </li>
+                        <li>Equació general:  \(4x-3y-11=0\)</li>
+                        <li>Equació explícita:  \(y=\frac{4}{3}x-\frac{11}{3}\)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Donada la recta  \(2x-y+7=0\), es demana:</p>
+                    <p>a) Trobar 3 punts de la recta.</p>
+                    <div>
+                        <span data-mq="cloze" data-mq-ini="(?,?)" data-mq-ans="check==0" data-mq-symbols="check:=2*ua_0-ua_1+7" data-mq-formulation="A="> </span>
+                        <span data-mq="cloze" data-mq-ini="(?,?)" data-mq-ans="check==0" data-mq-symbols="check:=2*ua_0-ua_1+7" data-mq-formulation="B="> </span>
+                        <span data-mq="cloze" data-mq-ini="(?,?)" data-mq-ans="check==0" data-mq-symbols="check:=2*ua_0-ua_1+7" data-mq-formulation="C="> </span>
+                    </div>
+                    <p data-mq="cloze" data-mq-ini="(?,?)" data-mq-ans="m.rank()==1" data-mq-symbols="m:=Matrix([[1,2],[ua_0,ua_1]])" data-mq-formulation="\(\vec d=\)" >
+                        b) Calcular un vector director. </p>
+
+                    <p>c) Escriure les equacions paramètriques de la mateixa recta. <em>Empra \(t\) com a paràmetre.</em></p>
+                    
+            <p data-mq="cloze" data-mq-ini="\begin{matrix} x = ? \\ y=? \end{matrix}" data-mq-ans="chk1==0 and chk2.rank()==1" 
+            data-mq-symbols="px:=ua_0.subs(t,0); py:=ua_1.subs(t,0); dx:=ua_0.subs(t,1)-px; dy:=ua_1.subs(t,1)-py; chk1:=2*px-py+7; chk2:=Matrix([[dx,dy],[1,2]])"></p>
+                       
+                </div>
+                <div class="resolucio">
+                    <p>a) Aïllam  \(y\) i trobam l'equació explícita:  \(y=2x+7\). Donam valors a  \(x\) i calculam
+                         \(y\). Obtenim, per exemple, els punts  \(A=(0,7)\),  \(B=(-1,5)\),  \(C=(1,9)\), etc.
+                    </p>
+                    <p><br></p>
+                    <p>b) Un vector director es pot obtenir de  \(\vec d = \vec{AB} = B-A=(-1,5) - (0, 7) = (-1,-2)\) o també serveix
+                         \(\vec d (1,2)\).
+                    </p>
+                    <p><br></p>
+                    <p>c) Agafant un punt (per exemple  \(A=(0,7)\)) i el vector  \(\vec d (1,2)\), podem escriure les equacions paramètriques directament:</p>
+                    <p> \(\left\{\begin{array}{l} x= 0+1t \\ y=7+2t \end{array}\right.\)</p>
+                </div>
+            </div>
+        </div>
+
+
+        <section id="Rectes horitzontals i verticals">
+        <DT>
+        <p>Les rectes horitzontals o constants tenen com a vector director  \(\vec d(1, 0)\) (o múltiples d'ell)
+            i la seva equació és de la forma  \(y=k\).
+        </p>
+        <DD>Recta horitzontal</DD>
+        </DT>
+        <DT>
+        <p>En canvi, les rectes verticals representen parets que tenen com a vector director  \(\vec d(0, 1)\) (o múltiples)
+            i la seva equació és de la forma  \(x=k\).
+        </p>
+        <DD>Recta vertical</DD>
+        </DT>
+
+        <center>
+        <img src="rectes-vh.png" style="width:300px" title="Rectes verticals i horitzontals. Elaboració pròpia."/>
+        </center>
+
+        
+        <div class="resolt">
+            <div class="formulacio">
+                <p>La fotografia següent mostra una de les façanes del palau de congresos de Palma.</p>
+                <center>
+                    <img src="congresos_palma.png" style="width:95%;latex-width:85%;" title="Palau de congresos de Palma. Elaboració pròpia a partir de  &lt;a target='_blank' href='https://www.wicona.com/es/baltics/references/espana/palacio-de-congresos-de-palma/'&gt;Wicona &lt;/a&gt;">
+                </center>
+                <p>Escriu les equacions de les rectes  \(r,s,t,q\) que hi estan representades.</p>
+            </div>
+            <div class="resolucio">
+                <p>Indentificam la recta horitzontal  \(r:\, y=4\) i les dues rectes verticals  \(t:\, x=4\) i  \(q:\, x=8\).</p>
+                <p>Queda per determinar la recta que passa pels punts  \(G=(0,6)\) i  \(E=(7,8)\). El vector director és
+                     \(\vec{GE}=E-G=(7,2)\) i el pendent  \(m=\frac{2}{7}\). L'ordenada a l'origen és precisament el punt  \(G\), i
+                    per tant,  \(n=6\). En definitiva, l'equació explícita és  \(s:\, y=\frac{2}{7}x+6\). 
+                </p>
+            </div>
+        </div>
+
+
+        <div class="html">
+            <h3>Pràctica de conversió entre tipus d'equacions</h3>
+            <div data-pygen="g2d.line_tasks.task_convert_line" data-pygen-category="g2d.lines.convert" data-pygen-celebration="confetti" data-pygen-goal="5,5,*"></div>
+            <script src="https://piworld.es/iedib/snippets/sd/confetti.min.js"></script>
+            <script src="https://piworld.es/iedib/snippets/sd/iapace.min.js"></script>
+            <script src="https://piworld.es/iedib/matheditor/matheditor.min.js"></script>    
+        </div>
+
+    </section>
+
+
+       
+      
+
+    <section id="Posició relativa de dues rectes">
+        
+        <!--------------------->
+
+
+                <p>Dues rectes en el pla poden estar situades una respecte l'altra de 3 formes diferents:</p>
+        <ul>            
+            <li>   es tallen a un punt (secants),</li> 
+          <li>  són 
+                    paral·leles o,</li> 
+            <li>  són coincidents (són la mateixa recta).</li>
+    </ul>
+
+                <p>La posició relativa es pot determinar mitjançant diverses tècniques i 
+                    la forma més ràpida dependrà
+                    de com venguin donades les equacions de les rectes.
+                   Comencem analitzant el cas a partir de punts i 
+                   vectors directors.</p>
+
+                    <h3>A partir de punts i vectors</h3>
+
+                <ul>
+                    <li><p>Si els vectors directors de les rectes són independents, aleshores les rectes són secants.</p></li>
+                    <li><p>Si els vectors directors de les rectes són dependents, aleshores cal agafar un punt  \(R\) 
+                        de la recta  \(r\) fer el següent:</p>
+                        <ul>
+                            <li>Si el punt  \(R\) no pertany a la recta  \(s\), aleshores les rectes són paral·leles.</li>
+                            <li>Si el punt  \(R\) també pertany a la recta  \(s\), aleshores són coincidents.</li>
+                        </ul>
+                        </li>
+                </ul>
+                
+
+                <div class="if-latex">
+                <table class="table-lg align-left">
+                
+                <thead>
+                    <tr><th>Secants</th><th>Paral·leles</th><th>Coincidents</th></tr>
+                </thead>
+                <tbody> 
+                    <tr> 
+                        <td><img src="rectes-secants.png" style="width:90%;latex-width:175px"/></td>
+                        <td><img src="rectes-paralleles.png" style="width:90%;latex-width:175px"/></td>
+                        <td><img src="rectes-coincidents.png" style="width:90%;latex-width:175px"/></td>
+                    </tr>
+                
+                    <tr>
+                        <td> \(\vec d_r, \vec d_s\) independents</td>  
+                        <td> \(\vec d_r, \vec d_s\) dependents</td>
+                        <td> \(\vec d_r, \vec d_s\) dependents</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> \(R\) no pertany a  \(s\)</td>
+                        <td> \(R\) pertany a  \(s\)</td>
+                    </tr>
+            
+                </tbody>
+                </table>
+                </div>
+
+                <div class="html">
+                    <!--ini taula 3x3-->
+                    <center>
+                        <table class="iedib-table" style="table-layout:fixed;border-collapse: collapse; border-spacing: 0px;width:96%"><thead><tr><th style="border: 1px solid black;background:
+                        aliceblue;text-align:center;"><span>Secants</span></th><th style="border: 1px solid black;background:
+                        aliceblue;text-align:center;"><span>Paral·leles</span></th><th style="border: 1px solid black;background:
+                        aliceblue;text-align:center;"><span>Coincidents</span></th></tr></thead><tbody><tr><td style="text-align: center; border: 1px solid black;"><div style="width:90%;">
+                        <img src="rectes-secants.png" alt="" width="225" height="187" role="presentation" class="img-responsive atto_image_button_text-bottom"></div></td><td style="text-align: center; border: 1px solid black;"><div style="width:90%;">
+                        <img src="rectes-paralleles.png" alt="" width="225" height="189" role="presentation" class="img-responsive atto_image_button_text-bottom"></div></td><td style="text-align: center; border: 1px solid black;"><div style="width:90%;">
+                        <img src="rectes-coincidents.png" alt="" width="255" height="217" role="presentation" class="img-responsive atto_image_button_text-bottom"></div></td></tr><tr><td style="text-align: center; border: 1px solid black;"><span>\(\vec d_r, \vec d_s\)&nbsp;</span>independents</td><td style="text-align: center; border: 1px solid black;"><span>\(\vec d_r, \vec d_s\)&nbsp;</span>dependents</td><td style="text-align: center; border: 1px solid black;"><span>\(\vec d_r, \vec d_s\)&nbsp;</span>dependents</td></tr><tr><td style="text-align: center; border: 1px solid black;"><br></td><td style="text-align: center; border: 1px solid black;"><span>\(R\)&nbsp;</span>no pertany a&nbsp;<span>\(s\)</span></td><td style="text-align: center; border: 1px solid black;"><span>\(R\)&nbsp;</span>pertany a&nbsp;<span>\(s\)</span></td></tr></tbody></table><p style="margin-top:5px;"><span class="iedib-caption-counter">Taula</span>: <span class="iedib-caption-title">Posició relativa de dues rectes al pla.</span></p>
+                        </center> 
+                    <!--fi taula-->
+                </div>
+            
+                
+                
+                <br>
+                <h3>A partir de les equacions generals</h3>
+
+                <p>L'altre forma de determinar la posició relativa és útil si es té les equacions
+                    en forma general. En aquest cas, cada recta tindrà una equació de la forma
+                </p> 
+
+                \[\begin{array}{l}r:\, Ax+By+C=0 \\ s:\, A'x+B'y+C'=0\end{array} \tag{13}\]
+
+                <p>La posició es fa comprovant les relacions entre coeficients</p>
+                <ul>
+                    <li>Si  \(\dfrac{A}{A'}\neq \dfrac{B}{B'}\): Les rectes són secants.</li>
+                    <li>Si  \(\dfrac{A}{A'} = \dfrac{B}{B'} \neq \dfrac{C}{C'} \): Les rectes són paral·leles.</li>
+                    <li>Si  \(\dfrac{A}{A'} = \dfrac{B}{B'} = \dfrac{C}{C'} \): Les rectes són coincidents.</li>
+                </ul>
+
+                <b></b>
+                
+                <h3>A partir de les equacions explícites</h3>
+
+                <p>Finalment, també es pot raonar en termes del pendent i l'ordenada a l'origen de l'equació explícita  \(y=mx+n\).
+                    Si dues rectes tenen diferent pendent  \(m\), per força són secants. Si tenen igual pendent però diferent
+                    ordenada a l'origen  \(n\) seran paral·leles. En altre cas, seran coincidents.
+                </p>
+
+
+                <div class="proposats pw-mq-group">
+                    <div class="exercici-proposat">
+                        <div class="formulacio">
+                            <p>Determina la posició relativa entre els parells de rectes:</p>
+                            <ul>
+                                <li><b>a)</b>  \(r:\, y=3x-2\) i  \(s:\, y=3x+1\) <span data-mq="mchoice" data-mq-ans="1" data-mq-symbols="Secants;Paral·leles;Coincidents"></span> </li>
+                                <li><b>b)</b>  \(r:\, (x,y)=(0,1)+t(-6,2)\) i  \(s:\, \dfrac{x-6}{3}=\dfrac{y+1}{-1}\) <span data-mq="mchoice" data-mq-ans="2" data-mq-symbols="Secants;Paral·leles;Coincidents"></span></li>
+                                <li><b>c)</b>  \(r:\, 3x-2y+5=0\) i  \(s:\, -6x+4y+10=0\) <span data-mq="mchoice" data-mq-ans="1" data-mq-symbols="Secants;Paral·leles;Coincidents"></span></li>
+                                <li><b>d)</b>  \(r:\, 3x-2y+5=0\) i  \(s:\, 2x+3y-5=0\) <span data-mq="mchoice" data-mq-ans="0" data-mq-symbols="Secants;Paral·leles;Coincidents"></span></li>
+                            </ul>
+                        </div>
+                        <div class="resolucio">
+                            <ul>
+                                <li><b>a)</b>  \(r:\, y=3x-2\) i  \(s:\, y=3x+1\) Són paral·leles perquè les equacions explícites tenen igual pendent però diferent ordenada a l'origen. </li>
+                                <li><b>b)</b>  \(r:\, (x,y)=(0,1)+t(-6,2)\) i  \(s:\, \dfrac{x-6}{3}=\dfrac{y+1}{-1}\) Són coincidents (la mateixa recta). Fixeu-vos que els vectors directors
+                                 \((-6,2)\) i  \((3,-1)\) són proporcionals. A més el punt  \(R=(0,1)\) també pertany a la recta  \(s\).</li>
+                                <li><b>c)</b>  \(r:\, 3x-2y+5=0\) i  \(s:\, -6x+4y+10=0\) Es tracta de dues rectes paral·leles perquè es compleix que  \(\dfrac{3}{-6}=\dfrac{-2}{4}\neq \dfrac{5}{10}\)</li>
+                                <li><b>d)</b>  \(r:\, 3x-2y+5=0\) i  \(s:\, 2x+3y-5=0\) Són dues rectes secants perquè tenen diferent pendent. Es compleix que  \(\dfrac{3}{-2}\neq \dfrac{-2}{3}\)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+        <!-------------------->
+   
+   
+    </section>
+
+    <section id="Càlcul de rectes paral·leles i perpendiculars">
+
+        <p>Dues rectes són paral·leles o perpendiculars si ho són els seus vectors 
+        directors. Recordem quines són aquestes condicions:
+        </p>
+        <div class="quadre-groc">
+            <p>Donats dos vectors  \(\vec u = (u_1, u_2)\),  \(\vec v (v_1,v_2)\)</p>
+            <ul>
+                <li><p>Són <b>paral·lels</b> si les seves components són proporcionals  \(\dfrac{u_2}{u_1}=\dfrac{v_2}{v_1}\)
+                    que és equivalent a dir que tenen <b>igual pendent</b>.</p>
+                   
+                </li>
+                <li>
+                    <p>Són <b>perpendiculars</b> si el seu producte escalar és zero  \(\vec u \cdot \vec v =0\).
+                    Un possible vector perpendicular a un donat  \((u_1, u_2)\) és  \((-u_2, u_1)\).</p>
+                </li>
+            </ul>
+        </div>
+
+        <h3>Recta paral·lela a una donada</h3>
+
+        <div class="resolt"  data-audible="batmat1/res14.7">
+                <div class="formulacio">
+                        <p>
+                                Escriu les equacions paramètriques de la recta que passa pel punt  \(P=(3,4)\) i és
+                                paral·lela a la recta  \(r:\, \dfrac{x-2}{-5} = \dfrac{y-4}{2}\).                   
+                        </p>   
+                </div>
+                <div class="resolucio">
+                    <p>La recta que ens demanen ha d'ésser paral·lela a la recta  \(r\) i per tant ha de tenir
+                        el mateix vector director. El vector director és  \(\vec d = (-5, 2)\).
+                    </p>
+                    <div data-from="51">
+                    <p>La recta que ens demanen en forma paramètrica és 
+                          \(\left\{ \begin{array}{l} x = 3 - 5\lambda  \\
+                            y = 4 + 2 \lambda \end{array} \right.\). </p>
+
+                            <center>
+                                <img src="exemple-paralleles.png" style="width:400px"/>
+                            </center>
+                        </div>
+                </div>
+        </div>
+
+        <h3>Recta perpendicular a una donada</h3>
+        <div class="resolt"  data-audible="batmat1/res15.7">
+                <div class="formulacio">
+                        <p>
+                                Escriu l'equació contínua de la recta que passa pel punt  \(P=(-3,2)\) 
+                                i és perpendicular a la recta  \(r:\, 5x-2y+3=0\).                   
+                        </p>   
+                </div>
+                <div class="resolucio">
+                    <p>La recta que ens donen està en forma general i el vector normal  \(\vec n_r = (5,-2)\) ja és
+                    un vector perpendicular a la recta. Aquest vector és el vector director de la recta
+                    que ens demanen  \(\vec d_s = \vec n_r = (5, -2)\)
+                    </p>
+                    <div data-from="50">
+                    <p>La recta que ens demanen en forma contínua és 
+                          \(\dfrac{x+3}{5} = \dfrac{y-2}{-2}\). </p>
+
+                         <center>
+                            <img src="exemple-perpendiculars0.png" style="width:400px"/>
+                        </center>
+                    </div>
+                </div>
+        </div>
+        <div class="resolt">
+                <div class="formulacio">
+                        <p>
+                              Troba l'equació vectorial de la recta que es perpendicular a la recta
+                               \(y+1 = \frac{3}{2}(x-3)\) i que talla a l'eix OY en el punt d'ordenada 4.                 
+                        </p>   
+                </div>
+                <div class="resolucio">
+                    <p>La recta que ens donen està en forma punt-pendent de la qual en deduïm el pendent
+                         \(m=\dfrac{3}{2}\) i d'aquí el vector director  \(\vec d (2,3)\). Un vector perpendicular a aquest
+                        és  \(\vec n (-3, 2)\) i serà el vector director de la recta que ens demanen.
+                    </p>
+                    <p>A més, la recta que ens demanen ha de passar pel punt de tall  \(P=(0,4)\). La seva equació vectorial és
+                          \((x,y) = (0,4) + t (-3, 2)\). </p>
+
+                    <center>
+                        <img src="exemple-perpendiculars.png" style="width:400px"/>
+                    </center>
+                </div>
+        </div>
+
+        <div class="h5p" id="Video 7.05 BAT_MAT1" yt-id="VCHth-TPOxk" title="Equacions de rectes paral·leles i perpendiculars"></div>
+
+ 
+        <div class="proposats onecol">
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Calculau l'equació <b>contínua</b> de la recta que es paral·lela a la recta  \(r: y= -2x + 1\) i
+                        que passa pel punt  \(P(2, 1)\).
+                    </p>
+                    <p data-mq="cloze" data-mq-ini="\frac{x-?}{?}=\frac{y-?}{?}" data-mq-ans="chk1.rank()==1 and chk2==0"
+                    data-mq-symbols="chk1:=Matrix([[ua_1,ua_3],[1,-2]]);chk2:=2*ua_0+ua_2-5" data-mq-formulation="s: "></p>
+                </div>
+                <div class="resolucio">
+                    <p>La recta  \(r\) ve donada en forma explícita. Per trobar el seu vector director, primer 
+                        calcularem dos punts donant valors a  \(x\) i cercant què val  \(y\). Trobam  \(A=(0,1)\) i
+                         \(B=(1,-1)\). El vector director és  \(\vec d = \vec{AB} = B-A=(1,-1)-(0,1)=(1,-2)\).
+                    </p>
+                    <p>La recta paral·lela a  \(r\), anomenada  \(s\), tindrà el mateix vector director 
+                         \(\vec d (1,-2)\) i passarà pel punt  \(P(2, 1)\). Amb aquestes dues dades ja podem escriure
+                    l'equació contínua de la recta que ens demanen. Recordeu que el punt va canviat de signe al numeradors,
+                i les components del vector director al denominador</p>
+                    <p> \(s: \, \dfrac{x-2}{1} = \dfrac{y-1}{-2}\)</p>
+
+                    <p>A continuació es mostra la situació gràfica</p>
+                    <center>
+                        <img src="proposat-situacio1.png" style="width: 500px;">
+                    </center>
+                </div>
+            </div>
+            <div class="exercici-proposat">
+                <div class="formulacio">
+                    <p>Calculau l'equació <b>general</b> de la recta que es perpendicular a la recta  \(r: \dfrac{x}{4}=\dfrac{y+2}{-3}\) i
+                        que passa pel punt  \(P=(1, -1)\).
+                    </p>
+                    <p data-mq="cloze" data-mq-ini="?=0" data-mq-ans="simplify(chk1)==0" 
+                    data-mq-symbols="lt:=(ua_0+0).subs(x,0).subs(y,0);f:=-7/lt;chk1:=(4*x-3*y-7-f*ua_0)" data-mq-formulation="\(s:\)"></p>
+                </div>
+                <div class="resolucio">
+                    <p>De l'equació contínua de la recta  \(r\) podem deduir fàcilment el seu vector director (mirant el denominadors)
+                         \(\vec d_r = (4,-3)\). És fàcil també trobar un vector perpendicular a aquest (giram les components i canviam un signe)
+                         \(\vec n_r = (3, 4)\). De fet, es comprova que són perpendiculars ja que  \(\vec d_r \cdot \vec n_r = 0\).
+                    </p>
+                    <p>La recta que ens demanen tindrà com a vector director   \(\vec d_s = \vec n_r = (3, 4)\) i passarà per  \(P=(1, -1)\). 
+                        Començarem escrivint l'equació contínua
+                    </p>
+                    \[t: \dfrac{x-1}{3}=\dfrac{y+1}{4} \nonumber\]
+                    <p>Multiplicam en creu l'equació i eliminam els parèntesis:</p>
+                    \[t: 4(x-1)=3(y+1) \rightarrow 4x-3y-7=0 \nonumber\]
+                    <p>A continuació es mostra la situació gràfica</p>
+                    <center>
+                        <img src="proposat-situacio2.png" style="width: 500px;">
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="html">
+            <h3>Necessites practicar més?</h3>
+            <div data-pygen="g2d.line_tasks.task_parallel_perpendicular" data-pygen-category="g2d.lines.parallel_perpendicular" data-pygen-celebration="confetti" data-pygen-goal="5,5,*"></div>
+            <script src="https://piworld.es/iedib/snippets/sd/confetti.min.js"></script>
+            <script src="https://piworld.es/iedib/snippets/sd/iapace.min.js"></script>
+            <script src="https://piworld.es/iedib/matheditor/matheditor.min.js"></script>    
+        </div>
+    </section>
+    </section>
+
+
+</body>
+
+</html>

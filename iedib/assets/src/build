@@ -1,0 +1,4 @@
+uglifyjs iedib-api.js --compress drop_console=true --mangle reserved=['$','require'] > ../iedib-api.js
+uglifyjs video-snip.js --compress drop_console=true --mangle reserved=['$','require'] > ../video-snip.js
+uglifyjs pbau.js --compress drop_console=true --mangle reserved=['$','require'] > ../pbau.js
+uglifyjs iedib-tooltips.js --compress drop_console=true --mangle reserved=['$','require'] > ../iedib-tooltips.js

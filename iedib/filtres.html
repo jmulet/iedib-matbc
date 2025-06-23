@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>Filtres IEDIB</title>
+    <meta charset="utf8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <style> 
+        body {
+            margin: auto;
+            max-width: 1200px;
+            background: whitesmoke;
+            min-height: 800px;
+        }
+
+        .ibfilter-main {
+            background: white;
+            padding: 50px;
+            min-height: 800px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 40%;
+        }
+
+        #ace-editor {
+          width: 100%;
+          height: 500px;
+        }
+
+        /*! ========================================================================
+        * Bootstrap Toggle: bootstrap-toggle.css v2.2.0
+        * http://www.bootstraptoggle.com
+        * ========================================================================
+        * Copyright 2014 Min Hur, The New York Times Company
+        * Licensed under MIT
+        * ======================================================================== */
+        
+        .checkbox label .toggle,
+        .checkbox-inline .toggle {
+            margin-left: -20px;
+            margin-right: 5px
+        }
+
+        .toggle {
+            position: relative;
+            overflow: hidden
+        }
+
+        .toggle input[type=checkbox] {
+            display: none
+        }
+
+        .toggle-group {
+            position: absolute;
+            width: 200%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            transition: left .35s;
+            -webkit-transition: left .35s;
+            -moz-user-select: none;
+            -webkit-user-select: none
+        }
+
+        .toggle.off .toggle-group {
+            left: -100%
+        }
+
+        .toggle-on {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 50%;
+            margin: 0;
+            border: 0;
+            border-radius: 0
+        }
+
+        .toggle-off {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            right: 0;
+            margin: 0;
+            border: 0;
+            border-radius: 0;
+            background: lightgray;
+        }
+
+        .toggle-handle {
+            position: relative;
+            margin: 0 auto;
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 100%;
+            width: 0;
+            border-width: 0 1px;
+            background: gray;
+            opacity: 0.75;
+        }
+
+        .toggle.btn {
+            min-width: 59px;
+            min-height: 34px
+        }
+
+        .toggle-on.btn {
+            padding-right: 24px
+        }
+
+        .toggle-off.btn {
+            padding-left: 24px
+        }
+
+        .toggle.btn-lg {
+            min-width: 79px;
+            min-height: 45px
+        }
+
+        .toggle-on.btn-lg {
+            padding-right: 31px
+        }
+
+        .toggle-off.btn-lg {
+            padding-left: 31px
+        }
+
+        .toggle-handle.btn-lg {
+            width: 40px
+        }
+
+        .toggle.btn-sm {
+            min-width: 50px;
+            min-height: 30px
+        }
+
+        .toggle-on.btn-sm {
+            padding-right: 20px
+        }
+
+        .toggle-off.btn-sm {
+            padding-left: 20px
+        }
+
+        .toggle.btn-xs {
+            min-width: 35px;
+            min-height: 22px
+        }
+
+        .toggle-on.btn-xs {
+            padding-right: 12px
+        }
+
+        .toggle-off.btn-xs {
+            padding-left: 12px
+        }
+    </style>
+  
+</head>
+
+<body>
+    <div class="ibfilter-main">
+        <div id="resultatDlg" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Resultat</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="msg_stats"></p>
+                        <p id="msg_copied"><b>S'ha copiat el nou codi al portaretalls!</b></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h1><span style="color:darkblue;">IB</span> Filtres</h1>
+
+        <p>
+            Basta que seleccioneu els fitres que vulgueu aplicar i aferreu el vostre codi a l'editor de sota.
+        </p>
+
+        <div id="avail_filters">
+
+            <input data-filter="filtre_desjustificador" data-size="small" type="checkbox" checked data-toggle="toggle"
+                title="Elimina els align justify del codi" style="border:1px solid gray;"> Desjustificador
+
+            <input data-filter="filtre_notranslate" data-size="small" type="checkbox" checked data-toggle="toggle"
+                title="Encapsula formules en span amb classe notranslate" style="border:1px solid gray;"> noTranslate
+        </div>
+        <hr>
+        <button class="btn btn-primary" id="btn_process"><i class="fas fa-filter"></i> Processa</button>
+        <button class="btn btn-secondary" id="btn_neteja"><i class="fas fa-trash"></i> Neteja</button>
+        <br>
+        <br>
+
+
+        <h5>Aferreu el codi HTML que voleu processar:</h5>
+        <div style="position:relative">
+            <div id="ace-editor"></div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <div class="footer">
+        <small style="color: gray;">By Josep Mulet (2022) version 2.0</small>
+    </div>
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.11.1/ace.js"
+    integrity="sha512-Xj+aDEioSoftmz378MJZFfIq6vbvt7Y3VxsRyEfMX/UtLWjgVEMT1ICljIwddIMhgVugDx+tn44hUYsiZ63z6Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+-->
+<script type="text/javascript" src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+
+
+<script>
+    require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@latest/min/vs' } });
+
+    // Before loading vs/editor/editor.main, define a global MonacoEnvironment that overwrites
+    // the default worker url location (used when creating WebWorkers). The problem here is that
+    // HTML5 does not allow cross-domain web workers, so we need to proxy the instantiation of
+    // a web worker through a same-domain script
+    window.MonacoEnvironment = {
+        getWorkerUrl: function (workerId, label) {
+            return `data:text/javascript;charset=utf-8,${encodeURIComponent(`
+            self.MonacoEnvironment = {
+                baseUrl: 'https://unpkg.com/monaco-editor@latest/min/'
+            };
+            importScripts('https://unpkg.com/monaco-editor@latest/min/vs/base/worker/workerMain.js');`
+            )}`;
+        }
+    };
+
+     
+
+    var init = function (editor) {
+        var inlineRegex2 = /\\\(((?:.|\n)+?)\\\)/mgi;
+        var displayRegex2 = /\\\[((?:.|\n)+?)\\\]/mgi;
+        var divDisplaynotranslateRegex = /<\s*div\s+class=\"notranslate\"\s*>(\s*\\\[((?:.|\n)+?)\\\]\s*)<\/div>/mgi;
+        var spanInlinenotranslateRegex = /<\s*span\s+class=\"notranslate\"\s*>(\s*\\\(((?:.|\n)+?)\\\)\s*)<\/span>/mgi;
+        var verifiedRegex = /<!--notranslate verified (.*?)-->/mgi;
+
+        var $msg_stats = $("#msg_stats");
+        var $msg_copied = $("#msg_copied");
+
+        var randomkey = function () {
+            return Math.random().toString(32).substring(2);
+        };
+
+        /*
+        // Fallback on ace editor instead - same interface
+        var editor = ace.edit("ace-editor");
+        editor.setTheme("ace/theme/xcode");
+        editor.session.setMode("ace/mode/html");
+        editor.focus();
+        */
+
+        var $scope = {};
+
+        $scope.copyToClipboard = function (text) {
+            if (!navigator || !navigator.clipboard) {
+                $scope.fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function () {
+                console.log('Async: Copying to clipboard was successful!');
+            }, function (err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        };
+
+        $scope.fallbackCopyTextToClipboard = function (text) {
+
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Fallback: Copying text command was ' + msg);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textArea);
+        };
+
+        // Area of filters
+
+        $scope.filtre_desjustificador = function (text) {
+            var changed = false;
+            var found1 = text.match(/ style\s*=\s*"\s*text-align:\s*justify\s*;?\s*"/gi) != null;
+            var found2 = text.indexOf('align="justify"') > 0;
+            var msg = "S'ha aplicat el filtre desjustificador.";
+            var out = text;
+            if (found1 || found2) {
+                msg += " S'han corregit casos.";
+                out = text.replace(/ style\s*=\s*"\s*text-align:\s*justify\s*;?\s*"/gi, "");
+                out = out.replace(/ align=\"justify\"/gi, "");
+                changed = true;
+            } else {
+                msg += " No s'han trobat casos.";
+            }
+            console.log("Filter> unjustify applied.");
+            return [out, msg, changed];
+        };
+
+        var inlineRegex2 = /\\\(((?:.|\n)+?)\\\)/mgi;
+        var displayRegex2 = /\\\[((?:.|\n)+?)\\\]/mgi;
+        var divDisplaynotranslateRegex = /<\s*div\s+class\s*=\s*\"\s*notranslate\s*\"\s*>(\s*\\\[((?:.|\n)+?)\\\]\s*)<\/\s*div\s*>/mgi;
+        var spanInlinenotranslateRegex = /<\s*span\s+class\s*=\s*\"\s*notranslate\s*\"\s*>(\s*\\\(((?:.|\n)+?)\\\)\s*)<\/\s*span\s*>/mgi;
+        var verifiedRegex = /<!--filtre notranslate aplicat (.*?)-->/mgi;
+
+
+        $scope.filtre_notranslate = function (text) {
+            var randomkey = function () {
+                return Math.random().toString(32).substring(2);
+            };
+            var formulesOk = 0;
+            var formulesPendents = 0;
+            var msg = "";
+            // Detecta les fòrmules que ja estan arreglades
+            var mapaFormulas = {};
+            var code = text.replace(divDisplaynotranslateRegex, function ($0, $1, $2, $3) {
+                var key = randomkey() + formulesOk;
+                mapaFormulas[key] = $0;
+                formulesOk++;
+                return " [[[" + key + "]]] ";
+            });
+            code = code.replace(spanInlinenotranslateRegex, function ($0, $1, $2, $3) {
+                var key = randomkey() + formulesOk;
+                mapaFormulas[key] = $0;
+                formulesOk++;
+                return " [[[" + key + "]]] ";
+            });
+            // Now replace all formula between span notranslate to avoid google translation problems
+            code = code.replace(inlineRegex2, function ($0, $1, $2, $3) {
+                formulesPendents++;
+                return "<span class=\"notranslate\"> \\(" + $1 + "\\)</span>";
+            });
+            code = code.replace(displayRegex2, function ($0, $1, $2, $3) {
+                formulesPendents++;
+                return " <div class=\"notranslate\"> \\[" + $1 + "\\] </div>";
+            });
+            // Ara restaura les fòrmules que ja havien estat processades
+            var claus = Object.keys(mapaFormulas);
+            for (var i = 0; i < claus.length; i++) {
+                var key = claus[i];
+                code = code.replace("[[[" + key + "]]]", mapaFormulas[key]);
+            }
+            var total = formulesPendents + formulesOk;
+            msg = "S'han detectat " + total + " fórmules i s'han corregit " + formulesPendents;
+            console.log("filter> noTranslate done!");
+            return [code, msg, formulesPendents > 0];
+        };
+
+        $scope.neteja = function () {
+            $scope.codi = "";
+            editor.setValue("");
+            editor.focus();
+        }
+
+
+        $scope.neteja();
+
+        $scope.applySelectedFilters = function () {
+            var text = editor.getValue();
+
+            //Apply chain of filters
+            var nf = 0;
+            var msg = "";
+            var changesInCode = false;
+
+            $("#avail_filters input").each(function (i, e) {
+                var $e = $(e);
+                if ($e.prop("checked")) {
+                    nf += 1;
+                    var filtername = $e.attr("data-filter");
+                    var filterFunc = $scope[filtername];
+                    var res = filterFunc(text);
+                    text = res[0];
+                    msg += '<p><b>' + filtername + '</b>:</p><p>' + res[1] + "</p><br>";
+                    changesInCode = changesInCode || res[2];
+                }
+            });
+
+            if (nf == 0) {
+                msg = "No s'ha seleccionat cap filtre";
+                changesInCode = false;
+            }
+
+            if (changesInCode) {
+                console.log("> Begin copy to clipboard");
+                $scope.copyToClipboard(text);
+                //update editor
+                editor.setValue(text);
+            }
+            $msg_copied.css("display", changesInCode ? "" : "none");
+            $msg_stats.html(msg);
+
+
+            $('#resultatDlg').modal('show');
+        };
+
+
+        // Bind actions
+        $("#btn_process").on("click", function (evt) {
+            $scope.applySelectedFilters();
+        });
+
+        $("#btn_neteja").on("click", function (evt) {
+            $scope.neteja();
+        });
+
+
+       
+        $('input[data-toggle="toggle"]').bootstrapToggle();
+
+    };
+
+    require(["vs/editor/editor.main"], function () {
+        var editor = monaco.editor.create(document.querySelector('#ace-editor'), {
+            value: '',
+            language: 'text/html',
+            theme: 'vs',
+        });
+        $(function () {
+            init(editor);
+        });
+    });
+</script>
+
+</html>

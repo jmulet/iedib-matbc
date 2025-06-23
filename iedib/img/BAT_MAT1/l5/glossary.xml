@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GLOSSARY>
+  <INFO>
+    <NAME>FORMULARI BAT_MAT1 5</NAME>
+    <INTRO>&lt;p&gt;Equacions importants del tema Coneixes la paradoxa d’Aquil·les i la tortuga? enllaçades a fonts externes per més informació.&lt;/p&gt;</INTRO>
+    <INTROFORMAT>1</INTROFORMAT>
+    <ALLOWDUPLICATEDENTRIES>0</ALLOWDUPLICATEDENTRIES>
+    <DISPLAYFORMAT>fullwithoutauthor</DISPLAYFORMAT>
+    <SHOWSPECIAL>1</SHOWSPECIAL>
+    <SHOWALPHABET>1</SHOWALPHABET>
+    <SHOWALL>1</SHOWALL>
+    <ALLOWCOMMENTS>0</ALLOWCOMMENTS>
+    <USEDYNALINK>1</USEDYNALINK>
+    <DEFAULTAPPROVAL>1</DEFAULTAPPROVAL>
+    <GLOBALGLOSSARY>0</GLOBALGLOSSARY>
+    <ENTBYPAGE>10</ENTBYPAGE>
+    <ENTRIES>
+        <ENTRY>
+        <CONCEPT>Definició de funció</CONCEPT>
+        <DEFINITION>&lt;a href=&quot;https://www.vitutor.com/fun/2/a_r.html&quot; target=&quot;_blank&quot;&gt; &lt;p &gt;                     Una  &lt;strong &gt; funció &lt;/strong&gt;  és una  &lt;strong &gt; relació &lt;/strong&gt;  entre dues magnituds de manera que a un valor                    de  \(x\) (                     &lt;strong &gt; variable independent &lt;/strong&gt; ) li feim correspondre                     &lt;span   style=&quot;text-decoration:underline&quot;&gt; &lt;strong &gt; un únic &lt;/strong&gt; &lt;/span&gt;                     valor de  \(y\) ( &lt;strong &gt; variable dependent &lt;/strong&gt; ). Per a indicar que la variable  \(y\) depèn o és funció                    d&apos;una altra,  \(x\), empram la notació  \(y = f(x)\), que es llegeix &quot; \(y\) és la imatge de  \(x\) mitjançant la                    funció  \(f\)&quot;.                 &lt;/p&gt; &lt;/a&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció lineal</CONCEPT>
+        <DEFINITION>L&apos;expressió d&apos;una funció lineal és  \(y=mx+n\), essent  \(m\) el pendent i  \(n\) l&apos;ordenada a l&apos;origen. Si  \(m=0\)                    es diu que la funció és constant i la gràfica és una recta horitzontal.</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció quadràtica</CONCEPT>
+        <DEFINITION>L&apos;expressió d&apos;una funció quadràtica és  \(y=ax^2+bx+c\). Quan  \(a&gt;0\) la funció és còncava  \(\cup\) i si  \(a\lt0\)                    és convexa  \(\cap\). El valor de  \(b\) controla la posició del vèrtex (el màxim o mínim). L&apos;abscissa del vèrtex s&apos;obté de la                    fórmula  \(x_v=\dfrac{-b}{2a}\). L&apos;ordenada del vèrtex es troba substituint  \(x_v\) dins la funció.</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció de proporcionalitat inversa</CONCEPT>
+        <DEFINITION>L&apos;expressió analítica és  \(y=\dfrac{k}{x-a} + b\). La representació gràfica són hipèrboles amb les asímptotes                    paral·leles als eixos de coordenades. Tenen una asímptota vertical a  \(x=a\) i una horitzontal a  \(y=b\).                    Les asímptotes separen la funció en dues parts, cada part s&apos;anomena branca. La funció de proporcionalitat inversa                    té la forma \(y=\dfrac{k}{x}\).</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció                        arrel quadrada</CONCEPT>
+        <DEFINITION>Les funcions arrel  \(y=k\sqrt{x-a}\) es representen com mitges paràboles amb eix paral·lel a l&apos;eix X.</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció absolut</CONCEPT>
+        <DEFINITION>\[ |f(x)| = \left\{ \begin{array}{ll} -f(x) &amp; \text{ si }\,\, f(x)\leq 0 \\ f(x) &amp; \text{ si }\,\, f(x)\gt 0 \end{array}                \right.  \tag{2}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció inversa</CONCEPT>
+        <DEFINITION>&lt;p &gt; Es defineix la inversa d&apos;una funció  \(f(x)\) i la indicam com  \(f^{-1}(x)\) a aquella funció que compleix &lt;/p&gt;                 \[ f(f^{-1}(x)) = f^{-1}(f(x)) = x  \tag{5}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció exponencial</CONCEPT>
+        <DEFINITION>&lt;p &gt; Les funcions  &lt;strong &gt; exponencials &lt;/strong&gt;  són del tipus  \(y=b^x\). Si  \(b&gt;1\) són creixents i si \(0 \lt b \lt 1\)                 són decreixents. Totes elles passen pel punt  \((0, 1)\). &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Funció logarítmica</CONCEPT>
+        <DEFINITION>&lt;p &gt;  Les funcions  &lt;strong &gt; logarítmiques &lt;/strong&gt;  són del tipus  \(y=\log_b x\). Si  \(b&gt;1\) són creixents i si                 \(0 \lt b \lt 1\) són decreixents. Totes elles passen pel punt  \((1, 0)\). &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Tipus de logaritmes</CONCEPT>
+        <DEFINITION>&lt;ul &gt;                  &lt;li &gt; &lt;strong &gt; Logaritme Neperià: &lt;/strong&gt;   \(y=\ln x\) si la base és el número  \(e\)  &lt;/li&gt;                  &lt;li &gt; &lt;strong &gt; Logaritme decimal: &lt;/strong&gt;   \(y= \log x\) si la base és 10 &lt;/li&gt;              &lt;/ul&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Existència del límit</CONCEPT>
+        <DEFINITION>&lt;p &gt; &lt;span   style=&quot;color:darkred&quot;&gt; El límit al punt  \(a\) existeix si &lt;/span&gt; &lt;/p&gt;                 \[ \limx{a^-} f(x) = \limx{a^+} f(x) = \limx{a} f(x)  \tag{10}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Indeterminacions</CONCEPT>
+        <DEFINITION>\[ 0/0, \quad \infty/\infty, \quad \infty - \infty,\quad 0\cdot \infty,\quad 1^\infty, ...\nonumber \]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Asímptota vertical</CONCEPT>
+        <DEFINITION>&lt;p &gt;                     Per a que una funció racional  \(f(x)=\dfrac{P(x)}{Q(x)}\) tengui una asímptota vertical, el denominador ha d&apos;ésser igual a                    zero i el numerador diferent de zero. El procediment consisteix resoldre l&apos;equació  \(Q(x)=0\).                 &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Asímptota horitzontal</CONCEPT>
+        <DEFINITION>&lt;p &gt;                     Perquè una funció racional  \(f(x)=\dfrac{P(x)}{Q(x)}\) tengui una asímptota horitzontal, el grau  \(P\leq \)grau  \(Q\). L&apos;asímptota                    és la recta horitzontal  \(y=L\), essent  \(L=\limx{\infty }f(x)\).                 &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>   </ENTRIES>
+  </INFO>
+</GLOSSARY>

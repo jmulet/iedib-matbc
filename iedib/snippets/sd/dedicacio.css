@@ -1,0 +1,31 @@
+
+.iedib-rwrap {
+    text-align: right;
+    font-size: 0;
+}
+
+.iedib-ctx {
+    display: inline-block;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: rgb(31, 106, 219);
+    color: rgb(241, 245, 254);
+    margin: 0;
+    padding: 4px;
+    font-size: 11px;
+}
+
+.iedib-time {
+    display: inline-block;
+    margin: 0px;
+    padding: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background: rgb(241, 245, 254);
+    color: rgb(31, 106, 219);
+    font-size: 12px;
+}
+
+.iedib-time>span {
+    font-weight: bold;
+}

@@ -1,0 +1,1 @@
+﻿positionForPages[187]={page:187,positions:[{word:"Exemples",left:0.149556,top:0.097858,width:0.113957,height:0.021403},{word:"de",left:0.268538,top:0.097858,width:0.029800,height:0.021403},{word:"problemes",left:0.303363,top:0.097858,width:0.122826,height:0.021403},{word:"d’optimitzacio´",left:0.431214,top:0.097619,width:0.160344,height:0.021642}]};

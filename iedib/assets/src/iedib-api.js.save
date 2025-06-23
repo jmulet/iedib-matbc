@@ -1,0 +1,298 @@
+/** 
+ * Common functions @IEDIB organized into an API
+ * Josep Mulet Pol (pmulet@iedib.net) 
+ **/
+
+window.iedibAPI = window.iedibAPI || { DEBUG: false };
+ 
+// Insert script to head or the end of body
+// isPrepend to the beginning of the head
+window.iedibAPI.insertScript = function (url, isPrepend, toBody, isAsync) {
+    // Check if this script is already in page
+    var scripts = document.getElementsByTagName('script');
+    var found;
+    for (var i = 0; i < scripts.length; i++) {
+        var script = scripts[i]
+        if (script.src === url) {
+            found = true;
+            break;
+        }
+    }
+    if (found) {
+        return;
+    }
+    var tag = document.createElement('script');
+    tag.src = url;
+    tag.type = "text/javascript";
+    if(isAsync){
+	 tag.async = true;
+    }
+    if (toBody) {
+        // Append to the end of the body
+        document.body.appendChild(tag);
+    } else {
+        // Append to the head
+        if (isPrepend && scripts.length) {
+            var script0 = scripts[0];
+            script0.parentNode.insertBefore(tag, script0);
+        } else {
+            document.head.appendChild(tag);
+        }
+    }
+};
+
+window.iedibAPI.insertScriptBody = function (url) {
+    window.iedibAPI.insertScript(url, false, true);
+};
+
+window.iedibAPI.parseUrlParams = function (url) {
+    var params = {};
+    var parts = url.substring(1).split('&');
+
+    for (var i = 0; i < parts.length; i++) {
+        var nv = parts[i].split('=');
+        if (!nv[0]) continue;
+        params[nv[0]] = nv[1] || true;
+    }
+    return params;
+};
+
+// Change july2020: boost detection
+window.iedibAPI.isBoost = function() {
+    return document.querySelector('div[data-region="drawer-toggle"]')!=null;
+};
+
+// Change june2020: Allow guest user detection
+// Change july2020: isTeacher, chapterid --> boost detection
+window.iedibAPI.getPageInfo = function () {
+    if (!document.querySelector) {
+        return {};
+    }
+    // Get current user information
+    var userId;
+    var userFullname;
+
+    var dataUserId = document.querySelector('[data-userid]');
+    if (dataUserId) {
+        userId = dataUserId.getAttribute('data-userid');
+    }
+    var userText = document.getElementsByClassName("usertext");
+    if (userText && userText.length) {
+        userFullname = userText[0].innerText;
+    }
+
+    if(!userId) {
+        //TODO:: check if the current user is guest
+        userId = -1;
+        userFullname = "Usuari convidat";
+    }
+
+    // Get information about book id and chapter id (from the current url)
+    var params = {};
+    if (location.search) {
+        params = iedibAPI.parseUrlParams(location.search);
+    }
+    var chapterId = params.chapterid;
+    if(!chapterId) {
+        // On first page, chapterid might not appear
+        // Case on boost
+        var ele = document.querySelector('input[name="chapterid"]');
+        if(ele){
+            chapterId = ele.value;
+        }
+    }
+
+    var bookId = params.id;
+    if(!bookId) {
+        var ele = document.querySelector('div.singlebutton > form > input[name="id"]');
+        if(ele){
+            bookId = ele.value;
+        }
+    }
+
+    // Get cookie for MoodleSession
+    //var moodleSession = (document.cookie || "").split("MoodleSession=")[1];
+    //moodleSession = moodleSession.split(";")[0];
+    var cookie =  (document.cookie || "");
+    var eq_cookie_pos = cookie.indexOf("=");
+    var moodleSession = "";
+    if(eq_cookie_pos>0) {
+        moodleSession = cookie.substr(eq_cookie_pos+1);
+    }
+    if(moodleSession && moodleSession.indexOf(";") > 0) {
+        moduleSession = moodleSession.split(";")[0];
+    }
+    
+    // Get information about the course
+    var courseId;
+    var courseName;
+
+    var footer = document.querySelector(".homelink > a");
+
+    if (footer) {
+        courseName = footer.innerText;
+        var hrefVal = "?" + (footer.href.split("?")[1] || "");
+        courseId = iedibAPI.parseUrlParams(hrefVal).id;
+    }
+
+    var isTeacher = document.querySelector('.teacherdash.nav-item.nav-link') != null? 1 : 0;
+    /*if(!isTeacher) {
+        
+      isTeacher = document.querySelector('div.singlebutton > form > input[type="hidden"][name="edit"] ~ button[type="submit"]')
+                     != null? 1 : 0;
+     
+         isTeacher = document.querySelector('.usermenu li a[href*="switchrole"]') != null? 1 : 0;
+    }
+   */
+    
+    var site = (location.href.split("?")[0] || "").replace("/mod/book/view.php", "");
+    window.iedibAPI.lliurament = window.iedibAPI.lliurament || {};
+    return {
+        userId: userId, userFullname: userFullname, bookId: bookId, chapterId: chapterId, 
+        assignNum: window.iedibAPI.lliurament.id || 0,
+        assignName: window.iedibAPI.lliurament.title || "",
+        courseName: courseName, courseId: courseId, isTeacher: isTeacher, site: site, moodleSession: moodleSession
+    };
+};
+
+window.iedibAPI.waitForWindow = function (prop, callback, type) {
+    var interval; 
+    var timer_fn = function () {
+        if ( (!type && typeof window[prop] != "undefined") || (type && typeof window[prop] == type)) {
+            if (interval) {
+                window.clearInterval(interval);
+            }
+            console.log("Found " + prop, window[prop]);
+            callback && callback();
+        }
+        else {
+            if (!interval) {
+                interval = window.setInterval(timer_fn, 250);
+            }
+        }
+    };
+    timer_fn();
+};
+
+window.iedibAPI.createStyleSheet = function (src, id) {
+    if (id && document.getElementById(id)) {
+        return;
+    }
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = src;
+    if (id) {
+        style.id = id;
+    }
+    document.getElementsByTagName('head')[0].appendChild(style);
+};
+
+window.iedibAPI.createLinkSheet = function (href, id) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = href;
+    document.getElementsByTagName('head')[0].appendChild(link);
+};
+
+window.iedibAPI.addBookEvent = function (element, evnt, funct) {
+    if (element.attachEvent) {
+        return element.attachEvent('on' + evnt, funct);
+    } else {
+        return element.addEventListener(evnt, funct, false);
+    }
+};
+
+window.iedibAPI.ready = function (fun) {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        fun();
+    } else {
+        if (document.addEventListener) {
+            document.addEventListener('DOMContentLoaded', fun, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', fun);
+        } else {
+            fun();
+        }
+    }
+}; 
+
+// Converts seconds to human readable time lapse
+window.iedibAPI.convertTimeLapse = function (delta) {
+    if (!delta) {
+        return "mai";
+    }
+    var days = Math.floor(delta / 86400);
+    delta -= days * 86400;
+    var hours = Math.floor(delta / 3600) % 24;
+    delta -= hours * 3600;
+    var minutes = Math.floor(delta / 60) % 60;
+    delta -= minutes * 60;
+    var seconds = delta % 60; 
+
+    if (days) {
+        return days + " d  " + hours + " h";
+    } else if (hours) {
+        return hours + " h  " + minutes + " min";
+    } else if (minutes) {
+        return minutes + " min  " + seconds + " s";
+    } else {
+        return seconds + " s";
+    }
+};
+
+// Parses yyyy-mm-dd hh:mm
+window.iedibAPI.parseDate = function(str){
+    var parts = str.replace(/ /g, " ").split(" ");
+    var sep = "-";
+    if(parts[0].indexOf("/")>0) {
+        sep = "/";
+    }
+    var datePart = parts[0].split(sep);
+    var timePart = parts[1].split(":");
+    return new Date(datePart[0], datePart[1]-1, datePart[2], timePart[0] || 0, timePart[1] || 0);
+};
+
+// Handle iedib-restricted-access class (jQuery ajax is required so wait for it!)
+window.iedibAPI.waitForWindow("$", function() {
+ 
+    var $elems = $(".iedib-restricted-access");
+    if($elems.length) {
+        // query datetime from server
+        $.ajax({
+            method: "GET",
+            url: "https://piworld.es/iedibapi/date",
+            dataType: "json"
+        }).done(function (json_res) {
+            console.log(json_res)
+	    var serverDate = new Date(json_res);
+            var pageInfo = window.iedibAPI.getPageInfo();
+	    console.log(pageInfo);
+            for(var i=0, elems_length=$elems.length; i<elems_length; i++) {
+                var $e = $($elems[i]);
+                var fromdate = window.iedibAPI.parseDate($e.attr("data-fromdate"));
+                // only hide class .pw-resolucio
+                var $eres = $e.find(".pw-resolucio"); 
+                    if(pageInfo.isTeacher) {
+                        $eres.css("display", "")
+                        if(fromdate > serverDate) {
+                            $eres.css("background", "lightgray");
+                        } else {
+                            $eres.css("background", "#eefbff");
+                        }
+                    } else {
+                        if(fromdate <= serverDate) {
+                            $eres.css("display", "");
+                            $eres.css("background", "#eefbff");
+                        } else {
+                            $eres.css("display", "");
+			    $eres.css("background", "lightgray");
+			    $eres.html("<p>S'obrirà la solució dia "+fromdate.toLocaleDateString()+"</p>");
+                        }
+                    } 
+            }
+        });
+    }
+  
+}, "function");
+

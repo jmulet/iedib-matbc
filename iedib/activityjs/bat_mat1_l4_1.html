@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta  charset="UTF-8">
+ <!--  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   -->
+<style>
+body{
+  overflow: hidden;
+}
+.btn-success {
+  background-color: green;
+  color: white;
+  border-raius: 3px;
+  padding: 4px;
+}
+</style>
+</head>
+<body>
+    <!-- Configuració de l'activitat interactiva -->
+<script>
+    var idioma = "ca"; /* trieu entre: ca, es, en */
+    var num_preguntes = 6;
+  
+    /* Escriviu aquí les opcions per a cadascuna de les preguntes */
+    var opcions1 = ["Proporcionalitat inversa", "Paràbola", "Exponencial", "Radical", "Lineal", "Logarítimica"];
+    var opcions2 = ["Proporcionalitat inversa", "Paràbola", "Exponencial", "Radical", "Lineal", "Logarítimica"];
+    var opcions3 = ["Proporcionalitat inversa", "Paràbola", "Exponencial", "Radical", "Lineal", "Logarítimica"];
+    var opcions4 = ["Proporcionalitat inversa", "Paràbola", "Exponencial", "Radical", "Lineal", "Logarítimica"];
+    var opcions5 = ["Proporcionalitat inversa", "Paràbola", "Exponencial", "Radical", "Lineal", "Logarítimica"];
+    var opcions6 = ["Proporcionalitat inversa", "Paràbola", "Exponencial", "Radical", "Lineal", "Logarítimica"];
+  
+    /* Definiu quina és l'opció correcta de cada pregunta */
+    var correcta1 = "Proporcionalitat inversa";
+    var correcta2 = "Paràbola";
+    var correcta3 = "Radical";
+    var correcta4 = "Exponencial";
+    var correcta5 = "Lineal";
+    var correcta6 = "Radical";
+  </script>
+  
+  <center>
+    <div style="border-radius:10px;border:2px solid gray;width:70%;background-color:whitesmoke">
+      <table class="table table-responsive" style="width:100%;">
+        <tbody>
+          <tr>
+            <td colspan="2" style="text-align: center;"><b>Triau l'opció correcta</b>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center;width:50%;vertical-align:middle">
+              <img src="pic-cloze-a.png" alt="" width="165" height="110" role="presentation" class="img-responsive atto_image_button_text-bottom">
+            </td>
+            <td style="text-align:center;width:50%;vertical-align:middle">
+              <img src="pic-cloze-b.png" alt="" width="166" height="110" role="presentation" class="img-responsive atto_image_button_text-bottom">
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center">
+              <select id="iedib_combo1" style="width:70%"></select>
+            </td>
+            <td style="text-align:center">
+              <select id="iedib_combo2" style="width:70%"></select>
+            </td>
+  
+          </tr>
+          <tr>
+            <td style="text-align:center;width:50%;vertical-align:middle">
+              <img src="pic-cloze-c.png" alt="" width="165" height="110" role="presentation" class="img-responsive atto_image_button_text-bottom">
+  
+            </td>
+            <td style="text-align:center;width:50%;vertical-align:middle">
+              <h4><img src="pic-cloze-d.png" alt="" width="167" height="110" role="presentation" class="img-responsive atto_image_button_text-bottom"><br></h4>
+  
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center">
+              <select id="iedib_combo3" style="width:70%"></select>
+            </td>
+            <td style="text-align:center">
+              <select id="iedib_combo4" style="width:70%"></select>
+            </td>
+  
+          </tr>
+          <tr>
+            <td style="text-align:center;width:50%;vertical-align:middle">
+              <img src="pic-cloze-e.png" alt="" width="169" height="110" role="presentation" class="img-responsive atto_image_button_text-bottom">
+  
+            </td>
+            <td style="text-align:center;width:50%;vertical-align:middle">&nbsp;<img src="pic-cloze-f.png" alt="" width="167" height="110" role="presentation" class="img-responsive atto_image_button_text-bottom">
+             
+  
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center">
+              <select id="iedib_combo5" style="width:70%"></select>
+            </td>
+            <td style="text-align:center">
+              <select id="iedib_combo6" style="width:70%"></select>
+            </td>
+  
+          </tr>
+          <tr>
+            <td style="text-align:center;width:50%">
+              <button id="iedib_btn1" class="btn btn-success">Check</button>
+              <button id="iedib_btn2" class="btn btn-primary" style="display:none;">Try again</button>
+            </td>
+            <td style="text-align:center;width:50%">
+              <p id="iedib_score"></p>
+            </td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </center>
+  <br>
+  <br>
+  
+  <script>
+    var iedib_score = document.getElementById("iedib_score");
+    var btn_success = document.getElementById("iedib_btn1");
+    var btn_tryagain = document.getElementById("iedib_btn2");
+  
+    var dict = {
+      en: {
+        CHECK: "Check",
+        TRY_AGAIN: "Try again",
+        YOUR_SCORE: "Your score",
+      },
+      es: {
+        CHECK: "Comprueba",
+        TRY_AGAIN: "Nuevo intento",
+        YOUR_SCORE: "Su puntuación",
+      },
+      ca: {
+        CHECK: "Comprova",
+        TRY_AGAIN: "Intentar-ho de nou",
+        YOUR_SCORE: "La seva puntuació",
+      }
+    };
+    
+   
+    var i18n = function(key) {
+      return (dict[idioma] || dict['ca'])[key] || key;
+    };
+    
+    btn_success.innerHTML = i18n('CHECK');
+    btn_tryagain.innerHTML = i18n('TRY_AGAIN');
+    
+  
+    var shuffle_array = function(array) {
+      var currentIndex = array.length;
+      var temporaryValue, randomIndex;
+  
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+  
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+  
+      return array;
+    };
+  
+    var createCombos = function() {
+      var combos = [];
+      for (var i = 1; i <= num_preguntes; i++) {
+        var combo = document.getElementById("iedib_combo" + i);
+        var opts = window["opcions" + i];
+        var correct = window["correcta" + i];
+        if (combo && opts && correct) {
+          combo.disabled = false;
+          combo.style.background = '';
+          combo.innerHTML = '';
+          combos.push(combo);
+  
+          var opts2 = shuffle_array(opts);
+          var optElem = document.createElement("option");
+          var text = document.createTextNode("");
+          optElem.appendChild(text);
+          optElem.selected = true;
+          combo.appendChild(optElem);
+  
+          for (var j = 0; j < opts2.length; j++) {
+            var optElem = document.createElement("option");
+            var text = document.createTextNode(opts2[j]);
+            optElem.appendChild(text);
+            combo.appendChild(optElem);
+          }
+        }
+  
+      }
+      btn_success.style.display = '';
+      btn_tryagain.style.display = 'none';
+      iedib_score.style.display = 'none';
+    };
+  
+    createCombos();
+  
+    var lock_application = function() {
+      for (var i = 1; i <= num_preguntes; i++) {
+        var combo = document.getElementById("iedib_combo" + i);
+        if (combo) {
+          combo.disabled = true;
+          btn_success.style.display = 'none';
+          btn_tryagain.style.display = '';
+        }
+      }
+    };
+  
+    var check_activity = function() {
+      var total = 0;
+      for (var i = 1; i <= num_preguntes; i++) {
+        var combo = document.getElementById("iedib_combo" + i);
+        if (combo) { 
+          if (combo.value == window["correcta" + i]) {
+            combo.style.background = "lightgreen";
+            total += 1;
+          } else {
+            combo.style.background = "lightcoral";
+          }
+        }
+      }
+  
+      if (iedib_score) {
+        iedib_score.style.display = '';
+        total = (total * 100 / num_preguntes).toFixed(0);
+        iedib_score.innerHTML = "<b>"+i18n("YOUR_SCORE") + " " + total + "%</b>";
+      }
+      iedib_score.style['font-size'] = '14px'; 
+      lock_application();
+    };
+  
+  
+    btn_success && btn_success.addEventListener("click", function(evt) {
+      check_activity();
+    });
+  
+    btn_tryagain && btn_tryagain.addEventListener("click", function(evt) {
+      createCombos();
+    });
+  </script>
+</body>
+</html>

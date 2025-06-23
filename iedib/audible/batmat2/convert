@@ -1,0 +1,10 @@
+#!/bin/bash
+files=*.m4a
+
+for file in $files; do
+        mp3File=${file/%m4a/mp3}
+	if [ ! -f $mp3File ]; then
+	echo "Generating $mp3File"
+        ffmpeg -v 5 -y -i ${file} -acodec libmp3lame -ac 2 -ab 192k ${mp3File}
+	fi
+done

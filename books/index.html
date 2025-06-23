@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <META http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <META charset="utf-8">
+        <TITLE>Llibres de Matemàtiques - IES Binissalem</TITLE>
+        <META name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <LINK href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+         
+         <!-- Plugin -->
+        <link rel="stylesheet" href="css/Cover3D.css">
+        <!--[if lt IE 9]>
+          <SCRIPT src="//html5shim.googlecode.com/svn/trunk/html5.js"></SCRIPT>
+        <![endif]-->
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    </HEAD>
+    <BODY>
+
+     
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="nav-bar-brand" src="css/iesbbooks.svg" style="max-height:50px"/> 
+
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav hidden-sm hidden-xs">
+        <li class="active"> <span class="header"> - Matemàtiques</span> </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li style="padding-right: 30px">
+            <SELECT style="margin-top:6px" class="form-control" id="genre" onChange="pw.Books.loadBooks()">
+                <OPTION value="All">Tots</OPTION>
+                <OPTION value="Student">Estudiant</OPTION>
+                <OPTION value="Teacher">Professor</OPTION>
+                <OPTION value="Solutions">Solucionari</OPTION> 
+            </SELECT>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <DIV class="container maincontainer">
+ 
+      <DIV class="row" id="bookData">
+
+        <!-- THIS WILL GET POPULATED DYNAMICALLY -->
+
+      </DIV> <!-- End: row -->
+
+    </DIV> <!-- End: container -->
+   
+    <BR>
+    <BR>
+    <BR>
+    <BR>
+    
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+        <img src="css/licencia.png" style="height:34px" alt="Creative Commons license" title="Creative Commons license"> 
+        <span style="color:lightgray; margin-right: 30px;">J. Mulet (c) 2017</span>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <SCRIPT type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></SCRIPT>
+    <script src="js/Cover3D.js"></script>
+    <SCRIPT type='text/javascript' src="js/modernizr-custom.js"></SCRIPT>
+    <SCRIPT type='text/javascript' src="js/book_loader.js"></SCRIPT>
+    <SCRIPT>     
+    window.pw.Books.loadBooks();
+    </SCRIPT>
+ 
+    
+</BODY>
+</HTML>

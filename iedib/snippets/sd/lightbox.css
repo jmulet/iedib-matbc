@@ -1,0 +1,24 @@
+.modal-fullscreen-xl .modal-header {
+    padding: 0rem 1rem;
+}
+.modal-fullscreen-xl .modal-dialog {
+    width: 98%;
+    height: 98%;
+    max-width: none;
+    margin: auto;
+}
+.modal-fullscreen-xl .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    background: rgba(0,0,0,0);
+}
+.modal-fullscreen-xl .modal-body {
+    width: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0);
+}
+.left-arrow, .right-arrow {
+    font-size: 300%;
+    color: whitesmoke;
+}

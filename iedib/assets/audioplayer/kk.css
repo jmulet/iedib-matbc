@@ -1,0 +1,20 @@
+.pw-laser-nw{position:relative;}
+ .pw-laser-nw::after{content:"";position:absolute;left:0;top:0;width:10px;height:10px;border-radius:50%;background:rgba(255,0,0,0.6);box-shadow: 0 0 5px 3px red;}
+ .pw-laser-ne{position:relative;}
+ .pw-laser-ne::after{content:"";position:absolute;right:0;top:0;width:10px;height:10px;border-radius:50%;background:rgba(255,0,0,0.6);box-shadow: 0 0 5px 3px red;}
+ .pw-laser-sw{position:relative;}
+ .pw-laser-sw::after{content:"";position:absolute;left:0;bottom:0;width:10px;height:10px;border-radius:50%;background:rgba(255,0,0,0.6);box-shadow: 0 0 5px 3px red;} 
+.pw-laser-se{position:relative;}
+ .pw-laser-se::after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:rgba(255,0,0,0.6);box-shadow: 0 0 5px 3px red;}
+ .pw-laser-md{position:relative;}
+ .pw-laser-md::after{content:"";position:absolute;left:50%;bottom:50%;width:10px;height:10px;border-radius:50%;background:rgba(255,0,0,0.6);box-shadow: 0 0 5px 3px red;}
+ .audible-media-player{max-width:600px;padding:6px;border-radius:7px;display:flex;margin:auto;margin-bottom:15px;}
+ .audible-frog{background:#e6ede6;border:1px solid blue;}
+ .audible-frog span, .audible-frog button{color: #4f6e46;}
+ .audible-sky{background:rgb(241,245,254);}
+ .audible-sky span, .audible-sky button{color:rgb(31,106,219);} 
+.pw-audible-btn{background: none; border: none; color: #4f6e46; margin: 0 5px;} 
+.pw-pen-yellow{-webkit-box-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, 5px 5px 15px 5px rgba(0,0,0,0);box-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, 5px 5px 15px 5px rgba(0,0,0,0);background: rgb(255,255,193,0.5);} 
+.pw-pen-green{-webkit-box-shadow: #FFF 0 -1px 4px, #3f3 0 -2px 10px, 5px 5px 15px 5px rgba(0,0,0,0);box-shadow: #FFF 0 -1px 4px, #3f3 0 -2px 10px, 5px 5px 15px 5px rgba(0,0,0,0);background: rgb(193,255,200,0.5);}
+ .pw-pen-red{-webkit-box-shadow: #FFF 0 -1px 4px, #f33 0 -2px 10px, 5px 5px 15px 5px rgba(0,0,0,0);box-shadow: #FFF 0 -1px 4px, #f33 0 -2px 10px, 5px 5px 15px 5px rgba(0,0,0,0);background: rgb(255,193,193,0.5);} 
+@media print{.audible-media-player{display:none;} }

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<base href="https://www.wolframalpha.com">
+
+<meta http-equiv="Content-Security-Policy" content="Content-Security-Policy: default-src 'self' localhost data: *.wolfram.com *.wolframalpha.com *.wolframcdn.com *.wolframcloud.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.wolfram.com *.wolframalpha.com *.wolframcdn.com ajax.googleapis.com *.wolframalpha.tw; img-src 'self' http://*.wolframcdn.com  wolframcdn.com *.wolframcdn.com data: *.wolfram.com *.wolframalpha.com *.wolframcdn.com wolframcdn.com; font-src * data:; style-src 'unsafe-inline' 'self' data: *.wolfram.com *.wolframalpha.com *.wolframcdn.com wolframcdn.com fonts.googleapis.com;">
+
+<meta charset="utf-8">q
+
+
+<title>Resolució de sistemes lineals</title>
+</head>
+<body>
+<script type="text/javascript" id="WolframAlphaScript8306b963586e247e0cfca84394d5dcf4" src="https://www.wolframalpha.com/widget/widget.jsp?id=8306b963586e247e0cfca84394d5dcf4"></script>
+<!--
+<script type="text/javascript" id="WolframAlphaScript486ee6cbb8a2b3b3bd55d0b80848d811" src="//www.wolframalpha.com/widget/widget.jsp?id=486ee6cbb8a2b3b3bd55d0b80848d811&output=popup&width=450"></script>
+-->
+</body>
+</html>

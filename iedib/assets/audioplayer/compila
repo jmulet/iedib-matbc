@@ -1,0 +1,1 @@
+uglifyjs audioplayer.js  -m -c drop_console=true  -o audioplayer.min.js

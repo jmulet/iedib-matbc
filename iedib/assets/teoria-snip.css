@@ -1,0 +1,363 @@
+div.no-overflow ul > li, div.no-overflow ol > li {
+	margin-bottom: 30px;
+}
+
+table.table th {
+	text-align:center;
+}
+/* Make youtube embeds responsive */
+.pw-column-70pc {
+    width: 70%;
+    height: auto;
+    text-align: center;
+}
+.pw-column-650max {
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    text-align: center; 
+}
+.pw-responsive-16-by-9 {
+    position:relative; width: 100%; padding-bottom: 56.25%; padding-top: 0px; height: 0; overflow: hidden; margin-bottom: 10px;
+}
+.pw-responsive-4-by-3 {
+    position:relative; width: 100%; padding-bottom: 75%; padding-top: 0px; height: 0; overflow: hidden; margin-bottom: 10px;
+}
+.pw-responsive-16-by-9 > iframe  {
+    position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%;
+}
+.pw-responsive-4-by-3 > iframe {
+    position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%;
+}
+
+/* Classes for inserted element captions */
+.pw-caption {
+    margin-top: 5px !important;
+    margin-bottom: 40px !important;
+    font-size: 0.9em !important;
+}
+.pw-counter {
+    font-weight: bold; 
+}
+.pw-title {
+    font-style: italic;
+}
+.pw-h5p-video {
+    margin-top: 30px !important;
+}
+
+/*
+.iedib-exemple-border {
+   font-size: 90% !important;
+}
+.iedib-capsa-petita > .iedib-central > p {
+   text-align: left !important;
+}
+*/
+.iedib-col2-responsive {
+   font-size: 90% !important;
+   -webkit-column-count: 1 !important;
+   -moz-column-count: 1 !important;
+   column-count: 1 !important;
+}
+/*
+.iedib-capsa-mitjana{
+    width: 80%; 
+    margin: 5px 10%;
+}
+.iedib-capsa-petita{
+    width: 60%; 
+    margin: 5px 20%;
+} 
+*/
+
+/* Small screens */
+@media screen and (max-width: 600px) {  
+    .pw-minipage {
+        display: block !important;
+        width: 100% !important;
+     }
+     .pw-background-img {
+        border-radius: 10px;
+        width: 99%;
+        margin:auto;
+     }
+}
+@media screen and (max-width: 2000px) {   
+/*  
+  table {
+        font-size: 90% !important;
+    }
+*/ 
+    .iedib-col2-responsive {
+        -webkit-column-count: 1 !important;
+        -moz-column-count: 1 !important;
+        column-count: 1 !important;
+	padding-top: 0 !important;
+     }
+     .iedib-col2-responsive > ol > li {
+	margin-top: 30px !important;
+     }
+}  
+#video-completion-progress {
+	font-size: 85%!important;
+}
+/* printing */
+@media print and (color) {
+    div[data-mq], p[data-mq], span[data-mq] {
+        display:none!important;
+    }
+
+    /*inici canvis cati*/
+    div.accordion-inner, div.accordion-body {
+        height: 100% !important;
+    }
+    
+    div.accordion-inner .iedib-capsa {
+     page-break-inside: initial; 
+    }
+    /** Fi canvis cati***/
+
+    #region-main::after{
+	position: fixed;
+	content:'IEDIB';
+	width:100%;
+	top: 50%;
+	left: 50%;
+	opacity: 0.3;
+	color: gray;
+	font-size: 200%;
+    }*/
+
+    .pw-tasca-solucio{
+        display:none!important;
+     }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+     }
+    .pw-spinner {
+         display: none;
+    } 
+    .pw-resolt-button {
+        display: none !important;
+    } 
+    .pw-resolt-ocultable {
+        display: table-cell !important;
+    }
+    .pw-yt-video {
+        display: none !important; 
+    }
+    .pw-h5p-video {
+        display: none !important; 
+        margin-top: 40px !important;
+    }
+    .pw-responsive-16-by-9 {
+        background-image: url("https://piworld.es/iedib/img/youtube.png") !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        height: 50px !important; 
+        padding: 10px !important;
+        overflow: visible !important;
+    }  
+    a[href^=http]:after {
+        content:" <" attr(href) "> " !important;
+        font-style: italic !important;
+        font-size: 0.9em !important;
+    }
+    a[href^="#"]:after {
+        content: "" !important;
+    }
+
+    /* tabs panels */
+    .pw-tabs > ul {
+        display: none !important;
+    }
+    .pw-tabs > div {
+        display: inline !important; 
+        border: none !important; 
+        position: relative !important;
+    }  
+    .pw-tabs > div::before {
+        content: attr(title) !important; 
+        font-size: 1.3em !important; 
+        font-weight: bold !important; 
+        display: block !important; 
+        margin-bottom:10px !important; 
+        margin-top:20px !important;
+    }  
+    .pw-tabs > div::after {
+        content:'' !important; 
+        left:0 !important; 
+        right:0 !important; 
+        display: inline-block !important; 
+        margin-top: 20px !important; 
+        width: 97% !important; 
+        height:1px !important; 
+        background-color: gray !important; 
+        margin:10px !important;
+    } 
+    .active {
+        border: none !important;
+    }   
+    .pw-tabs  > div:first-of-type > img {
+        width: auto !important; 
+        max-width: 400px !important;
+    }  
+    .pw-tabs  > div > img {
+        max-width:400px !important;
+    }
+    iframe[src*="/iedib/wolfram/"] {
+        display: none !important;
+    } 
+}
+
+div[role="main"] li:not(:last-child) {
+    margin-bottom: 12px;
+}
+div.book_toc > ul > li:not(:last-child) {
+    margin-bottom: 12px;
+}
+div.book_toc > ul > li > ul > li:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.iedib-pulsating {
+  animation: ibpulseanim 2s ease 0s infinite;
+  backface-visibility: hidden;
+  border-radius:50%;
+}
+
+@keyframes ibpulseanim {
+  0% {
+      background: lightgray;
+      /*opacity: 0.6;*/ 
+      width: 25px;
+  }
+  80% {
+       background: white;
+      /*opacity: 0.8;*/
+      width: 30px;
+  }
+  100% {
+      /*opacity: 0.6;*/
+      width:25px;
+  }
+}
+
+.pw-ggb:hover + .iedib-pulsating {
+	display: none;
+ 	-webkit-animation-play-state: paused;
+	animation-play-state: 'paused'; 
+}
+.pw-background-img {
+        border-radius: 20px;
+	width: 90%;
+	margin:auto;
+}
+.pw-aquestion {
+	color: darkslategray;
+        font-size:101%;
+        font-weight:bold;
+}
+.pw-aquestion::before {
+	content: "\f60b";
+	font-size: 120%;
+	margin-right: 5px;
+  	font-family: "Font Awesome 5 Pro"; 
+  	font-weight: 900; 
+}
+.iedib-card-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.iedib-card {
+    margin: 20px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;	
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+}
+.iedib-card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.iedib-card-img {
+    background-color: #808080;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px); 
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; 
+    position: relative;
+}
+.iedib-card.iedib-card-xl .iedib-card-img {
+	height: 120px;
+}
+.iedib-card label {
+	margin:0;
+	border:none;
+	cursor:pointer;
+}
+.iedib-card-title {
+    margin-bottom: -45px;
+    font-size: 1.025rem!important;
+    font-weight: 600;
+    line-height: 1.4rem;
+    background: ghostwhite;
+    padding: 15px;
+    transform: translate(3%, -40px);
+    width: 94%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.iedib-card p {  
+    font-size:90%;  
+}
+.iedib-card-front, .iedib-card-back {
+  backface-visibility: hidden;
+  transition: transform 300ms;
+  transition-timing-function: linear;
+  animation-delay: 300ms;
+  width: 100%;
+  /*height: 100%;*/
+  margin: 0;
+  /*display: flex;*/
+}
+
+.iedib-card-front {
+  transform: rotateY(0deg);
+  z-index: 10;
+}
+
+.iedib-card-back {
+  transform: rotateY(-180deg);
+  position: absolute;
+  top: 0;
+}
+.iedib-card input:checked ~ .iedib-card-front {
+  transform: rotateY(-180deg);
+}
+  
+.iedib-card input:checked ~ .iedib-card-back {
+  transform: rotateY(0deg);
+}
+.iedib-card input:not(checked) ~ label:after {
+  content: '+ Saber-ne més';
+}
+  
+.iedib-card input:checked ~ label:after {
+  content: 'x Tancar';
+}

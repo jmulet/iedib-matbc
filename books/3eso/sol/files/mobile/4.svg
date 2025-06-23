@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="595.276pt" height="841.89pt" viewBox="0 0 595.276 841.89" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d=""/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 4.421875 -2.3125 L 3.796875 -2.3125 L 3.796875 -6 L 2.390625 -6 L 0.203125 -2.328125 L 0.203125 -1.328125 L 2.609375 -1.328125 L 2.609375 0 L 3.796875 0 L 3.796875 -1.328125 L 4.421875 -1.328125 Z M 2.609375 -2.3125 L 1.046875 -2.3125 L 2.609375 -4.875 Z M 2.609375 -2.3125 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface28">
+<g style="fill:rgb(0%,0%,79.998779%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="284.547" y="774.679"/>
+</g>
+<path style="fill:none;stroke-width:0.398;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,79.998779%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.00053125 0.00121875 L 16.660687 0.00121875 " transform="matrix(1,0,0,-1,277.394,765.427)"/>
+<path style="fill:none;stroke-width:0.398;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,79.998779%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.00075 -0.0001875 L 0.00075 12.437312 " transform="matrix(1,0,0,-1,277.593,777.867)"/>
+<path style="fill:none;stroke-width:0.398;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,79.998779%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.00046875 -0.0001875 L 0.00046875 12.437312 " transform="matrix(1,0,0,-1,293.855,777.867)"/>
+<path style="fill:none;stroke-width:0.398;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,79.998779%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.00053125 -0.0001875 L 16.660687 -0.0001875 " transform="matrix(1,0,0,-1,277.394,777.867)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,79.998779%);fill-opacity:1;" d="M 293.855469 782.050781 L 298.039062 782.050781 L 298.039062 769.214844 L 293.855469 769.214844 Z M 293.855469 782.050781 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,79.998779%);fill-opacity:1;" d="M 281.378906 782.050781 L 298.039062 782.050781 L 298.039062 777.867188 L 281.378906 777.867188 Z M 281.378906 782.050781 "/>
+</g>
+</svg>

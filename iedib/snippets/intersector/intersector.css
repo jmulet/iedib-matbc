@@ -1,0 +1,10 @@
+@keyframes intersector_anim_fadein { 
+    0% {opacity: 0.2;}
+    100% {opacity: 1;}
+} 
+.pw-apareix {
+    animation: intersector_anim_fadein 2s;
+} 
+.pw-faded {
+    opacity: 0.2
+}

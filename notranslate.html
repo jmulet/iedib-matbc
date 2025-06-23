@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <title>Please, NO translate!</title>
+    <meta charset="utf8"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            margin:60px
+        } 
+    </style>
+</head>
+
+<body ng-app="app">
+    <div class="main" ng-controller="app-ctrl">
+
+
+     <div id="resultatDlg" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">S'ha processat</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>El document té {{formula.total}} fòrmules, de les quals s'han hagut de corregir {{formula.checked}}</p>
+                </div>
+                <div class="modal-footer"> 
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+                </div>
+              </div>
+            </div>
+    </div>
+
+
+    <h1>Please, NO translate!</h1>
+    <br>
+
+    <p>Aquesta petita aplicació encapsula les fórmules LaTeX  \(...\) o \[ .... \] dintre de blocs amb la classe "notranslate" per evitar
+        que el traductor de Google les modifiqui.
+    </p>
+    <p>
+        Basta que copieu el vostre codi dins el quadre de sota i pitjeu el botó Processa.
+    </p>
+    
+
+    <h4>Introduir el codi HTML que voleu processar:</h4>
+    <textarea ng-model="codi.raw" rows="20" style="width: 90%;">
+
+    </textarea>
+<br>
+
+    <button class="btn btn-primary" ng-click="maquilla()" ng-disabled="codi.raw.trim().length==0">Processa</button>
+    <button class="btn btn-secondary" ng-click="neteja()">Neteja</button>
+
+    
+    <br>
+
+     <div ng-if="codi.process">
+         <br>
+        <h4>Codi processat:</h4>
+        <textarea ng-model="codi.process" rows="20" style="width: 90%;">
+
+        </textarea>
+    </div>
+
+    </div>
+
+    <br>
+    <br>
+    <small>By Josep Mulet (2020) version 1.0.0</small>
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<script>
+    var inlineRegex2 = /\\\(((?:.|\n)+?)\\\)/mgi;
+    var displayRegex2 = /\\\[((?:.|\n)+?)\\\]/mgi;
+    var divDisplaynotranslateRegex = /<\s*div\s+class=\"notranslate\"\s*>(\s*\\\[((?:.|\n)+?)\\\]\s*)<\/div>/mgi;
+    var spanInlinenotranslateRegex = /<\s*span\s+class=\"notranslate\"\s*>(\s*\\\(((?:.|\n)+?)\\\)\s*)<\/span>/mgi;
+    var verifiedRegex = /<!--notranslate verified (.*?)-->/mgi;
+
+    var randomkey = function() {
+        return Math.random().toString(32).substring(2);
+    };
+
+    var app = angular.module("app", []);
+    app.controller("app-ctrl", ["$scope", function($scope){
+
+        $scope.codi = {
+            raw: "",
+            process: null
+        };
+
+        $scope.formula = {
+
+        }
+ 
+        $scope.maquilla = function(){
+               var code = $scope.codi.raw;
+           
+               var formulesOk = 0;
+               var formulesPendents = 0;
+
+                // Detecta les fòrmules que ja estan arreglades //
+                var mapaFormulas = {};
+
+                code = code.replace(divDisplaynotranslateRegex, function ($0, $1, $2, $3) {
+                    console.log("Trobam ", $0)
+                    var key = randomkey() + formulesOk;
+                    mapaFormulas[key] = $0;
+                    formulesOk++;
+                    return " [[["+key+"]]] ";
+                });
+
+                code = code.replace(spanInlinenotranslateRegex, function ($0, $1, $2, $3) {
+                    console.log("Trobam ", $0)
+                    var key = randomkey() + formulesOk;
+                    mapaFormulas[key] = $0;
+                    formulesOk++;
+                    return " [[["+key+"]]] ";
+                });
+
+
+                // Now replace all formula between span notranslate to avoid google translation problems
+
+                code = code.replace(inlineRegex2, function ($0, $1, $2, $3) {
+                    formulesPendents++;
+                    return " <span class=\"notranslate\"> \\(" + $1 + "\\) </span>";
+                });
+
+                code = code.replace(displayRegex2, function ($0, $1, $2, $3) {
+                    formulesPendents++;
+                    return " <div class=\"notranslate\"> \\[" + $1 + "\\] </div>";
+                });
+
+                // Ara restaura les fòrmules que ja havien estat processades
+                var claus = Object.keys(mapaFormulas);
+                for(var i=0; i<claus.length; i++) {
+                    var key = claus[i];
+                    code = code.replace("[[["+key+"]]]", mapaFormulas[key]);
+                }
+              
+                $scope.formula = {
+                    total: formulesPendents+formulesOk,
+                    checked: formulesPendents
+                }
+
+                var hasVerified = false;
+                code = code.replace(verifiedRegex, function ($0, $1, $2, $3) {
+                    hasVerified = true;
+                    return "<!--notranslate verified "+new Date()+"-->";
+                });
+                if(!hasVerified) {
+                    code = "<!--notranslate verified "+new Date()+"-->\n"+code;
+                }
+                $scope.codi.process = code;
+
+
+                $('#resultatDlg').modal('show')
+                console.log("Done")
+
+        };
+
+        $scope.neteja = function() {
+            $scope.codi.process = null;
+            $scope.codi.raw = "";
+        }
+
+
+        $scope.neteja();
+
+    }]);
+</script>
+
+</html>

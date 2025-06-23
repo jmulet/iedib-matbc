@@ -1,0 +1,23 @@
+div[role="presentacio"] {
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 600px;
+} 
+
+.box_continguts {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  height: 250px;
+  background-color: powderblue;
+}
+
+.box_botons {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 20px;
+  height: 50px;
+  background-color: powderblue;
+}

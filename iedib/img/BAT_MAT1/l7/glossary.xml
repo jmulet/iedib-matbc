@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GLOSSARY>
+  <INFO>
+    <NAME>FORMULARI BAT_MAT1 7</NAME>
+    <INTRO>&lt;p&gt;Equacions importants del tema Com ajuda l&apos;àlgebra a resoldre situacions geomètriques? enllaçades a fonts externes per més informació.&lt;/p&gt;</INTRO>
+    <INTROFORMAT>1</INTROFORMAT>
+    <ALLOWDUPLICATEDENTRIES>0</ALLOWDUPLICATEDENTRIES>
+    <DISPLAYFORMAT>fullwithoutauthor</DISPLAYFORMAT>
+    <SHOWSPECIAL>1</SHOWSPECIAL>
+    <SHOWALPHABET>1</SHOWALPHABET>
+    <SHOWALL>1</SHOWALL>
+    <ALLOWCOMMENTS>0</ALLOWCOMMENTS>
+    <USEDYNALINK>1</USEDYNALINK>
+    <DEFAULTAPPROVAL>1</DEFAULTAPPROVAL>
+    <GLOBALGLOSSARY>0</GLOBALGLOSSARY>
+    <ENTBYPAGE>10</ENTBYPAGE>
+    <ENTRIES>
+        <ENTRY>
+        <CONCEPT>Components d&apos;un vector fix</CONCEPT>
+        <DEFINITION>\[ \overrightarrow{AB}=B-A=(B_1-A_1, B_2-A_2)  \tag{1}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Condició de vectors paral·lels</CONCEPT>
+        <DEFINITION>\[ \dfrac{u_1}{v_1} = \dfrac{u_2}{v_2} \tag{3}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Combinació lineal de vectors</CONCEPT>
+        <DEFINITION>&lt;p &gt; Una combinació lineal de dos vectors consisteix en sumar els vectors prèviament multiplicats per algun escalar.                 &lt;/p&gt;                  &lt;p &gt; Per exemple:  \(5 \vec u - 2 \vec v = 5(-2,5) - 2 (3,1)= (-10, 25)-(6,2)=(-16, 23)\).             &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>base canònica o ortonormal</CONCEPT>
+        <DEFINITION>\(\vec i = (1, 0)\),  \(\vec j = (0,1)\).                    Aquests vectors tenen mòdul 1 i formen un angle de  \(90^\circ\)</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Definició de producte escalar</CONCEPT>
+        <DEFINITION>\[                \vec u \cdot \vec v = |\vec u| \, |\vec v| \, \cos \alpha \label{eq:pescalardef}                 \tag{6}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Condició vectors perpendiculars</CONCEPT>
+        <DEFINITION>&lt;p &gt; Dos vectors són  &lt;b &gt; perpendiculars &lt;/b&gt;  si i només si el seu producte escalar és igual a zero  \(\vec u \cdot \vec v = 0\). &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Producte escalar en components</CONCEPT>
+        <DEFINITION>\[                \vec u \cdot \vec v = u_1 \, v_1 + u_2 \, v_2 \label{eq:pescalarcomp}                 \tag{8}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Mòdul d&apos;un vector</CONCEPT>
+        <DEFINITION>\[ |\vec v| = \sqrt{v_1^2 + v_2^2 } \label{eq:modul} \tag{9}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Vector unitari. Normalitzar un vector</CONCEPT>
+        <DEFINITION>&lt;p &gt; Un vector és  &lt;b &gt; unitari &lt;/b&gt;  si té mòdul 1. Per aconseguir que un vector sigui            unitari basta dividir el vector entre el seu mòdul. Ho indicam de la següent forma             \(\hat{\vec u}=\dfrac{\vec u}{|\vec u|}\). &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Angle entre dos vectors</CONCEPT>
+        <DEFINITION>\[  \alpha = \arccos \dfrac{\vec u \cdot \vec v}{|\vec u|\, |\vec v|} =                    \arccos  \dfrac{u_1 v_1 + u_2 v_2}{\sqrt{u_1^2 + u_2^2} \sqrt{v_1^2 + v_2^2}}                     \label{eq:angle}  \tag{10}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Equació vectorial de la recta</CONCEPT>
+        <DEFINITION>&lt;p &gt;  \((x,y) = (P_1, P_2) + \lambda (d_1,d_2)\) &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Equacions paramètriques de la recta</CONCEPT>
+        <DEFINITION>&lt;p &gt;  \(\left\{ \begin{array}{l} x = P_1 + \lambda d_1 \\ y = P_2 + \lambda d_2  \end{array} \right.\) &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Equació contínua de la recta</CONCEPT>
+        <DEFINITION>\(\dfrac{x - P_1}{d_1} = \dfrac{y-P_2}{d_2}\)</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>relació entre vector i pendent</CONCEPT>
+        <DEFINITION>\(m = \dfrac{d_2}{d_1}\)</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Equació punt-pendent de la recta</CONCEPT>
+        <DEFINITION>\[                y-P_1 = m \cdot (x - P_2) \label{eq:puntpendent}             \tag{11}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Equació general de la recta</CONCEPT>
+        <DEFINITION>&lt;p &gt; L&apos;equació general té la forma  \(Ax+By+C=0\) on els coeficients  \(A, B\) són les            components del vector normal  \(\vec n =(A, B)\), és a dir, d&apos;un vector perpendicular a la recta.             Si volguéssim un vector director hauríem de prendre   \(\vec d =(-B, A)\) &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Equació explícita de la recta</CONCEPT>
+        <DEFINITION>\[ y =m x + n \label{eq:implicit}  \tag{12}\]</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Recta horitzontal</CONCEPT>
+        <DEFINITION>&lt;p &gt; Les rectes horitzontals o constants tenen com a vector director  \(\vec d(1, 0)\) (o múltiples d&apos;ell)            i la seva equació és de la forma  \(y=k\).         &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>
+        <ENTRY>
+        <CONCEPT>Recta vertical</CONCEPT>
+        <DEFINITION>&lt;p &gt; En canvi, les rectes verticals representen parets que tenen com a vector director  \(\vec d(0, 1)\) (o múltiples)            i la seva equació és de la forma  \(x=k\).         &lt;/p&gt;</DEFINITION>
+        <FORMAT>1</FORMAT>
+        <USEDYNALINK>0</USEDYNALINK>
+        <CASESENSITIVE>0</CASESENSITIVE>
+        <FULLMATCH>0</FULLMATCH>
+        <TEACHERENTRY>1</TEACHERENTRY>
+        <CATEGORIES>
+          <CATEGORY>
+            <NAME>Matemàtiques I</NAME>
+            <USEDYNALINK>0</USEDYNALINK>
+          </CATEGORY>
+        </CATEGORIES>
+      </ENTRY>   </ENTRIES>
+  </INFO>
+</GLOSSARY>

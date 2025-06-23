@@ -1,0 +1,1 @@
+﻿positionForPages[299]={page:299,positions:[{word:"Esquema",left:0.149556,top:0.097039,width:0.108824,height:0.021403}]};

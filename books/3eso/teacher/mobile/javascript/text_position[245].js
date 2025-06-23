@@ -1,0 +1,1 @@
+﻿positionForPages[245]={page:245,positions:[{word:"`",left:0.154244,top:0.097619,width:0.009699,height:0.021403},{word:"Arees",left:0.149556,top:0.100755,width:0.068649,height:0.021403},{word:"per",left:0.223230,top:0.100755,width:0.039175,height:0.021403},{word:"triangulacio´",left:0.267429,top:0.100516,width:0.134921,height:0.021642}]};

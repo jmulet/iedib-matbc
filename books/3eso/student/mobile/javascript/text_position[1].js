@@ -1,0 +1,1 @@
+﻿positionForPages[1]={page:1,positions:[{word:"Matemàtiques",left:0.283910,top:0.086402,width:0.632125,height:0.077559},{word:"ESO",left:0.113475,top:0.179299,width:0.137784,height:0.060336},{word:"Josep",left:0.683749,top:0.945517,width:0.118155,height:0.031750},{word:"Mulet",left:0.814515,top:0.945517,width:0.115412,height:0.031750}]};
