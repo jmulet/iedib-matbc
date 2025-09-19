@@ -332,6 +332,16 @@ if (isBAT1 || isBAT2) {
 }
 
 // Do smooth scroll to #where for tags annotated with class ib-smooth-scroll
+function scrollToElement(target, offset) {
+    offset = offset || 0;
+    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    } else {
+        window.scrollTo(0, targetPosition); // fallback for old browsers
+    }
+}
+
 var anchors = document.querySelectorAll("a.ib-smooth-scroll");
 for (var i = 0, anchors_length = anchors.length; i < anchors_length; i++) {
     (function(link){
@@ -342,10 +352,7 @@ for (var i = 0, anchors_length = anchors.length; i < anchors_length; i++) {
             if (target) {
                 link.addEventListener('click', function(evt) {
                     evt.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    scrollToElement(target, 60);
                 });
             }
         }
