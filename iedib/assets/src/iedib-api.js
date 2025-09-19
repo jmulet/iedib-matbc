@@ -335,7 +335,7 @@ if (isBAT1 || isBAT2) {
 var anchors = document.querySelectorAll("a[data-scrollto]");
 for (var i = 0, anchors_length = anchors.length; i < anchors_length; i++) {
     var elem = anchors[i];
-    var where = elem.data.scrollto;
+    var where = elem.dataset.scrollto;
     if (where) {
         elem.addEventListener('click', function(evt) {
             elem.scrollIntoView({ behavior: 'smooth' });
