@@ -334,21 +334,22 @@ if (isBAT1 || isBAT2) {
 // Do smooth scroll to #where for tags annotated with class ib-smooth-scroll
 var anchors = document.querySelectorAll("a.ib-smooth-scroll");
 for (var i = 0, anchors_length = anchors.length; i < anchors_length; i++) {
-    var link = anchors[i];
-    var where = link.getAttribute('href');
-    if (where) {
-        var wherename = where.slice(1); // remove the '#'
-        var target = document.querySelector('a[name="' + wherename + '"]');
-        if (target) {
-            link.addEventListener('click', function(evt) {
-                evt.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+    (function(link){
+        var where = link.getAttribute('href');
+        if (where) {
+            var wherename = where.slice(1); // remove the '#'
+            var target = document.querySelector('a[name="' + wherename + '"]');
+            if (target) {
+                link.addEventListener('click', function(evt) {
+                    evt.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 });
-            });
+            }
         }
-    }
+    })(anchors[i]);
 }
 
 // Handle iedib-restricted-access class (jQuery ajax is required so wait for it!)
