@@ -211,6 +211,9 @@ table.table th {
     iframe[src*="/iedib/wolfram/"] {
         display: none !important;
     } 
+    div.ai-course-summarise-controls {
+        display: none!important;
+    }
 }
 
 div[role="main"] li:not(:last-child) {
