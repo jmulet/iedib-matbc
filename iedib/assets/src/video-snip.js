@@ -688,10 +688,7 @@ window.require(["jquery", "core/modal_factory", "core/modal_events"], function (
     var onH5PReady = function(iframe, H5P, instance0, player, duration) { 
         var $iframe = $(iframe);
         var $videoContainer = $iframe.closest('div.iedib-video-container');
-        if($videoContainer.hasClass('h5p-placeholder')) {
-            // Support for native h5p
-            $videoContainer = $videoContainer.parent();
-        }
+
         var H5P_Video = H5P.Video || {ENDED: 0, PLAYING: 1, PAUSED: 2, BUFFERING: 3};
         H5P_Video_PLAYING = H5P_Video_PLAYING || H5P_Video.PLAYING;
         H5P_Video_PAUSED = H5P_Video_PAUSED || H5P_Video.PAUSED;
@@ -720,9 +717,12 @@ window.require(["jquery", "core/modal_factory", "core/modal_events"], function (
             h5pName = $videoContainer.find(".iedib-caption-counter").text() || '';
         }
 
-        var $caption_elem = $($videoContainer.find(".iedib-caption")[0]);
-        var $title_elem = $($caption_elem.find(".iedib-caption-title")[0]);
-        var $progress_elem = $($caption_elem.find(".iedib-caption-progress")[0]);
+        var $caption_elem = $videoContainer.find(".iedib-caption").first();
+        var $title_elem = $caption_elem.find(".iedib-caption-title").first();
+        var $progress_elem = $caption_elem.find(".iedib-caption-progress");
+        if (!$progress_elem.length) {
+            $caption_elem.append('<div class="iedib-caption-progress"></div>');
+        }
         $progress_elem.css({"display": "inline-table", "height": "25px", "width": "70px", "font-size": "80%", "border-top": "3px solid #e9b04f", "border-bottom": "3px solid #e9b04f"});
          
         console.log(player, instance0); 
