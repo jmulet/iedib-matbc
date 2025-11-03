@@ -155,7 +155,7 @@ var getPageInfo = function () {
     if (dataUserId) {
         userId = dataUserId.getAttribute('data-userid');
     }
-    var userText = document.getElementsByClassName("usertext");
+    var userText = document.querySelector(".usertext");
     if (userText && userText.length) {
         userFullname = userText[0].innerText;
     }
@@ -281,7 +281,7 @@ var drawTimeSegments = function (segm, duration, container) {
 };
 
 var turnErrorMode = function () {
-    var pwvts = document.getElementsByClassName("iedib-caption-progress");
+    var pwvts = document.querySelectorAll(".iedib-caption-progress");
     for (var i = 0; i < pwvts.length; i++) {
         pwvts[i].style.background = "orangered";
         pwvts[i].title = "El registre de vídeos no funciona en aquests moments. No podreu obtenir punts fins que no s'activi.";
@@ -354,7 +354,7 @@ var updateTimesDB = function(vonpage) {
 };
 
 var search_h5p_videos = function () {
-    var snippet_iframes = document.querySelectorAll("div.iedib-video-container > iframe");
+    var snippet_iframes = document.querySelectorAll("div.iedib-video-container iframe");
     var len_snippet = snippet_iframes.length;
     console.log("Found H5P VIDEOS in this page n=", len_snippet);
     var pi = window.iedibAPI.pi;
@@ -362,9 +362,9 @@ var search_h5p_videos = function () {
     for (var ik = 0; ik < len_snippet; ik++) {
         console.log("Processing snippet num", ik);
         var snippet_iframe = snippet_iframes[ik];
-        var videoContainer = snippet_iframe.parentElement;
+        var videoContainer = snippet_iframe.closest('div.iedib-video-container');
         var snippet_document = snippet_iframe.contentWindow.document;
-        var iframeH5P = snippet_document.getElementsByClassName('h5p-iframe')[0].contentWindow.H5P;
+        var iframeH5P = snippet_document.querySelector('.h5p-iframe').contentWindow.H5P;
 
         console.log(iframeH5P);
         var instance0 = iframeH5P.instances[0];
@@ -384,12 +384,11 @@ var search_h5p_videos = function () {
             h5pName += h5pNameObj[h5pNameKeys[i]] + " ";
         }
         console.log(snippet_iframe);
-        console.log(snippet_iframe.parentNode);
-        console.log(snippet_iframe.parentElement);
-
-        var caption_elem = snippet_iframe.parentNode.getElementsByClassName("iedib-caption")[0];
-        var title_elem = caption_elem.getElementsByClassName("iedib-caption-title")[0];
-        var progress_elem = caption_elem.getElementsByClassName("iedib-caption-progress")[0];
+        console.log(videoContainer);
+    
+        var caption_elem = videoContainer.querySelector(".iedib-caption");
+        var title_elem = caption_elem.querySelector(".iedib-caption-title");
+        var progress_elem = caption_elem.querySelector(".iedib-caption-progress");
         if (!(title_elem.innerText || "").trim()) {
             title_elem.innerText = ": " + h5pName;
         } else {
@@ -676,7 +675,7 @@ var onYTPlayerStateChange = function (evt) {
 };
 
 var initYoutubeVideo = function (snippet_iframe) {
-    var videoContainer = snippet_iframe.parentElement;
+    var videoContainer = snippet_iframe.closest('');
     if (videoContainer.className.indexOf("iedib-no-tracking") >= 0) {
         return;
     }
@@ -693,9 +692,9 @@ var initYoutubeVideo = function (snippet_iframe) {
             'onStateChange': onYTPlayerStateChange
         }
     });
-    var caption_elem = snippet_iframe.parentNode.parentNode.getElementsByClassName("iedib-caption")[0];
-    var title_elem = caption_elem.getElementsByClassName("iedib-caption-title")[0];
-    var progress_elem = caption_elem.getElementsByClassName("iedib-caption-progress")[0];
+    var caption_elem = snippet_iframe.closest(".iedib-caption");
+    var title_elem = caption_elem.querySelector(".iedib-caption-title");
+    var progress_elem = caption_elem.querySelector(".iedib-caption-progress");
     progress_elem.style.display = "inline-table";
 
     snippet_iframe.className = "pw-yt-video pw-yt-video-handled";
@@ -715,7 +714,7 @@ var initYoutubeVideo = function (snippet_iframe) {
 };
 
 var search_yt_videos = function () {
-    var videos = document.querySelectorAll("div.iedib-videoWrapper > iframe.pw-yt-video");
+    var videos = document.querySelectorAll("div.iedib-videoWrapper iframe.pw-yt-video");
     var videos_len = videos.length;
     console.log("Found Youtube videos in this page n=", videos_len);
     if (!videos_len) {
