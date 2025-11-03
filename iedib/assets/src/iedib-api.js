@@ -359,6 +359,19 @@ for (var i = 0, anchors_length = anchors.length; i < anchors_length; i++) {
     })(anchors[i]);
 }
 
+// TinyMCE removes onload on geogebra iframe's, add manually
+document.querySelectorAll('iframe.pw-ggb').forEach(e => {
+    var spinner = e.closest('div.pw-spinner');
+    if (!spinner) {
+        return;
+    }
+    e.onload = function() {
+        snipper.style.display = 'none';
+    };
+    // After a long wait, remove them
+    window.setTimeout(function(){spinner.style.display = 'none';}, 4000);
+});
+
 // Handle iedib-restricted-access class (jQuery ajax is required so wait for it!)
 window.iedibAPI.require(['jquery'], function ($) {
     var $elems = $(".iedib-restricted-access");
