@@ -643,7 +643,7 @@ window.require(["jquery", "core/modal_factory", "core/modal_events"], function (
         try {
             var embed_document = iframe.contentWindow.document;
             //There is a doble iframe
-            var h5p_iframe = embed_document.getElementsByClassName('h5p-iframe')[0].contentWindow;
+            var h5p_iframe = embed_document.querySelector('.h5p-iframe').contentWindow;
             H5P = h5p_iframe.H5P;
 
             if(H5P != null) {
@@ -687,7 +687,7 @@ window.require(["jquery", "core/modal_factory", "core/modal_events"], function (
     // Do the actual work when the H5P is ready
     var onH5PReady = function(iframe, H5P, instance0, player, duration) { 
         var $iframe = $(iframe);
-        var $videoContainer = $iframe.parent();
+        var $videoContainer = $iframe.closest('div.iedib-video-container');
         if($videoContainer.hasClass('h5p-placeholder')) {
             // Support for native h5p
             $videoContainer = $videoContainer.parent();
