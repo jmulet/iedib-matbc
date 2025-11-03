@@ -361,7 +361,8 @@ for (var i = 0, anchors_length = anchors.length; i < anchors_length; i++) {
 
 // TinyMCE removes onload on geogebra iframe's, add manually
 document.querySelectorAll('iframe.pw-ggb').forEach(e => {
-    var spinner = e.querySelector('#' + e.id?.replace('ggb', 'ggb_spinner'));
+    var id = e.id?.replace('ggb', 'ggb_spinner');
+    var spinner = document.querySelector('#' + id);
     if (!spinner) {
         return;
     }
