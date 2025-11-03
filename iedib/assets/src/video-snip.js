@@ -721,7 +721,8 @@ window.require(["jquery", "core/modal_factory", "core/modal_events"], function (
         var $title_elem = $caption_elem.find(".iedib-caption-title").first();
         var $progress_elem = $caption_elem.find(".iedib-caption-progress");
         if (!$progress_elem.length) {
-            $caption_elem.append('<div class="iedib-caption-progress"></div>');
+            $progress_elem = $('<div class="iedib-caption-progress"></div>');
+            $caption_elem.append($progress_elem);
         }
         $progress_elem.css({"display": "inline-table", "height": "25px", "width": "70px", "font-size": "80%", "border-top": "3px solid #e9b04f", "border-bottom": "3px solid #e9b04f"});
          
