@@ -38,9 +38,9 @@ const IBParallax = (function () {
             const settings = {
                 height: config.height || '350px',
                 background: config.background || 'linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 50%, #fae8ff 100%)',
-                unit: config.unit || 'Unitat 1',
-                title: config.title || 'TITOL',
-                description: config.description || 'Descripció de la unitat.',
+                unit: config.unit || '',
+                title: config.title || '',
+                description: config.description || '',
                 layers: config.layers || [],
                 scrollDepth: config.scrollDepth || 500
             };
