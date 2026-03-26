@@ -41,10 +41,12 @@ const IBParallax = (function () {
                 unit: config.unit || 'Unitat 1',
                 title: config.title || 'TITOL',
                 description: config.description || 'Descripció de la unitat.',
-                layers: config.layers || []
+                layers: config.layers || [],
+                scrollDepth: config.scrollDepth || 500
             };
 
             container.className = "d-flex align-items-center justify-content-center";
+            container.style.borderRadius = '20px';
             Object.assign(container.style, {
                 position: 'relative',
                 height: settings.height,
@@ -96,7 +98,7 @@ const IBParallax = (function () {
 
                     // Combinamos el movimiento del ratón con el desplazamiento de scroll
                     const moveX = mouseX * (depth * 140);
-                    const moveY = (mouseY * (depth * 140)) + (scrollFactor * (depth * 250));
+                    const moveY = (mouseY * (depth * 140)) + (scrollFactor * (depth * settings.scrollDepth));
 
                     layer.style.transform = `translate(${moveX}px, ${moveY}px)`;
                 });
