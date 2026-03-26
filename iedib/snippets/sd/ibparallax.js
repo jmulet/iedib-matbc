@@ -45,7 +45,7 @@ const IBParallax = (function () {
                 scrollDepth: config.scrollDepth || 500
             };
 
-            container.className = "d-flex align-items-center justify-content-center";
+            container.className = "d-flex align-items-center justify-content-center mb-5";
             container.style.borderRadius = '20px';
             Object.assign(container.style, {
                 position: 'relative',
